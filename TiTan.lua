@@ -2165,7 +2165,7 @@ if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2255,7 +2255,7 @@ if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and D
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2286,7 +2286,7 @@ if text and text:match("^رفع مطور (%d+)$") and DevTiTan(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع مطور (%d+)$")
@@ -2325,7 +2325,7 @@ if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2343,7 +2343,7 @@ if text and text:match("^رفع منشئ اساسي @(.*)$") then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2370,7 +2370,7 @@ if text and text:match("^رفع منشئ اساسي (%d+)$") then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2386,7 +2386,7 @@ if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2404,7 +2404,7 @@ if text and text:match("^تنزيل منشئ اساسي @(.*)$") then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2428,7 +2428,7 @@ if text and text:match("^تنزيل منشئ اساسي (%d+)$") then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2478,7 +2478,7 @@ if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2492,7 +2492,7 @@ if text and text:match("^رفع منشئ اساسي @(.*)$") and DevBot(msg) the
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع منشئ اساسي @(.*)$")
@@ -2515,7 +2515,7 @@ if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) the
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
@@ -2527,7 +2527,7 @@ if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2541,7 +2541,7 @@ if text and text:match("^تنزيل منشئ اساسي @(.*)$") and DevBot(msg)
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل منشئ اساسي @(.*)$")
@@ -2561,7 +2561,7 @@ if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg)
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
@@ -2574,7 +2574,7 @@ if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and Bas
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2587,7 +2587,7 @@ if text and text:match("^رفع منشئ @(.*)$") and BasicConstructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع منشئ @(.*)$")
@@ -2610,7 +2610,7 @@ if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع منشئ (%d+)$")
@@ -2621,7 +2621,7 @@ if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_messag
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2635,7 +2635,7 @@ if text and text:match("^تنزيل منشئ @(.*)$") and BasicConstructor(msg) 
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل منشئ @(.*)$")
@@ -2654,7 +2654,7 @@ if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) 
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^تنزيل منشئ (%d+)$")
@@ -2666,7 +2666,7 @@ if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and C
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2680,7 +2680,7 @@ if text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع مدير @(.*)$") 
@@ -2704,7 +2704,7 @@ if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع مدير (%d+)$") 
@@ -2716,7 +2716,7 @@ if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2730,7 +2730,7 @@ if text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل مدير @(.*)$")
@@ -2749,7 +2749,7 @@ if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^تنزيل مدير (%d+)$") 
@@ -2762,7 +2762,7 @@ if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and O
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2780,7 +2780,7 @@ if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع ادمن @(.*)$")
@@ -2807,7 +2807,7 @@ if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع ادمن (%d+)$")
@@ -2823,7 +2823,7 @@ if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2837,7 +2837,7 @@ if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل ادمن @(.*)$") 
@@ -2856,7 +2856,7 @@ if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^تنزيل ادمن (%d+)$")
@@ -2869,7 +2869,7 @@ if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and A
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2887,7 +2887,7 @@ if text and text:match("^رفع مميز @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع مميز @(.*)$") 
@@ -2915,7 +2915,7 @@ if text == ("رفع مطي") and tonumber(msg.reply_to_message_id_) ~= 0 and Add
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2933,7 +2933,7 @@ if text and text:match("^رفع مطي @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^رفع مطي @(.*)$") 
@@ -2961,7 +2961,7 @@ if (text == ("تنزيل مطي")) and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2975,7 +2975,7 @@ if text and text:match("^تنزيل مطي @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل مطي @(.*)$") 
@@ -2995,7 +2995,7 @@ if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local userid = text:match("^رفع مميز (%d+)$")
@@ -3012,7 +3012,7 @@ if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3026,7 +3026,7 @@ if text and text:match("^تنزيل مميز @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تنزيل مميز @(.*)$") 
@@ -3051,7 +3051,7 @@ if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local RTPA = text:match("رفع (.*)")
@@ -3083,7 +3083,7 @@ if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local RTPA = text:match("تنزيل (.*)")
@@ -3115,7 +3115,7 @@ if text and text:match("^رفع (.*) @(.*)") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local text1 = {string.match(text, "^(رفع) (.*) @(.*)$")}
@@ -3150,7 +3150,7 @@ if text and text:match("^تنزيل (.*) @(.*)") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local text1 = {string.match(text, "^(تنزيل) (.*) @(.*)$")}
@@ -3186,7 +3186,7 @@ if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3220,7 +3220,7 @@ if text and text:match("^حظر @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^حظر @(.*)$")
@@ -3291,7 +3291,7 @@ if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3311,7 +3311,7 @@ if text and text:match("^الغاء حظر @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^الغاء حظر @(.*)$") 
@@ -3348,7 +3348,7 @@ if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3370,7 +3370,7 @@ if text and text:match("^كتم @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^كتم @(.*)$")
@@ -3415,7 +3415,7 @@ if text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3429,7 +3429,7 @@ if text and text:match("^الغاء كتم @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^الغاء كتم @(.*)$")
@@ -3456,7 +3456,7 @@ if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictiv
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3475,7 +3475,7 @@ if text and text:match("^تقيد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^تقيد @(.*)$")
@@ -3514,7 +3514,7 @@ if text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3529,7 +3529,7 @@ if text and text:match("^الغاء تقيد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^الغاء تقيد @(.*)$")
@@ -3555,7 +3555,7 @@ if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3587,7 +3587,7 @@ if text and text:match("^طرد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local username = text:match("^طرد @(.*)$")
@@ -3669,7 +3669,7 @@ if Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
@@ -3682,7 +3682,7 @@ if Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
@@ -3737,7 +3737,7 @@ if text == "ضع رابط" or text == "وضع رابط" then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if msg.reply_to_message_id_ == 0  and Addictive(msg) then  
@@ -3751,7 +3751,7 @@ if Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:set(bot_id.."TiTan:Link_Group"..msg.chat_id_,true) 
@@ -3764,7 +3764,7 @@ if Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:del(bot_id.."TiTan:Link_Group"..msg.chat_id_) 
@@ -3929,7 +3929,7 @@ if text == "مسح البوتات" and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
@@ -3957,7 +3957,7 @@ if text == ("كشف البوتات") and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
@@ -4026,7 +4026,7 @@ if text == "الاوامر المضافه" and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 local list = database:smembers(bot_id.."TiTan:List:Cmd:Group:New"..msg.chat_id_.."")
@@ -4058,7 +4058,7 @@ if text == "اضف امر" and Constructor(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:set(bot_id.."TiTan:Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
@@ -4103,7 +4103,7 @@ ComdNew = text:match("^اضف صلاحيه (.*)$")
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:set(bot_id.."TiTan:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
@@ -4116,7 +4116,7 @@ ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلا
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:del(bot_id.."TiTan:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
@@ -4287,7 +4287,7 @@ if text == "اضف رد" and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 send(msg.chat_id_, msg.id_,"📫︙ارسل الكلمه التي تريد اضافتها")
@@ -4298,7 +4298,7 @@ if text == "حذف رد" and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 send(msg.chat_id_, msg.id_,"📫︙ارسل الكلمه التي تريد حذفها")
@@ -4490,7 +4490,7 @@ if text == "اضف رد للكل" and DevTiTan(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 send(msg.chat_id_, msg.id_,"📥︙ ارسل الكلمه التي تريد اضافتها")
@@ -4669,7 +4669,7 @@ if text == "تاك للكل" and Addictive(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
@@ -5397,7 +5397,7 @@ if text == "تعطيل اوامر التحشيش" and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 send(msg.chat_id_, msg.id_, '☑︙تم تعطيل اوامر التحشيش')
@@ -5412,7 +5412,7 @@ if text == 'تفعيل الايدي' and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:del(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) 
@@ -5426,7 +5426,7 @@ if text == 'تفعيل الايدي بالصوره' and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end  
 database:del(bot_id..'TiTan:Lock:ID:Bot:Photo'..msg.chat_id_) 
@@ -5440,7 +5440,7 @@ if text == 'تعين الايدي' and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:setex(bot_id.."TiTan:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
@@ -5484,7 +5484,7 @@ if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not databa
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if not database:sismember(bot_id..'TiTan:Spam:Group'..msg.sender_user_id_,text) then
@@ -5992,7 +5992,7 @@ if text == "تفعيل الالعاب" and Owner(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 database:set(bot_id.."TiTan:Lock:Games"..msg.chat_id_,true) 
@@ -6012,7 +6012,7 @@ Teext = [[
 🔖︙لعبة الحزوره ~⪼ حزوره
 🔖︙لعبة المعاني ~⪼ معاني
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔖︙Ch ~⪼ @TiTan
+🔖︙Ch ~⪼ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Teext) 
 end
@@ -6401,7 +6401,7 @@ local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
 local TextS = "\n📁︙اهلا بك متجر بوشنكي  \n📮︙ملفات السورس ↓ \nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n\n"
-local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔰︙تدل علامة (✔︎) الملف مفعل\n".."🔰︙تدل علامة (✘) الملف معطل\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔖┇Ch ~⪼ @TiTanX\n"
+local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔰︙تدل علامة (✔︎) الملف مفعل\n".."🔰︙تدل علامة (✘) الملف معطل\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔖┇Ch ~⪼ @TiTancilX\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("TiTan_Files/"..name,"r")
@@ -6675,7 +6675,7 @@ Text = [[
 🎖︙م4 ~⪼ لعرض اوامر المنشئين
 👤︙م5 ~⪼ لعرض اوامر المطورين
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡︙CH @TiTan
+📡︙CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6713,7 +6713,7 @@ Text = [[
 🔗︙الكلايش
 🔗︙السيلفي
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡︙Ch ~⪼ @TiTan
+📡︙Ch ~⪼ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6773,7 +6773,7 @@ Text = [[
 📮︙الصلاحيات
 📮︙الرابط
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡︙CH @TiTan
+📡︙CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6817,7 +6817,7 @@ Text = [[
 تغير رد المميز + النص
 تغير رد العضو + النص
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡︙CH @TiTan
+📡︙CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6842,7 +6842,7 @@ Text = [[
 ➕︙اضف رسائل + العدد بالرد
 ➕︙اضف مجوهرات + العدد بالرد
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡︙CH @TiTan
+📡︙CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6888,7 +6888,7 @@ Text = [[
 ➕︙اذاعه بالتثبيت 
 ➕︙الاحصائيات 
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡︙CH @TiTan
+📡︙CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6901,7 +6901,7 @@ if text == 'تفعيل' and DevBot(msg) then
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -6954,7 +6954,7 @@ if text == 'تعطيل' and DevBot(msg) then
  local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -6996,7 +6996,7 @@ if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'TiTan:
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTan] ⚜️')
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -7065,7 +7065,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' then  
 if DevTiTan(msg) then
-local Text = '📥┋مرحبا عزيزي المطور آلاساسي ،\n🔰┋يمكنك اختيار الامر من الكيبورد\n📮┋اضغط على الأمر الذي تـريده !\n🔖┋Ch ~⪼ @TiTan'
+local Text = '📥┋مرحبا عزيزي المطور آلاساسي ،\n🔰┋يمكنك اختيار الامر من الكيبورد\n📮┋اضغط على الأمر الذي تـريده !\n🔖┋Ch ~⪼ @TiTancil'
 local keyboard = {
 {'تعطيل التواصل ✖️','تفعيل التواصل 🔛'},
 {'ضع اسم للبوت ®','الاحصائيات 📈'},
