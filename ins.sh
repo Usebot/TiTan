@@ -10,7 +10,7 @@ chmod +x tk
 get() {
 rm -fr TiTan.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/TiTanBot/TiTan/master/TiTan.lua"
+wget "https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua"
 lua run.lua
 }
 ins_sudo(){
