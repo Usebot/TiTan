@@ -5481,12 +5481,6 @@ send(msg.chat_id_, msg.id_,'📌︙تم تعين الايدي')
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 if not database:sismember(bot_id..'TiTan:Spam:Group'..msg.sender_user_id_,text) then
 database:sadd(bot_id.."TiTan:Spam:Group"..msg.sender_user_id_,text) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
@@ -6654,14 +6648,14 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 Text = [[
 🔰 Welcome to Source 🔰
 
-🌐︙TiTan TEAM 
+🌐︙Titan TEAM 
 ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📄︙ [Source Channel](https://t.me/TiTan)
+📄︙ [Source Channel](https://t.me/TiTancil)
 
-📮︙ [Source Info](https://t.me/TiTan)
+📮︙ [Source Info](https://t.me/TiTancil)
 
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-📧︙ [TWS TiTan](https://t.me/Y_8ibot)
+📧︙ [TWS TiTan](https://t.me/Titancilbot)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
