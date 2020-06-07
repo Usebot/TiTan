@@ -4155,6 +4155,14 @@ return false
 end 
 end
 
+if text == 'تنزيل جميع الرتب' or text == 'تنزيل الرتبه' and BasicConstructor(msg) then
+database:del(bot_id..'TiTan:Constructor'..msg.chat_id_)
+database:del(bot_id..'TiTan:Manager'..msg.chat_id_)
+database:del(bot_id..'TiTan:Mod:User'..msg.chat_id_)
+database:del(bot_id..'TiTan:Special:User'..msg.chat_id_)
+send(msg.chat_id_, msg.id_, '\n🔖| تم تنزيل الكل من الرتب الاتيه \n💠| المميزين ، الادمنيه ، المدراء ، المنشئين \n')
+end
+
 if text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
 database:set(bot_id.."TiTan:Sudo:Rd"..msg.chat_id_,Teext)
@@ -6892,10 +6900,10 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
-local url , res = https.request("https://api.telegram.org/bot"..token.."/getchatmember?chat_id=@TiTancil&user_id="..msg.sender_user_id_)
-data = json:decode(url)
-if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')   
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiTan ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -6945,10 +6953,10 @@ end,nil)
 end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then
- local url , res = https.request("https://api.telegram.org/bot"..token.."/getchatmember?chat_id=@TiTancil&user_id="..msg.sender_user_id_)
-data = json:decode(url)
-if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')   
+ local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiTan ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -6987,10 +6995,10 @@ end,nil)
 end,nil) 
 end
 if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'TiTan:Free:Add:Bots') then 
-local url , res = https.request("https://api.telegram.org/bot"..token.."/getchatmember?chat_id=@TiTancil&user_id="..msg.sender_user_id_)
-data = json:decode(url)
-if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')   
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TiTan ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
 if msg.can_be_deleted_ == false then 
