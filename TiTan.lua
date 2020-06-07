@@ -2866,12 +2866,6 @@ return false
 end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
@@ -2884,12 +2878,6 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع مميز @(.*)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 local username = text:match("^رفع مميز @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -6640,7 +6628,7 @@ send(msg.chat_id_, msg.id_,'🔖︙ تم مسح قائمه منع المتحرك
 end
 if text == 'مسح قائمه منع الصور' and Owner(msg) then 
 database:del(bot_id.."filterphoto"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'🔖︙ تم مسح قائمه منع الصور')  
+send(msg.chat_id_, msg.id_,'??︙ تم مسح قائمه منع الصور')  
 end
 if text == 'مسح قائمه منع الملصقات' and Owner(msg) then 
 database:del(bot_id.."filtersteckr"..msg.chat_id_)
@@ -6900,12 +6888,6 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'📮︙البوت ليس ادمن يرجى ترقيتي !') 
 return false  
@@ -6953,12 +6935,6 @@ end,nil)
 end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then
- local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if not database:sismember(bot_id..'TiTan:Chek:Groups',msg.chat_id_) then
@@ -6995,12 +6971,6 @@ end,nil)
 end,nil) 
 end
 if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'TiTan:Free:Add:Bots') then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
-return false 
-end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'📮︙البوت ليس ادمن يرجى ترقيتي !') 
 return false  
