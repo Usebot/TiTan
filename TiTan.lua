@@ -5615,9 +5615,9 @@ end
 if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
-local Status_Gps = Get_Rank(result.sender_user_id_,msg.chat_id_)
+local rtp = Get_Rank(result.sender_user_id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
-local Id = data.id_
+local Id = result.id_
 send(msg.chat_id_, msg.id_,'🎟️| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالرد')
 end,nil)
 end
@@ -5629,9 +5629,9 @@ local username = text:match("^كشف @(.*)$")
 function start_function(extra, result, success)
 if result.id_ then
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data) 
-Status_Gps = Get_Rank(result.id_,msg.chat_id_)
+local rtp = Get_Rank(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
-local Id = data.id_
+local Id = result.id_
 send(msg.chat_id_, msg.id_,'🎟| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالمعرف')
 end,nil)
 else
