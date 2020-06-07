@@ -5611,6 +5611,36 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
 return false
 end
+
+if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
+function start_function(extra, result, success)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
+local Status_Gps = Get_Rank(result.sender_user_id_,msg.chat_id_)
+local username = ('[@'..data.username_..']' or 'لا يوجد')
+local Id = data.id_
+send(msg.chat_id_, msg.id_,'🎟️| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالرد')
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+end
+---------
+if text and text:match("^كشف @(.*)$") then
+local username = text:match("^كشف @(.*)$")
+function start_function(extra, result, success)
+if result.id_ then
+tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data) 
+Status_Gps = Get_Rank(result.id_,msg.chat_id_)
+local username = ('[@'..data.username_..']' or 'لا يوجد')
+local Id = data.id_
+send(msg.chat_id_, msg.id_,'🎟| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالمعرف')
+end,nil)
+else
+send(msg.chat_id_, msg.id_,'✖| المعرف غير صحيح ')
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
+end
+
 if text == "سمايلات" or text == "سمايل" then
 if database:get(bot_id.."TiTan:Lock:Games"..msg.chat_id_) then
 database:del(bot_id.."TiTan:Set:Sma"..msg.chat_id_)
