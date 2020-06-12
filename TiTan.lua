@@ -6645,11 +6645,11 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 Text = [[
 ☬┋Welcome To Source Titan . 
 
-⌯ | [قناة السورس ⛑](https://t.me/joinchat/AAAAAERpvVzYnV_p2U3f8Q)
+[⌯ | قناة السورس ⛑](https://t.me/joinchat/AAAAAERpvVzYnV_p2U3f8Q)
 
-⌯ | [قناة التحديثات ⚜](https://t.me/joinchat/AAAAAFjdkfaJHgTTkiehZg)
+[⌯ | قناة التحديثات ⚜](https://t.me/joinchat/AAAAAFjdkfaJHgTTkiehZg)
 
-⌯ | [تواصل السورس🎗](https://t.me/Ta2bot)
+[⌯ | تواصل السورس🎗](https://t.me/Ta2bot)
 ...................................................
 ®︙تم تطويره في عام 2020/6/12 ⚜
 ]]
