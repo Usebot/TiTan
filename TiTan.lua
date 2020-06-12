@@ -2162,9 +2162,9 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiTan(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2252,9 +2252,9 @@ return false
 end
 
 if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiTan(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2283,9 +2283,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false 
 end
 if text and text:match("^رفع مطور (%d+)$") and DevTiTan(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2322,9 +2322,9 @@ Reply_Status(msg,userid,"reply","🔰︙تم تنزيلة مطور من البو
 return false 
 end
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2340,9 +2340,9 @@ end
 end,nil)
 end
 if text and text:match("^رفع منشئ اساسي @(.*)$") then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2367,9 +2367,9 @@ end
 end,nil)
 end
 if text and text:match("^رفع منشئ اساسي (%d+)$") then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2383,9 +2383,9 @@ end
 end,nil)
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2401,9 +2401,9 @@ end
 end,nil)
 end
 if text and text:match("^تنزيل منشئ اساسي @(.*)$") then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2425,9 +2425,9 @@ end
 end,nil)
 end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2475,9 +2475,9 @@ end,nil)
 end
 
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2489,9 +2489,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع منشئ اساسي @(.*)$") and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2512,9 +2512,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false
 end
 if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2524,9 +2524,9 @@ Reply_Status(msg,userid,"reply","🔖︙تم رفعة منشئ اساسي في �
 return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2538,9 +2538,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل منشئ اساسي @(.*)$") and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2558,9 +2558,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false
 end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2571,9 +2571,9 @@ return false
 end
 
 if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2584,9 +2584,9 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
 if text and text:match("^رفع منشئ @(.*)$") and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2607,9 +2607,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 end
 ------------------------------------------------------------------------
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2618,9 +2618,9 @@ database:sadd(bot_id.."TiTan:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","🔰︙تم رفعه منشئ في البوت")  
 end
 if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2632,9 +2632,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ @(.*)$") and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2651,9 +2651,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2663,9 +2663,9 @@ Reply_Status(msg,userid,"reply","🔰︙تم تنزيلة منشئ من البو
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2677,9 +2677,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end  
 if text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2701,9 +2701,9 @@ return false
 end 
 
 if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2713,9 +2713,9 @@ Reply_Status(msg,userid,"reply","🔖︙تم رفعة مدير في البوت")
 return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2727,9 +2727,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end  
 if text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2746,9 +2746,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false
 end  
 if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2759,9 +2759,9 @@ return false
 end
 
 if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2777,9 +2777,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2804,9 +2804,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false
 end
 if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2820,9 +2820,9 @@ Reply_Status(msg,userid,"reply","🔖︙تم رفعة ادمن في البوت")
 return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2834,9 +2834,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2853,9 +2853,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, 
 return false
 end
 if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2900,9 +2900,9 @@ return false
 end
 
 if text == ("رفع مطي") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2918,9 +2918,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع مطي @(.*)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2946,9 +2946,9 @@ return false
 end
 
 if (text == ("تنزيل مطي")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2960,9 +2960,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل مطي @(.*)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2980,9 +2980,9 @@ return false
 end
 
 if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -2997,9 +2997,9 @@ return false
 end
 
 if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3011,9 +3011,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل مميز @(.*)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3036,9 +3036,9 @@ Reply_Status(msg,userid,"reply","🔰︙تم تنزيله من المميزين 
 return false
 end  
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3068,9 +3068,9 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3100,9 +3100,9 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text and text:match("^رفع (.*) @(.*)") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3135,9 +3135,9 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil)
 end 
 end
 if text and text:match("^تنزيل (.*) @(.*)") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3171,9 +3171,9 @@ end
 end
 
 if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3205,9 +3205,9 @@ return false
 end
 
 if text and text:match("^حظر @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3276,9 +3276,9 @@ end
 return false
 end
 if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3296,9 +3296,9 @@ return false
 end
  
 if text and text:match("^الغاء حظر @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3333,9 +3333,9 @@ return false
 end
 
 if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3355,9 +3355,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^كتم @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3400,9 +3400,9 @@ end
 return false
 end
 if text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3414,9 +3414,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^الغاء كتم @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3441,9 +3441,9 @@ return false
 end
 
 if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3460,9 +3460,9 @@ return false
 end
 ------------------------------------------------------------------------
 if text and text:match("^تقيد @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3499,9 +3499,9 @@ return false
 end
 ------------------------------------------------------------------------
 if text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3514,9 +3514,9 @@ return false
 end
 ------------------------------------------------------------------------
 if text and text:match("^الغاء تقيد @(.*)$") and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3540,9 +3540,9 @@ Reply_Status(msg,userid,"reply","📛 ※ تم الغاء تقيده من الم
 return false
 end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3572,9 +3572,9 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end  
 if text and text:match("^طرد @(.*)$") and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3654,9 +3654,9 @@ end
 end
 if text == "تعطيل الرفع" or text == "تعطيل الترقيه" then
 if Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3667,9 +3667,9 @@ end
 end
 if text == "تفعيل الرفع" or text == "تفعيل الترقيه" then
 if Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3722,9 +3722,9 @@ database:hset(bot_id.."TiTan:flooding:settings:"..msg.chat_id_ ,"floodtime" ,Num
 send(msg.chat_id_, msg.id_,"📮︙تم وضع زمن التكرار ("..Num..")") 
 end
 if text == "ضع رابط" or text == "وضع رابط" then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3736,9 +3736,9 @@ end
 end
 if text == "تفعيل جلب الرابط" or text == 'تفعيل الرابط' then
 if Addictive(msg) then  
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3749,9 +3749,9 @@ end
 end
 if text == "تعطيل جلب الرابط" or text == 'تعطيل الرابط' then
 if Addictive(msg) then  
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3914,9 +3914,9 @@ return false  end
 end
 
 if text == "مسح البوتات" and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -3942,9 +3942,9 @@ end
 end,nil)  
 end   
 if text == ("كشف البوتات") and Addictive(msg) then  
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4011,9 +4011,9 @@ end
 end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4043,9 +4043,9 @@ send(msg.chat_id_, msg.id_,"📬︙تم مسح جميع الاوامر التي 
 end
 end
 if text == "اضف امر" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4088,9 +4088,9 @@ send(msg.chat_id_, msg.id_,"📬︙تم مسح الصلاحيات")
 end
 if text and text:match("^اضف صلاحيه (.*)$") and Addictive(msg) then 
 ComdNew = text:match("^اضف صلاحيه (.*)$")
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4101,9 +4101,9 @@ send(msg.chat_id_, msg.id_, "🎖︙ارسل نوع الصلاحيه ⚜️\n�
 end
 if text and text:match("^مسح صلاحيه (.*)$") and Addictive(msg) or text and text:match("^حذف صلاحيه (.*)$") and Addictive(msg) then 
 ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4280,9 +4280,9 @@ return false
 end  
 end
 if text == "اضف رد" and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4291,9 +4291,9 @@ database:set(bot_id.."TiTan:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_
 return false 
 end
 if text == "حذف رد" and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4483,9 +4483,9 @@ end
 end
 
 if text == "اضف رد للكل" and DevTiTan(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -4662,9 +4662,9 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
 if text == "تاك للكل" and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -5390,9 +5390,9 @@ local text =
 send(msg.chat_id_, msg.id_,text)     
 end    
 if text == "تعطيل اوامر التحشيش" and Owner(msg) then    
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -5405,9 +5405,9 @@ database:del(bot_id.."TiTan:Fun_Bots"..msg.chat_id_)
 end
 
 if text == 'تفعيل الايدي' and Owner(msg) then   
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -5419,9 +5419,9 @@ database:set(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_,'☑︙تم تعطيل الايدي') 
 end
 if text == 'تفعيل الايدي بالصوره' and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end  
@@ -5433,9 +5433,9 @@ database:set(bot_id..'TiTan:Lock:ID:Bot:Photo'..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_,'☑︙تم تعطيل الايدي بالصوره') 
 end
 if text == 'تعين الايدي' and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -5610,35 +5610,6 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
 return false
-end
-
-if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
-function start_function(extra, result, success)
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
-local rtp = Get_Rank(result.sender_user_id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
-local Id = result.id_
-send(msg.chat_id_, msg.id_,'🎟️| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالرد')
-end,nil)
-end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
-end
----------
-if text and text:match("^كشف @(.*)$") then
-local username = text:match("^كشف @(.*)$")
-function start_function(extra, result, success)
-if result.id_ then
-tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data) 
-local rtp = Get_Rank(result.id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
-local Id = result.id_
-send(msg.chat_id_, msg.id_,'🎟| الايدي » ('..Id..')\n📌| المعرف » ('..UserName_User..')\n👮‍♂️| الرتبه » ('..Status_Gps..')\n👁️‍🗨️| نوع الكشف » بالمعرف')
-end,nil)
-else
-send(msg.chat_id_, msg.id_,'✖| المعرف غير صحيح ')
-end
-end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
 
 if text == "سمايلات" or text == "سمايل" then
@@ -6009,9 +5980,9 @@ database:del(bot_id.."TiTan:Lock:Games"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"\n☑︙تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
 return false 
 end
@@ -7450,7 +7421,7 @@ os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/run.lua')
 dofile('TiTan.lua')  
 return false
 end
-if text == "تحديث الملفات 🗂️" then
+if text == "تحديث الملفات ??️" then
 dofile("TiTan.lua")  
 send(msg.chat_id_, msg.id_, "☑︙تم التحديث")
 end
