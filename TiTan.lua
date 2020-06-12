@@ -6643,16 +6643,15 @@ send(msg.chat_id_, msg.id_, "☑︙تم التحديث")
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 Text = [[
-🔰 Welcome to Source 🔰
+☬┋Welcome To Source Titan . 
 
-🌐︙Titan TEAM 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📄︙ [Source Channel](https://t.me/TiTancil)
+⌯ | [قناة السورس ⛑](https://t.me/joinchat/AAAAAERpvVzYnV_p2U3f8Q)
 
-📮︙ [Source Info](https://t.me/TiTancil)
+⌯ | [قناة التحديثات ⚜](https://t.me/joinchat/AAAAAFjdkfaJHgTTkiehZg)
 
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-📧︙ [TWS TiTan](https://t.me/Titancilbot)
+⌯ | [تواصل السورس🎗](https://t.me/Ta2bot)
+...................................................
+®︙تم تطويره في عام 2020/6/12 ⚜
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -6889,6 +6888,12 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
+return false 
+end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'📮︙البوت ليس ادمن يرجى ترقيتي !') 
 return false  
@@ -6936,6 +6941,12 @@ end,nil)
 end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
+return false 
+end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if not database:sismember(bot_id..'TiTan:Chek:Groups',msg.chat_id_) then
@@ -6972,6 +6983,12 @@ end,nil)
 end,nil) 
 end
 if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'TiTan:Free:Add:Bots') then 
+local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@TiTancil] ⚜️')
+return false 
+end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'📮︙البوت ليس ادمن يرجى ترقيتي !') 
 return false  
