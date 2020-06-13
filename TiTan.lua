@@ -4702,6 +4702,9 @@ end
 send(msg.chat_id_, msg.id_,first_name.."\n"..last_name) 
 end,nil)
 end 
+if text == 'ايديي' then
+send(msg.chat_id_, msg.id_,'⎙╮ ايديك ← '..msg.sender_user_id_)
+end
 if text==("عدد الكروب") and Addictive(msg) then  
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_,msg.id_,"⎙╮ البوت ليس ادمن هنا \n") 
