@@ -522,7 +522,7 @@ if v.linkgroup then
 if v.linkgroup ~= "" then
 database:set(bot_id.."TiTan:Private:Group:Link"..idg,v.linkgroup)   
 end;end;end
-send(chat,msg.id_,"⎙╮تم رفع الملف بنجاح وتفعيل المجموعات\n⎙╮ورفع {الامنشئين الاساسين ; والمنشئين ; والمدراء; والادمنيه} بنجاح")   
+send(chat,msg.id_,"⎙╮ تم رفع الملف بنجاح وتفعيل المجموعات\n⎙╮ورفع {الامنشئين الاساسين ; والمنشئين ; والمدراء; والادمنيه} بنجاح")   
 end
 
 function Is_Not_Spam(msg,type)
@@ -576,7 +576,7 @@ end
 end
 if database:get(bot_id.."TiTan:TiTan:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الاذاعه") 
 database:del(bot_id.."TiTan:TiTan:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -607,7 +607,7 @@ sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_)
 database:set(bot_id..'TiTan:Msg:Pin:Chat'..v,msg.content_.sticker_.sticker_.persistent_id_) 
 end 
 end
-send(msg.chat_id_, msg.id_,"⎙╮تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
+send(msg.chat_id_, msg.id_,"⎙╮ تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
 database:del(bot_id.."TiTan:TiTan:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
@@ -1112,7 +1112,7 @@ if data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_, msg.id_,"⎙╮ليس لدي صلاحية تغيير معلومات المجموعه يرجى المحاوله لاحقا") 
 database:del(bot_id.."TiTan:Change:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
 else
-send(msg.chat_id_, msg.id_,"⎙╮تم تغيير صورة المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تغيير صورة المجموعه") 
 end
 end, nil) 
 database:del(bot_id.."TiTan:Change:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
@@ -1121,38 +1121,38 @@ end
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id.."TiTan:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء وضع الوصف") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء وضع الوصف") 
 database:del(bot_id.."TiTan:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)
 return false  
 end 
 database:del(bot_id.."TiTan:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 https.request("https://api.telegram.org/bot"..token.."/setChatDescription?chat_id="..msg.chat_id_.."&description="..text) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تغيير وصف المجموعه")   
+send(msg.chat_id_, msg.id_,"⎙╮ تم تغيير وصف المجموعه")   
 return false  
 end 
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id.."TiTan:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء حفظ الترحيب") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء حفظ الترحيب") 
 database:del(bot_id.."TiTan:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
 database:del(bot_id.."TiTan:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 database:set(bot_id.."TiTan:Get:Welcome:Group"..msg.chat_id_,text) 
-send(msg.chat_id_, msg.id_,"⎙╮تم حفظ ترحيب المجموعه")   
+send(msg.chat_id_, msg.id_,"⎙╮ تم حفظ ترحيب المجموعه")   
 return false   
 end
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id.."TiTan:Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) then
 if text == "الغاء" then
-send(msg.chat_id_,msg.id_,"⎙╮تم الغاء حفظ الرابط")       
+send(msg.chat_id_,msg.id_,"⎙╮ تم الغاء حفظ الرابط")       
 database:del(bot_id.."TiTan:Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local Link = text:match("(https://telegram.me/joinchat/%S+)") or text:match("(https://t.me/joinchat/%S+)")   
 database:set(bot_id.."TiTan:Private:Group:Link"..msg.chat_id_,Link)
-send(msg.chat_id_,msg.id_,"⎙╮تم حفظ الرابط بنجاح")       
+send(msg.chat_id_,msg.id_,"⎙╮ تم حفظ الرابط بنجاح")       
 database:del(bot_id.."TiTan:Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false 
 end
@@ -1160,7 +1160,7 @@ end
 
 if database:get(bot_id.."TiTan:TiTan:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الاذاعه للخاص") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الاذاعه للخاص") 
 database:del(bot_id.."TiTan:TiTan:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1187,14 +1187,14 @@ for k,v in pairs(list) do
 sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_)   
 end 
 end
-send(msg.chat_id_, msg.id_,"⎙╮تمت الاذاعه الى *~ "..#list.." ~* مشترك في الخاص ")     
+send(msg.chat_id_, msg.id_,"⎙╮ تمت الاذاعه الى *~ "..#list.." ~* مشترك في الخاص ")     
 database:del(bot_id.."TiTan:TiTan:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
 
 if database:get(bot_id.."TiTan:TiTan:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الاذاعه") 
 database:del(bot_id.."TiTan:TiTan:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1221,14 +1221,14 @@ for k,v in pairs(list) do
 sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_)   
 end 
 end
-send(msg.chat_id_, msg.id_,"⎙╮تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
+send(msg.chat_id_, msg.id_,"⎙╮ تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
 database:del(bot_id.."TiTan:TiTan:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
 
 if database:get(bot_id.."TiTan:TiTan:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الاذاعه") 
 database:del(bot_id.."TiTan:TiTan:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -1242,14 +1242,14 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-send(msg.chat_id_, msg.id_,"⎙╮تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
+send(msg.chat_id_, msg.id_,"⎙╮ تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
 database:del(bot_id.."TiTan:TiTan:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end 
 return false
 end
 if database:get(bot_id.."TiTan:TiTan:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الاذاعه") 
 database:del(bot_id.."TiTan:TiTan:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -1263,7 +1263,7 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-send(msg.chat_id_, msg.id_,"⎙╮تمت الاذاعه الى *~ "..#list.." ~* مشترك في الخاص ")     
+send(msg.chat_id_, msg.id_,"⎙╮ تمت الاذاعه الى *~ "..#list.." ~* مشترك في الخاص ")     
 database:del(bot_id.."TiTan:TiTan:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end 
 return false
@@ -1300,7 +1300,7 @@ if text and database:get(bot_id.."TiTan:Set:Cmd:Group1"..msg.chat_id_..":"..msg.
 local NewCmd = database:get(bot_id.."TiTan:Set:Cmd:Group:New"..msg.chat_id_)
 database:set(bot_id.."TiTan:Set:Cmd:Group:New1"..msg.chat_id_..":"..text,NewCmd)
 database:sadd(bot_id.."TiTan:List:Cmd:Group:New"..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_,"⎙╮تم حفظ الامر")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم حفظ الامر")  
 database:del(bot_id.."TiTan:Set:Cmd:Group1"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
@@ -1959,7 +1959,7 @@ end
 
 if text == ("مسح قائمه العام") and DevTiTan(msg) then
 database:del(bot_id.."TiTan:GBan:User")
-send(msg.chat_id_, msg.id_, "\n⎙╮تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n⎙╮ تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين") and DevTiTan(msg) then
@@ -1995,7 +1995,7 @@ send(msg.chat_id_, msg.id_, "⎙╮ تم مسح قائمه المكتومين ")
 end
 if text == "مسح المحظورين" and Addictive(msg) then
 database:del(bot_id.."TiTan:Ban:User"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, "\n⎙╮تم مسح المحظورين")
+send(msg.chat_id_, msg.id_, "\n⎙╮ تم مسح المحظورين")
 end
 if text == ("قائمه العام") and DevTiTan(msg) then
 local list = database:smembers(bot_id.."TiTan:GBan:User")
@@ -2009,7 +2009,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد محظورين عام"
+t = "⎙╮ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -2026,7 +2026,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد مطورين"
+t = "⎙╮ لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2042,7 +2042,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد منشئين اساسيين"
+t = "⎙╮ لا يوجد منشئين اساسيين"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -2059,7 +2059,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد منشئين"
+t = "⎙╮ لا يوجد منشئين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2075,7 +2075,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد مدراء"
+t = "⎙╮ لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2107,7 +2107,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد اعضاء مميزين"
+t = "⎙╮ لا يوجد اعضاء مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2123,7 +2123,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا توجد مطايه في المجموعه"
+t = "⎙╮ لا توجد مطايه في المجموعه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2139,7 +2139,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد مكتومين"
+t = "⎙╮ لا يوجد مكتومين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2156,7 +2156,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد محظورين"
+t = "⎙╮ لا يوجد محظورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2170,16 +2170,16 @@ return false
 end
 function Function_TiTan(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "⎙╮لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⎙╮لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
 database:sadd(bot_id.."TiTan:GBan:User", result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم حظره من مجموعات البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم حظره من مجموعات البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2193,17 +2193,17 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⎙╮لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
 if result.id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "⎙╮لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
 database:sadd(bot_id.."TiTan:GBan:User", result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم حظره من مجموعات البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم حظره من مجموعات البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2212,21 +2212,21 @@ end
 if text and text:match("^حظر عام (%d+)$") and DevTiTan(msg) then
 local userid = text:match("^حظر عام (%d+)$")
 if userid == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, "⎙╮لا يمكنك حظر المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, "⎙╮لا تسطيع حظر البوت عام")
+send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
 database:sadd(bot_id.."TiTan:GBan:User", userid)
-Reply_Status(msg,userid,"reply","⎙╮تم حظره من مجموعات البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم حظره من مجموعات البوت")  
 return false
 end
 if text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiTan(msg) then
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:GBan:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء حظره من مجموعات البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2235,10 +2235,10 @@ if text and text:match("^الغاء العام @(.*)$") and DevTiTan(msg) then
 local username = text:match("^الغاء العام @(.*)$") 
 function Function_TiTan(extra, result, success)
 if result.id_ then
-Reply_Status(msg,result.id_,"reply","⎙╮تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم الغاء حظره من مجموعات البوت")  
 database:srem(bot_id.."TiTan:GBan:User", result.id_)
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2247,7 +2247,7 @@ end
 if text and text:match("^الغاء العام (%d+)$") and DevTiTan(msg) then
 local userid = text:match("^الغاء العام (%d+)$")
 database:srem(bot_id.."TiTan:GBan:User", userid)
-Reply_Status(msg,userid,"reply","⎙╮تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم الغاء حظره من مجموعات البوت")  
 return false
 end
 
@@ -2260,7 +2260,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة مطور في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة مطور في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false 
@@ -2274,9 +2274,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة مطور في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة مطور في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2291,13 +2291,13 @@ return false
 end
 local userid = text:match("^رفع مطور (%d+)$")
 database:sadd(bot_id.."TiTan:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة مطور في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة مطور في البوت")  
 return false 
 end
 if text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevTiTan(msg) then
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيلة مطور من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيلة مطور من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false 
@@ -2307,9 +2307,9 @@ local username = text:match("^حذف مطور @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيلة مطور من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيلة مطور من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2318,7 +2318,7 @@ end
 if text and text:match("^حذف مطور (%d+)$") and DevTiTan(msg) then
 local userid = text:match("^حذف مطور (%d+)$")
 database:srem(bot_id.."TiTan:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيلة مطور من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيلة مطور من البوت")  
 return false 
 end
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
@@ -2332,7 +2332,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2356,9 +2356,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2377,7 +2377,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 return false
 end
 end,nil)
@@ -2393,7 +2393,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2414,9 +2414,9 @@ function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.id_)
 
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2435,7 +2435,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 return false
 end
 end,nil)
@@ -2455,7 +2455,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد منشئين اساسيين"
+t = "⎙╮ لا يوجد منشئين اساسيين"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -2483,7 +2483,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2503,9 +2503,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2520,7 +2520,7 @@ return false
 end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة منشئ اساسي في البوت")  
 return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
@@ -2532,7 +2532,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2549,9 +2549,9 @@ function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.id_)
 
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2566,7 +2566,7 @@ return false
 end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيلة منشئ اساسي من البوت")  
 return false
 end
 
@@ -2579,7 +2579,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعه منشئ في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعه منشئ في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
@@ -2598,9 +2598,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعه منشئ في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعه منشئ في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2615,7 +2615,7 @@ return false
 end
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id.."TiTan:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعه منشئ في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعه منشئ في البوت")  
 end
 if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
@@ -2626,7 +2626,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيلة منشئ من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
@@ -2642,9 +2642,9 @@ local username = text:match("^تنزيل منشئ @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيلة منشئ من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2659,7 +2659,7 @@ return false
 end
 local userid = text:match("^تنزيل منشئ (%d+)$")
 database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيلة منشئ من البوت")  
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
@@ -2671,7 +2671,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة مدير في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة مدير في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2691,9 +2691,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة مدير في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة مدير في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2709,7 +2709,7 @@ return false
 end
 local userid = text:match("^رفع مدير (%d+)$") 
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة مدير في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة مدير في البوت")  
 return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
@@ -2721,7 +2721,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيله مدير من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيله مدير من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2737,9 +2737,9 @@ local username = text:match("^تنزيل مدير @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيله مدير من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيله مدير من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2754,7 +2754,7 @@ return false
 end
 local userid = text:match("^تنزيل مدير (%d+)$") 
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيله مدير من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيله مدير من البوت")  
 return false
 end
 
@@ -2766,12 +2766,12 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة ادمن في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة ادمن في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2785,7 +2785,7 @@ return false
 end
 local username = text:match("^رفع ادمن @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
@@ -2795,9 +2795,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة ادمن في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة ادمن في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2812,11 +2812,11 @@ return false
 end
 local userid = text:match("^رفع ادمن (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة ادمن في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة ادمن في البوت")  
 return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
@@ -2828,7 +2828,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيلة ادمن من البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2844,9 +2844,9 @@ local username = text:match("^تنزيل ادمن @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيلة ادمن من البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2861,18 +2861,18 @@ return false
 end
 local userid = text:match("^تنزيل ادمن (%d+)$")
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيلة ادمن من البوت")  
 return false
 end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة مميز في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة مميز في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2880,7 +2880,7 @@ end
 if text and text:match("^رفع مميز @(.*)$") and Addictive(msg) then 
 local username = text:match("^رفع مميز @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
@@ -2890,9 +2890,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة مميز في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة مميز في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2907,12 +2907,12 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Mote:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم رفعة مطي في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم رفعة مطي في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2926,7 +2926,7 @@ return false
 end
 local username = text:match("^رفع مطي @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_TiTan(extra, result, success)
@@ -2936,9 +2936,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Mote:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم رفعة مطي في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم رفعة مطي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2954,7 +2954,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Mote:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيله من مطي الى انسان")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيله من مطي الى انسان")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -2970,9 +2970,9 @@ local username = text:match("^تنزيل مطي @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Mote:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيله من مطي الى انسان")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيله من مطي الى انسان")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -2988,11 +2988,11 @@ return false
 end
 local userid = text:match("^رفع مميز (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم رفعة مميز في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم رفعة مميز في البوت")  
 return false
 end
 
@@ -3005,7 +3005,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيله من المميزين في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -3021,9 +3021,9 @@ local username = text:match("^تنزيل مميز @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم تنزيله من المميزين في البوت")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3032,7 +3032,7 @@ end
 if text and text:match("^تنزيل مميز (%d+)$") and Addictive(msg) then 
 local userid = text:match("^تنزيل مميز (%d+)$") 
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم تنزيله من المميزين في البوت")  
 return false
 end  
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
@@ -3048,19 +3048,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم رفعه "..RTPA.." في البوت\n")   
 end
 end,nil)   
 end   
@@ -3080,19 +3080,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮ تم تنزيلة من "..RTPA.." البوت\n")   
 end
 end,nil)   
 end   
@@ -3112,19 +3112,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم رفعه "..text1[2].." في البوت ")   
 end
 else
 info = "⎙╮المعرف غلط"
@@ -3147,19 +3147,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮ العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮ تم تنريله من "..text1[2].." البوت")   
 end
 else
 info = "⎙╮المعرف غلط"
@@ -3196,7 +3196,7 @@ return false
 end
 database:sadd(bot_id.."TiTan:Ban:User"..msg.chat_id_, result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم حظره من المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم حظره من المجموعه")  
 end,nil)   
 end
 end
@@ -3238,11 +3238,11 @@ return false
 end
 database:sadd(bot_id.."TiTan:Ban:User"..msg.chat_id_, result.id_)
 Kick_Group(msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم حظره من المجموعه")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم حظره من المجموعه")  
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3270,7 +3270,7 @@ return false
 end
 database:sadd(bot_id.."TiTan:Ban:User"..msg.chat_id_, userid)
 Kick_Group(msg.chat_id_, userid)  
-Reply_Status(msg,userid,"reply","⎙╮تم حظره من المجموعه")  
+Reply_Status(msg,userid,"reply","⎙╮ تم حظره من المجموعه")  
 end,nil)   
 end
 return false
@@ -3289,7 +3289,7 @@ return false
 end
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم الغاء حظره من المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء حظره من المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -3311,9 +3311,9 @@ return false
 end
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_, result.id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Reply_Status(msg,result.id_,"reply","⎙╮تم الغاء حظره من المجموعه")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم الغاء حظره من المجموعه")  
 else
-send(msg.chat_id_, msg.id_, "⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3328,7 +3328,7 @@ return false
 end
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_, userid)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = userid, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-Reply_Status(msg,userid,"reply","⎙╮تم الغاء حظره من المجموعه")  
+Reply_Status(msg,userid,"reply","⎙╮ تم الغاء حظره من المجموعه")  
 return false
 end
 
@@ -3349,7 +3349,7 @@ send(msg.chat_id_, msg.id_,"⎙╮البوت ليس ادمن يرجى ترقيت
 return false  
 end
 database:sadd(bot_id.."TiTan:Muted:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم كتمه من المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم كتمه من المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -3377,9 +3377,9 @@ send(msg.chat_id_,msg.id_,"⎙╮عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id.."TiTan:Muted:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم كتمه من البوت")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم كتمه من البوت")  
 else
-send(msg.chat_id_, msg.id_, "⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3395,7 +3395,7 @@ send(msg.chat_id_, msg.id_,"⎙╮البوت ليس ادمن يرجى ترقيت
 return false  
 end
 database:sadd(bot_id.."TiTan:Muted:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم كتمه من البوت")  
+Reply_Status(msg,userid,"reply","⎙╮ تم كتمه من البوت")  
 end
 return false
 end
@@ -3408,7 +3408,7 @@ return false
 end
 function Function_TiTan(extra, result, success)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم الغاء كتمه من المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء كتمه من المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
@@ -3424,9 +3424,9 @@ local username = text:match("^الغاء كتم @(.*)$")
 function Function_TiTan(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم الغاء كتمه من المجموعه ")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم الغاء كتمه من المجموعه ")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3436,7 +3436,7 @@ end
 if text and text:match("^الغاء كتم (%d+)$") and Addictive(msg) then
 local userid = text:match("^الغاء كتم (%d+)$") 
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم الغاء كتمه من المجموعه ")  
+Reply_Status(msg,userid,"reply","⎙╮ تم الغاء كتمه من المجموعه ")  
 return false
 end
 
@@ -3480,7 +3480,7 @@ end
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_)
 Reply_Status(msg,result.id_,"reply","⎙╮ تم تقيده في المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3526,7 +3526,7 @@ if result.id_ then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 Reply_Status(msg,result.id_,"reply","⎙╮ تم الغاء تقيده من المجموعه")  
 else
-send(msg.chat_id_, msg.id_, "⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3564,7 +3564,7 @@ send(msg.chat_id_, msg.id_,"⎙╮البوت ليس ادمن يرجى ترقيت
 return false  
 end
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم طرده من المجموعه ")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم طرده من المجموعه ")  
 end,nil)
 end
 end
@@ -3602,11 +3602,11 @@ send(msg.chat_id_, msg.id_,"⎙╮البوت ليس ادمن يرجى ترقيت
 return false  
 end
 Kick_Group(msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم طرده من المجموعه ")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم طرده من المجموعه ")  
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "⎙╮لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "⎙╮ لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -3632,7 +3632,7 @@ send(msg.chat_id_, msg.id_,"⎙╮البوت ليس ادمن يرجى ترقيت
 return false  
 end
 Kick_Group(msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","⎙╮تم طرده من المجموعه ")  
+Reply_Status(msg,userid,"reply","⎙╮ تم طرده من المجموعه ")  
 end,nil)   
 end
 return false
@@ -3641,14 +3641,14 @@ end
 if text == "تعطيل الطرد" or text == "تعطيل الحظر" then
 if Constructor(msg) then
 database:set(bot_id.."Ban:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '⎙╮تم تعطيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تعطيل ~⪼ الحظر ~ والطرد ')
 return false
 end
 end
 if text == "تفعيل الطرد" or text == "تفعيل الحظر" then
 if Constructor(msg) then
 database:del(bot_id.."Ban:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '⎙╮تم تفعيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تفعيل ~⪼ الحظر ~ والطرد ')
 return false
 end
 end
@@ -3661,7 +3661,7 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '⎙╮تم تعطيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تعطيل رفع ~⪼ الادمن ~ المميز ')
 return false
 end
 end
@@ -3674,7 +3674,7 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '⎙╮تم تفعيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تفعيل رفع ~⪼ الادمن ~ المميز ')
 return false
 end
 end
@@ -3685,7 +3685,7 @@ return false
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100",""),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"⎙╮تم تثبيت الرساله")   
+send(msg.chat_id_, msg.id_,"⎙╮ تم تثبيت الرساله")   
 database:set(bot_id.."TiTan:Pin:Id:Msg"..msg.chat_id_,msg.reply_to_message_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"⎙╮انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -3701,7 +3701,7 @@ return false
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء تثبيت الرساله")   
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء تثبيت الرساله")   
 database:del(bot_id.."TiTan:Pin:Id:Msg"..msg.chat_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"⎙╮انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -3714,12 +3714,12 @@ end
 if text and text:match("^وضع تكرار (%d+)$") and Addictive(msg) then   
 local Num = text:match("وضع تكرار (.*)")
 database:hset(bot_id.."TiTan:flooding:settings:"..msg.chat_id_ ,"floodmax" ,Num) 
-send(msg.chat_id_, msg.id_,"⎙╮تم وضع عدد التكرار ("..Num..")")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم وضع عدد التكرار ("..Num..")")  
 end 
 if text and text:match("^وضع زمن التكرار (%d+)$") and Addictive(msg) then   
 local Num = text:match("^وضع زمن التكرار (%d+)$")
 database:hset(bot_id.."TiTan:flooding:settings:"..msg.chat_id_ ,"floodtime" ,Num) 
-send(msg.chat_id_, msg.id_,"⎙╮تم وضع زمن التكرار ("..Num..")") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم وضع زمن التكرار ("..Num..")") 
 end
 if text == "ضع رابط" or text == "وضع رابط" then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
@@ -3743,7 +3743,7 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:set(bot_id.."TiTan:Link_Group"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل جلب الرابط المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل جلب الرابط المجموعه") 
 return false  
 end
 end
@@ -3756,7 +3756,7 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:del(bot_id.."TiTan:Link_Group"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تعطيل جلب رابط المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل جلب رابط المجموعه") 
 return false end
 end
 if text == "الرابط" then 
@@ -3773,13 +3773,13 @@ local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token.
 if linkgpp.ok == true then 
 send(msg.chat_id_,msg.id_,"*⎙╮ 𝙻𝙸𝙽??  𝙶𝚁𝚄𝙿  :*\n••━━━━━━━━━━━━••\n ["..linkgpp.result.."]")                          
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد رابط ارسل ضع رابط")              
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد رابط ارسل ضع رابط")              
 end
 end            
 end
 if text == "مسح الرابط" or text == "حذف الرابط" then
 if Addictive(msg) then     
-send(msg.chat_id_,msg.id_,"⎙╮تم مسح رابط المجموعة")           
+send(msg.chat_id_,msg.id_,"⎙╮ تم مسح رابط المجموعة")           
 database:del(bot_id.."TiTan:Private:Group:Link"..msg.chat_id_) 
 return false      
 end
@@ -3793,7 +3793,7 @@ end
 if text == "حذف الصوره" or text == "مسح الصوره" then 
 if Addictive(msg) then
 https.request("https://api.telegram.org/bot"..token.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة صورة المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة صورة المجموعه") 
 end
 return false  
 end
@@ -3824,28 +3824,28 @@ return false
 end
 if text == "فتح الكانسر" and Owner(msg) then 
 database:set(bot_id.."TiTan:Num:kansers"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل ترحيب المجموعه") 
 return false  
 end
 if text == "قفل الكانسر" and Owner(msg) then 
 database:del(bot_id.."TiTan:Num:kansers"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تعطيل ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل ترحيب المجموعه") 
 return false  
 end
 if text == "تفعيل الترحيب" and Addictive(msg) then  
 database:set(bot_id.."TiTan:Chek:Welcome"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل ترحيب المجموعه") 
 return false  
 end
 if text == "تعطيل الترحيب" and Addictive(msg) then  
 database:del(bot_id.."TiTan:Chek:Welcome"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮تم تعطيل ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل ترحيب المجموعه") 
 return false  
 end
 if text == "مسح الترحيب" or text == "حذف الترحيب" then 
 if Addictive(msg) then
 database:del(bot_id.."TiTan:Get:Welcome:Group"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة ترحيب المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة ترحيب المجموعه") 
 end
 return false  
 end
@@ -3857,7 +3857,7 @@ database:del(bot_id.."TiTan:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)
 database:del(bot_id.."TiTan:Add:Filter:Rp2"..v..msg.chat_id_)  
 database:srem(bot_id.."TiTan:List:Filter"..msg.chat_id_,v)  
 end  
-send(msg.chat_id_, msg.id_,"⎙╮تم مسح قائمه المنع")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم مسح قائمه المنع")  
 end
 
 if text == "قائمه المنع" and Addictive(msg) then   
@@ -3868,7 +3868,7 @@ local TiTan_Msg = database:get(bot_id.."TiTan:Add:Filter:Rp2"..v..msg.chat_id_)
 t = t..""..k.."- "..v.." ~⪼ {"..TiTan_Msg.."}\n"    
 end  
 if #list == 0 then  
-t = "⎙╮لا يوجد كلمات ممنوعه"  
+t = "⎙╮ لا يوجد كلمات ممنوعه"  
 end  
 send(msg.chat_id_, msg.id_,t)  
 end  
@@ -3889,7 +3889,7 @@ end
 if text then  
 local test = database:get(bot_id.."TiTan:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test == "repp" then  
-send(msg.chat_id_, msg.id_,"⎙╮تم منع الكلمه مع التحذير")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم منع الكلمه مع التحذير")  
 database:del(bot_id.."TiTan:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 local test = database:get(bot_id.."TiTan:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 if text then   
@@ -3906,7 +3906,7 @@ return false  end
 if text then 
 local test = database:get(bot_id.."TiTan:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test and test == "reppp" then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء منعها ")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء منعها ")  
 database:del(bot_id.."TiTan:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 database:del(bot_id.."TiTan:Add:Filter:Rp2"..text..msg.chat_id_)  
 database:srem(bot_id.."TiTan:List:Filter"..msg.chat_id_,text)  
@@ -3934,9 +3934,9 @@ end
 c = c + 1
 end     
 if (c - x) == 0 then
-send(msg.chat_id_, msg.id_, "⎙╮لا توجد بوتات في المجموعه")
+send(msg.chat_id_, msg.id_, "⎙╮ لا توجد بوتات في المجموعه")
 else
-local t = "⎙╮عدد البوتات هنا >> {"..c.."}\n⎙╮عدد البوتات التي هي ادمن >> {"..x.."}\n⎙╮تم طرد >> {"..(c - x).."} من البوتات"
+local t = "⎙╮عدد البوتات هنا >> {"..c.."}\n⎙╮عدد البوتات التي هي ادمن >> {"..x.."}\n⎙╮ تم طرد >> {"..(c - x).."} من البوتات"
 send(msg.chat_id_, msg.id_,t) 
 end 
 end,nil)  
@@ -3965,7 +3965,7 @@ tr = " {✯}"
 end
 text = text..">> [@"..ta.username_.."]"..tr.."\n"
 if #admins == 0 then
-send(msg.chat_id_, msg.id_, "⎙╮لا توجد بوتات في المجموعه")
+send(msg.chat_id_, msg.id_, "⎙╮ لا توجد بوتات في المجموعه")
 return false 
 end
 if #admins == i then 
@@ -3980,12 +3980,12 @@ end
 
 if database:get(bot_id.."TiTan:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_, "⎙╮تم الغاء حفظ القوانين") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم الغاء حفظ القوانين") 
 database:del(bot_id.."TiTan:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 return false  
 end 
 database:set(bot_id.."TiTan:Set:Rules:Group" .. msg.chat_id_,text) 
-send(msg.chat_id_, msg.id_,"⎙╮تم حفظ قوانين المجموعه") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم حفظ قوانين المجموعه") 
 database:del(bot_id.."TiTan:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 end  
 
@@ -3997,7 +3997,7 @@ end
 end
 if text == "مسح القوانين" or text == "حذف القوانين" then  
 if Addictive(msg) then
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة قوانين المجموعه")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة قوانين المجموعه")  
 database:del(bot_id.."TiTan:Set:Rules:Group"..msg.chat_id_) 
 end
 end
@@ -4006,7 +4006,7 @@ local Set_Rules = database:get(bot_id.."TiTan:Set:Rules:Group" .. msg.chat_id_)
 if Set_Rules then     
 send(msg.chat_id_,msg.id_, Set_Rules)   
 else      
-send(msg.chat_id_, msg.id_,"⎙╮لا توجد قوانين هنا")   
+send(msg.chat_id_, msg.id_,"⎙╮ لا توجد قوانين هنا")   
 end    
 end
 
@@ -4028,7 +4028,7 @@ t = t..""..k.."- ("..v..") \n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا توجد اوامر اضافيه"
+t = "⎙╮ لا توجد اوامر اضافيه"
 end
 send(msg.chat_id_, msg.id_,"["..t.."]")
 end
@@ -4039,7 +4039,7 @@ for k,v in pairs(list) do
 database:del(bot_id.."TiTan:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 database:del(bot_id.."TiTan:List:Cmd:Group:New"..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"⎙╮تم مسح جميع الاوامر التي تم اضافتها")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم مسح جميع الاوامر التي تم اضافتها")  
 end
 end
 if text == "اضف امر" and Constructor(msg) then
@@ -4064,7 +4064,7 @@ end
 if text == "الصلاحيات" and Addictive(msg) then 
 local list = database:smembers(bot_id.."TiTan:Coomds"..msg.chat_id_)
 if #list == 0 then
-send(msg.chat_id_, msg.id_,"⎙╮لا توجد صلاحيات مضافه")
+send(msg.chat_id_, msg.id_,"⎙╮ لا توجد صلاحيات مضافه")
 return false
 end
 t = "\n⎙╮قائمة الصلاحيات المضافه \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
@@ -4084,7 +4084,7 @@ for k,v in pairs(list) do
 database:del(bot_id.."TiTan:Comd:New:rt:bot:"..v..msg.chat_id_)
 database:del(bot_id.."TiTan:Coomds"..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"⎙╮تم مسح الصلاحيات")
+send(msg.chat_id_, msg.id_,"⎙╮ تم مسح الصلاحيات")
 end
 if text and text:match("^اضف صلاحيه (.*)$") and Addictive(msg) then 
 ComdNew = text:match("^اضف صلاحيه (.*)$")
@@ -4108,11 +4108,11 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:del(bot_id.."TiTan:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
-send(msg.chat_id_, msg.id_, "⎙╮تم مسح الصلاحيه ") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم مسح الصلاحيه ") 
 end
 if database:get(bot_id.."TiTan:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء الامر ") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء الامر ") 
 database:del(bot_id.."TiTan:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
@@ -4137,7 +4137,7 @@ end
 if text == "مدير" or text == "ادمن" or text == "مميز" or text == "عضو" then
 local textn = database:get(bot_id.."TiTan:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:bot:"..textn..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_, "⎙╮تم اضافة صلاحية ") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم اضافة صلاحية ") 
 database:del(bot_id.."TiTan:Comd:New"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
@@ -4227,7 +4227,7 @@ end
 text = text..""..k..">> ("..v..") ~⪼ {"..db.."}\n"
 end
 if #list == 0 then
-text = "⎙╮لا يوجد ردود للمدير"
+text = "⎙╮ لا يوجد ردود للمدير"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 end
@@ -4275,7 +4275,7 @@ photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 database:set(bot_id.."TiTan:Add:Rd:Manager:Photo"..test..msg.chat_id_, photo_in_group)  
 end
-send(msg.chat_id_, msg.id_,"⎙╮تم حفظ الرد بنجاح")
+send(msg.chat_id_, msg.id_,"⎙╮ تم حفظ الرد بنجاح")
 return false  
 end  
 end
@@ -4319,7 +4319,7 @@ return false end
 end
 if text and text:match("^(.*)$") then
 if database:get(bot_id.."TiTan:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_.."") == "true2" then
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة الرد من قائمه الردود")
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة الرد من قائمه الردود")
 database:del(bot_id.."TiTan:Add:Rd:Manager:Gif"..text..msg.chat_id_)   
 database:del(bot_id.."TiTan:Add:Rd:Manager:Vico"..text..msg.chat_id_)   
 database:del(bot_id.."TiTan:Add:Rd:Manager:Stekrs"..text..msg.chat_id_)     
@@ -4403,7 +4403,7 @@ database:del(bot_id.."TiTan:Add:Rd:Sudo:File"..v)
 database:del(bot_id.."TiTan:Add:Rd:Sudo:Audio"..v)
 database:del(bot_id.."TiTan:List:Rd:Sudo")
 end
-send(msg.chat_id_, msg.id_,"⎙╮تم مسح ردود المطور")
+send(msg.chat_id_, msg.id_,"⎙╮ تم مسح ردود المطور")
 end
 if text == ("ردود المطور") and DevTiTan(msg) then 
 local list = database:smembers(bot_id.."TiTan:List:Rd:Sudo")
@@ -4429,7 +4429,7 @@ end
 text = text..""..k.." >> ("..v..") ~⪼ {"..db.."}\n"
 end
 if #list == 0 then
-text = "⎙╮لا يوجد ردود للمطور"
+text = "⎙╮ لا يوجد ردود للمطور"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
 end
@@ -4477,7 +4477,7 @@ photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 database:set(bot_id.."TiTan:Add:Rd:Sudo:Photo"..test, photo_in_group)  
 end
-send(msg.chat_id_, msg.id_,"⎙╮تم حفظ الرد بنجاح")
+send(msg.chat_id_, msg.id_,"⎙╮ تم حفظ الرد بنجاح")
 return false  
 end  
 end
@@ -4508,7 +4508,7 @@ return false end
 end
 if text and text:match("^(.*)$") then
 if database:get(bot_id.."TiTan:Set:On"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة الرد من قائمه ردود المطور")
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة الرد من قائمه ردود المطور")
 list = {"Add:Rd:Sudo:Audio","Add:Rd:Sudo:File","Add:Rd:Sudo:Video","Add:Rd:Sudo:Photo","Add:Rd:Sudo:Text","Add:Rd:Sudo:stekr","Add:Rd:Sudo:vico","Add:Rd:Sudo:Gif"}
 for k,v in pairs(list) do
 database:del(bot_id..'TiTan:'..v..text)
@@ -4586,26 +4586,26 @@ Kick_Group(msg.chat_id_, data.id_)
 end
 end,nil)
 end
-send(msg.chat_id_, msg.id_,'⎙╮تم طرد الحسابات المحذوفه')
+send(msg.chat_id_, msg.id_,'⎙╮ تم طرد الحسابات المحذوفه')
 end,nil)
 end
 end
 
 if text == "تفعيل ردود المدير" and Owner(msg) then   
 database:del(bot_id.."TiTan:Reply:Manager"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل ردود المدير") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل ردود المدير") 
 end
 if text == "تعطيل ردود المدير" and Owner(msg) then  
 database:set(bot_id.."TiTan:Reply:Manager"..msg.chat_id_,true)  
-send(msg.chat_id_, msg.id_,"⎙╮تم تعطيل ردود المدير" ) 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل ردود المدير" ) 
 end
 if text == "تفعيل ردود المطور" and Owner(msg) then   
 database:del(bot_id.."TiTan:Reply:Sudo"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل ردود المطور" ) 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل ردود المطور" ) 
 end
 if text == "تعطيل ردود المطور" and Owner(msg) then  
 database:set(bot_id.."TiTan:Reply:Sudo"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_,"⎙╮تم تعطيل ردود المطور" ) 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل ردود المطور" ) 
 end
 
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
@@ -4628,7 +4628,7 @@ if database:sismember(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_
 vip = "مميز ،" else vip = ""
 end
 if Rank_Checking(result.sender_user_id_,msg.chat_id_) ~= false then
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تنزيل الشخص من الرتب التاليه \n⎙╮ { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." } \n")
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تنزيل الشخص من الرتب التاليه \n⎙╮ { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." } \n")
 else
 send(msg.chat_id_, msg.id_,"\n⎙╮ليس لديه رتب حتى استطيع تنزيله \n")
 end
@@ -4754,7 +4754,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == "تعطيل اطردني" and Owner(msg) then  
 database:set(bot_id.."TiTan:Kick:Me"..msg.chat_id_,true)  
-Text = "\n⎙╮تم تعطيل امر اطردني"
+Text = "\n⎙╮ تم تعطيل امر اطردني"
 send(msg.chat_id_, msg.id_,Text) 
 end
 
@@ -4767,13 +4767,13 @@ database:srem(bot_id.."TiTan:GBan:User",result.id_)
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.id_)
 usertext = "\n⎙╮ العضو -  ~⪼ ["..result.title_.."](t.me/"..(username or "kenwa")..")"
-status  = "\n⎙╮تم الغاء القيود عنه  "
+status  = "\n⎙╮ تم الغاء القيود عنه  "
 texts = usertext..status
 send(msg.chat_id_, msg.id_,texts)
 else
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.id_)
-Reply_Status(msg,result.id_,"reply","⎙╮تم الغاء القيود عنه  ")  
+Reply_Status(msg,result.id_,"reply","⎙╮ تم الغاء القيود عنه  ")  
 end
 else
 Text = "⎙╮ المعرف غلط"
@@ -4788,13 +4788,13 @@ if DevTiTan(msg) then
 database:srem(bot_id.."TiTan:GBan:User",result.sender_user_id_)
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.sender_user_id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","⎙╮تم الغاء القيود عنه  ")  
+Reply_Status(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء القيود عنه  ")  
 else
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.sender_user_id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 usertext = "\n⎙╮ العضو -  ["..data.first_name_.."](t.me/"..(data.username_ or "kenwa").."✓)"
-status  = "\n⎙╮تم الغاء القيود عنه  "
+status  = "\n⎙╮ تم الغاء القيود عنه  "
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -4924,7 +4924,7 @@ send(msg.chat_id_, msg.id_,"⎙╮حساب المنشئ محذوف")
 return false  
 end
 local UserName = (b.username_ or "TiTan")
-send(msg.chat_id_, msg.id_,"⎙╮تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
@@ -4950,12 +4950,12 @@ end
 end
 if text == "تفعيل المغادره" and DevTiTan(msg) then   
 database:del(bot_id.."TiTan:Left:Bot"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل مغادرة البوت") 
 return false 
 end
 if text == "تعطيل المغادره" and DevTiTan(msg) then  
 database:set(bot_id.."TiTan:Left:Bot"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "⎙╮تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم تعطيل مغادرة البوت") 
 return false 
 end
 if text == (database:get(bot_id.."TiTan:Name:Bot") or "TiTan") then
@@ -5052,12 +5052,12 @@ end
 
 if text == "تفعيل الاذاعه" and DevTiTan(msg) then  
 database:del(bot_id.."TiTan:Status:Bc") 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تفعيل الاذاعه " ) 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تفعيل الاذاعه " ) 
 return false
 end 
 if text == "تعطيل الاذاعه" and DevTiTan(msg) then  
 database:set(bot_id.."TiTan:Status:Bc",true) 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تعطيل الاذاعه") 
 return false
 end 
 
@@ -5396,11 +5396,11 @@ if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكنك استخدام البوت ⎙╮\n• عليك الاشتراك في القناة ⎙╮\n• [@TiTancil] ⎙╮')
 return false 
 end
-send(msg.chat_id_, msg.id_, '⎙╮تم تعطيل اوامر التحشيش')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تعطيل اوامر التحشيش')
 database:set(bot_id.."TiTan:Fun_Bots"..msg.chat_id_,"true")
 end
 if text == "تفعيل اوامر التحشيش" and Owner(msg) then    
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل اوامر التحشيش')
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل اوامر التحشيش')
 database:del(bot_id.."TiTan:Fun_Bots"..msg.chat_id_)
 end
 
@@ -5412,11 +5412,11 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:del(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل الايدي') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل الايدي') 
 end
 if text == 'تعطيل الايدي' and Owner(msg) then  
 database:set(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,'⎙╮تم تعطيل الايدي') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل الايدي') 
 end
 if text == 'تفعيل الايدي بالصوره' and Owner(msg) then 
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
@@ -5426,11 +5426,11 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end  
 database:del(bot_id..'TiTan:Lock:ID:Bot:Photo'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل الايدي بالصوره') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل الايدي بالصوره') 
 end
 if text == 'تعطيل الايدي بالصوره' and Owner(msg) then  
 database:set(bot_id..'TiTan:Lock:ID:Bot:Photo'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,'⎙╮تم تعطيل الايدي بالصوره') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل الايدي بالصوره') 
 end
 if text == 'تعين الايدي' and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
@@ -5460,20 +5460,20 @@ end
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
 if Owner(msg) then
 database:del(bot_id.."TiTan:Klesh:Id:Bot"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '⎙╮تم ازالة كليشة الايدي ')
+send(msg.chat_id_, msg.id_, '⎙╮ تم ازالة كليشة الايدي ')
 end
 return false  
 end 
 
 if database:get(bot_id.."TiTan:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء تعين الايدي") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء تعين الايدي") 
 database:del(bot_id.."TiTan:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 database:del(bot_id.."TiTan:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 database:set(bot_id.."TiTan:Klesh:Id:Bot"..msg.chat_id_,text:match("(.*)"))
-send(msg.chat_id_, msg.id_,'⎙╮تم تعين الايدي')    
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعين الايدي')    
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) then
@@ -5550,7 +5550,7 @@ end
 if text and text:match('^تنظيف (%d+)$') and Addictive(msg) then    
 local Number = tonumber(text:match('^تنظيف (%d+)$')) 
 if Number > 10000 then 
-send(msg.chat_id_, msg.id_,'⎙╮لا تستطيع تنضيف اكثر من *~ 10000* رساله') 
+send(msg.chat_id_, msg.id_,'⎙╮ لا تستطيع تنضيف اكثر من *~ 10000* رساله') 
 return false  
 end  
 local Message = msg.id_
@@ -5558,7 +5558,7 @@ for i=1,tonumber(Number) do
 DeleteMessage(msg.chat_id_,{[0]=Message})
 Message = Message - 1048576
 end
-send(msg.chat_id_, msg.id_,'⎙╮تم تنظيف *~ '..Number..'* رساله .')  
+send(msg.chat_id_, msg.id_,'⎙╮ تم تنظيف *~ '..Number..'* رساله .')  
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 and not database:get(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) then
@@ -5607,7 +5607,7 @@ local Add_Mem = database:get(bot_id.."TiTan:Add:Memp"..msg.chat_id_..":"..data.i
 send(msg.chat_id_, msg.id_,'*⎙╮ايديه - '..Id..'\n⎙╮رسائله - '..NumMsg..'\n⎙╮معرفه - *['..UserName_User..']*\n⎙╮تفاعله - '..TotalMsg..'\n⎙╮رتبته - '..Status_Gps..'\n⎙╮تعديلاته - '..message_edit..'\n⎙╮جهاته - '..Add_Mem..'*') 
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,'⎙╮لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد حساب بهاذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TiTan, nil)
@@ -5837,7 +5837,7 @@ if tonumber(NUM) == tonumber(GETNUM) then
 database:del(bot_id.."TiTan:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
 database:del(bot_id.."TiTan:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 database:incrby(bot_id.."TiTan:Add:Num"..msg.chat_id_..msg.sender_user_id_,5)  
-send(msg.chat_id_, msg.id_,"⎙╮مبروك فزت ويانه وخمنت الرقم الصحيح\n⎙╮تم اضافة { 5 } من النقاط \n")
+send(msg.chat_id_, msg.id_,"⎙╮مبروك فزت ويانه وخمنت الرقم الصحيح\n⎙╮ تم اضافة { 5 } من النقاط \n")
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
 database:incrby(bot_id.."TiTan:SADD:NUM"..msg.chat_id_..msg.sender_user_id_,1)
 if tonumber(database:get(bot_id.."TiTan:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)) >= 3 then
@@ -5979,7 +5979,7 @@ database:set(bot_id.."TiTan:Set:Amth:Bot"..msg.chat_id_,true)
 end
 if text == "تعطيل الالعاب" and Owner(msg) then   
 database:del(bot_id.."TiTan:Lock:Games"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تعطيل الالعاب") 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
@@ -5989,7 +5989,7 @@ send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮\n• لايمكن
 return false 
 end
 database:set(bot_id.."TiTan:Lock:Games"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تفعيل الالعاب") 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تفعيل الالعاب") 
 end
 if text == 'الالعاب' then
 Teext = [[
@@ -6015,7 +6015,7 @@ local Text = '*⎙╮عدد رسائلك هنا ~ '..nummsg..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح رسائلي' then
-local Text = '⎙╮تم مسح جميع رسائلك '
+local Text = '⎙╮ تم مسح جميع رسائلك '
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'سحكاتي' or text == 'تعديلاتي' then
@@ -6024,7 +6024,7 @@ local Text = '⎙╮عدد التعديلات هنا *~ '..edit..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' then
-local Text = '⎙╮تم مسح جميع تعديلاتك '
+local Text = '⎙╮ تم مسح جميع تعديلاتك '
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'جهاتي' then
@@ -6033,7 +6033,7 @@ local Text = '⎙╮عدد جهاتك المضافه هنا *~ '..addmem..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح جهاتي' then
-local Text = '⎙╮تم مسح جميع جهاتك المضافه '
+local Text = '⎙╮ تم مسح جميع جهاتك المضافه '
 send(msg.chat_id_, msg.id_,Text) 
 end
 
@@ -6049,7 +6049,7 @@ end
 if text and text:match("^بيع مجوهراتي (%d+)$") then
 local NUMPY = text:match("^بيع مجوهراتي (%d+)$") 
 if tonumber(NUMPY) == tonumber(0) then
-send(msg.chat_id_,msg.id_,"\n*⎙╮لا استطيع البيع اقل من 1 *") 
+send(msg.chat_id_,msg.id_,"\n*⎙╮ لا استطيع البيع اقل من 1 *") 
 return false 
 end
 if tonumber(database:get(bot_id.."TiTan:Add:Num"..msg.chat_id_..msg.sender_user_id_)) == tonumber(0) then
@@ -6063,7 +6063,7 @@ end
 local NUMNKO = (NUMPY * 50)
 database:decrby(bot_id.."TiTan:Add:Num"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 database:incrby(bot_id.."TiTan:messageUser"..msg.chat_id_..":"..msg.sender_user_id_,NUMNKO)  
-send(msg.chat_id_,msg.id_,"⎙╮تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n⎙╮وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
+send(msg.chat_id_,msg.id_,"⎙╮ تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n⎙╮وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
 end 
 return false 
 end
@@ -6073,7 +6073,7 @@ end
 if database:get(bot_id.."TiTan:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 database:del(bot_id.."TiTan:id:user"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_, "⎙╮تم الغاء الامر ") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم الغاء الامر ") 
 database:del(bot_id.."TiTan:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -6082,12 +6082,12 @@ local numadded = string.match(text, "(%d+)")
 local iduserr = database:get(bot_id.."TiTan:id:user"..msg.chat_id_)  
 database:del(bot_id.."TiTan:Msg_User"..msg.chat_id_..":"..msg.sender_user_id_) 
 database:incrby(bot_id.."TiTan:messageUser"..msg.chat_id_..":"..iduserr,numadded)  
-send(msg.chat_id_, msg.id_,"⎙╮تم اضافة له {"..numadded.."} من الرسائل")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم اضافة له {"..numadded.."} من الرسائل")  
 end
 if database:get(bot_id.."TiTan:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 database:del(bot_id.."TiTan:idgem:user"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_, "⎙╮تم الغاء الامر ") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم الغاء الامر ") 
 database:del(bot_id.."TiTan:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -6095,7 +6095,7 @@ database:del(bot_id.."TiTan:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_use
 local numadded = string.match(text, "(%d+)") 
 local iduserr = database:get(bot_id.."TiTan:idgem:user"..msg.chat_id_)  
 database:incrby(bot_id.."TiTan:Add:Num"..msg.chat_id_..iduserr,numadded)  
-send(msg.chat_id_, msg.id_,"⎙╮تم اضافة له {"..numadded.."} من المجوهرات")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم اضافة له {"..numadded.."} من المجوهرات")  
 end
 ------------------------------------------------------------
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then    
@@ -6116,7 +6116,7 @@ if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message
 local Num = text:match("^اضف مجوهرات (%d+)$")
 function reply(extra, result, success)
 database:incrby(bot_id.."TiTan:Add:Num"..msg.chat_id_..result.sender_user_id_,Num)  
-send(msg.chat_id_, msg.id_,"⎙╮تم اضافة له {"..Num.."} من المجوهرات")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم اضافة له {"..Num.."} من المجوهرات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
@@ -6152,12 +6152,12 @@ end,nil)
 end
 if text == 'تفعيل ضافني' and Owner(msg) then   
 database:del(bot_id..'TiTan:Lock:Added:Me'..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل امر منو ضافني') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل امر منو ضافني') 
 return false
 end
 if text == 'تعطيل ضافني' and Owner(msg) then  
 database:set(bot_id..'TiTan:Lock:Added:Me'..msg.chat_id_,true)  
-send(msg.chat_id_, msg.id_,'⎙╮تم تعطيل امر منو ضافني') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل امر منو ضافني') 
 return false
 end
 if text and text:match("(.*)(ضافني)(.*)") then
@@ -6187,7 +6187,7 @@ local Num = text:match("^اضف رسائل (%d+)$")
 function reply(extra, result, success)
 database:del(bot_id.."TiTan:Msg_User"..msg.chat_id_..":"..result.sender_user_id_) 
 database:incrby(bot_id.."TiTan:messageUser"..msg.chat_id_..":"..result.sender_user_id_,Num)  
-send(msg.chat_id_, msg.id_, "\n⎙╮تم اضافة له {"..Num.."} من الرسائل")  
+send(msg.chat_id_, msg.id_, "\n⎙╮ تم اضافة له {"..Num.."} من الرسائل")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
@@ -6208,10 +6208,10 @@ sendok = sendok + 1
 end
 if #pv == i then 
 if sendok == 0 then
-send(msg.chat_id_, msg.id_,'⎙╮لا يوجد مشتركين وهميين')   
+send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
-send(msg.chat_id_, msg.id_,'*⎙╮عدد المشتركين الان ~ '..#pv..'\n⎙╮تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
+send(msg.chat_id_, msg.id_,'*⎙╮عدد المشتركين الان ~ '..#pv..'\n⎙╮ تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
 end
 end
 end,nil)
@@ -6247,7 +6247,7 @@ w = w + 1
 end
 if #group == i then 
 if (w + q) == 0 then
-send(msg.chat_id_, msg.id_,'⎙╮لا توجد مجموعات وهميه ')   
+send(msg.chat_id_, msg.id_,'⎙╮ لا توجد مجموعات وهميه ')   
 else
 local taha = (w + q)
 local sendok = #group - taha
@@ -6269,7 +6269,7 @@ end
 return false
 end
 if text == ("تحديث السورس") and DevTiTan(msg) then  
-send(msg.chat_id_,msg.id_,'⎙╮تم التحديث')
+send(msg.chat_id_,msg.id_,'⎙╮ تم التحديث')
 os.execute('rm -rf TiTan.lua')
 os.execute('rm -rf run.lua')
 os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua')
@@ -6281,11 +6281,11 @@ end
 
 if text == 'تفعيل البوت الخدمي' and DevTiTan(msg) then  
 database:del(bot_id..'TiTan:Free:Add:Bots') 
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل البوت الخدمي ') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل البوت الخدمي ') 
 end
 if text == 'تعطيل البوت الخدمي' and DevTiTan(msg) then  
 database:set(bot_id..'TiTan:Free:Add:Bots',true) 
-send(msg.chat_id_, msg.id_,'⎙╮تم تعطيل البوت الخدمي') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل البوت الخدمي') 
 end
 if text and text:match("^تعين عدد الاعضاء (%d+)$") and DevTiTan(msg) then
 local Num = text:match("تعين عدد الاعضاء (%d+)$") 
@@ -6422,7 +6422,7 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("TiTan_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
-t = "*⎙╮ الملف ~⪼ {"..file.."}\n⎙╮تم تعطيله وحذفه بنجاح \n✓*"
+t = "*⎙╮ الملف ~⪼ {"..file.."}\n⎙╮ تم تعطيله وحذفه بنجاح \n✓*"
 else
 t = "*⎙╮ بالتاكيد تم تعطيل وحذف ملف ~⪼ {"..file.."} \n✓*"
 end
@@ -6460,7 +6460,7 @@ return false
 end
 if text == "مسح جميع الملفات" and DevTiTan(msg) then
 os.execute("rm -fr TiTan_Files/*")
-send(msg.chat_id_,msg.id_,"⎙╮تم حذف جميع الملفات")
+send(msg.chat_id_,msg.id_,"⎙╮ تم حذف جميع الملفات")
 return false
 end
 if text == 'حذف كليشه المطور' and DevTiTan(msg) then
@@ -6475,21 +6475,21 @@ end
 if text and database:get(bot_id..'TiTan:Set:Text_Dev'..msg.chat_id_) then
 if text == 'الغاء' then 
 database:del(bot_id..'TiTan:Set:Text_Dev'..msg.chat_id_)
-send(msg.chat_id_,msg.id_,'⎙╮تم الغاء حفظ كليشة المطور')
+send(msg.chat_id_,msg.id_,'⎙╮ تم الغاء حفظ كليشة المطور')
 return false
 end
 database:set(bot_id..'TiTan:Text_Dev',text)
 database:del(bot_id..'TiTan:Set:Text_Dev'..msg.chat_id_)
-send(msg.chat_id_,msg.id_,'⎙╮تم حفظ كليشة المطور')
+send(msg.chat_id_,msg.id_,'⎙╮ تم حفظ كليشة المطور')
 return false
 end
 if text and text == "تفعيل تاك الادمنيه" and Owner(msg) then 
 database:set(bot_id.."TiTan:Tag:Admins:"..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل تاك الادمنيه")
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل تاك الادمنيه")
 end
 if text and text == "تعطيل تاك الادمنيه" and Owner(msg) then 
 database:del(bot_id.."TiTan:Tag:Admins:"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, "⎙╮تم تعطيل تاك الادمنيه")
+send(msg.chat_id_, msg.id_, "⎙╮ تم تعطيل تاك الادمنيه")
 end
 if text == 'صيح الادمنيه' or text == "تاك للادمنيه" or text == "وين الادمنيه" then
 if database:get(bot_id.."TiTan:Tag:Admins:"..msg.chat_id_) then 
@@ -6520,12 +6520,12 @@ end
 end   
 if text == 'تفعيل صيح' and Owner(msg) then   
 database:del(bot_id..'TiTan:Seh:User'..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,'⎙╮تم تفعيل امر صيح') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل امر صيح') 
 return false
 end
 if text == 'تعطيل صيح' and Owner(msg) then  
 database:set(bot_id..'TiTan:Seh:User'..msg.chat_id_,true)  
-send(msg.chat_id_, msg.id_,'⎙╮تم تعطيل امر صيح') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل امر صيح') 
 return false
 end
 if text and text:match("^صيح @(.*)$") then
@@ -6537,15 +6537,15 @@ send(msg.chat_id_, msg.id_,'⎙╮المعرف غلط ')
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
-send(msg.chat_id_, msg.id_,'⎙╮لا اسطيع صيح معرفات القنوات') 
+send(msg.chat_id_, msg.id_,'⎙╮ لا اسطيع صيح معرفات القنوات') 
 return false  
 end
 if result.type_.user_.type_.ID == "UserTypeBot" then
-send(msg.chat_id_, msg.id_,'⎙╮لا اسطيع صيح معرفات البوتات') 
+send(msg.chat_id_, msg.id_,'⎙╮ لا اسطيع صيح معرفات البوتات') 
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.is_supergroup_ == true then
-send(msg.chat_id_, msg.id_,'⎙╮لا اسطيع صيح معرفات المجموعات') 
+send(msg.chat_id_, msg.id_,'⎙╮ لا اسطيع صيح معرفات المجموعات') 
 return false  
 end
 if result.id_ then
@@ -6641,7 +6641,7 @@ end
 
 if text == "تحديث" and DevTiTan(msg) then
 dofile("TiTan.lua")  
-send(msg.chat_id_, msg.id_, "⎙╮تم التحديث")
+send(msg.chat_id_, msg.id_, "⎙╮ تم التحديث")
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 Text = [[
@@ -6910,7 +6910,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if database:sismember(bot_id..'TiTan:Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'⎙╮المجموعه مفعله سابقا ~ '..chat.title_..'')
 else
-Reply_Status(msg,result.id_,'reply_Add','⎙╮تم تفعيل المجموعه ~ '..chat.title_..'')
+Reply_Status(msg,result.id_,'reply_Add','⎙╮ تم تفعيل المجموعه ~ '..chat.title_..'')
 database:sadd(bot_id..'TiTan:Chek:Groups',msg.chat_id_)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 local NameChat = chat.title_
@@ -6928,7 +6928,7 @@ LinkGp = linkgpp.result
 else
 LinkGp = 'لا يوجد'
 end
-Text = '⎙╮تم تفعيل مجموعه جديده\n'..
+Text = '⎙╮ تم تفعيل مجموعه جديده\n'..
 '\n⎙╮بواسطة ~ '..Name..''..
 '\n⎙╮ايدي المجموعه ~ `'..IdChat..'`'..
 '\n⎙╮عدد اعضاء المجموعه *~ '..NumMember..'*'..
@@ -6954,7 +6954,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if not database:sismember(bot_id..'TiTan:Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'⎙╮المجموعه معطله سابقا ~ '..chat.title_..'')
 else
-Reply_Status(msg,result.id_,'reply_Add','⎙╮تم تعطيل المجموعه ~ '..chat.title_..'')
+Reply_Status(msg,result.id_,'reply_Add','⎙╮ تم تعطيل المجموعه ~ '..chat.title_..'')
 database:srem(bot_id..'TiTan:Chek:Groups',msg.chat_id_)  
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 local NameChat = chat.title_
@@ -7015,7 +7015,7 @@ if tonumber(data.member_count_) < tonumber(database:get(bot_id..'TiTan:Num:Add:B
 send(msg.chat_id_, msg.id_,'⎙╮عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'TiTan:Num:Add:Bot') or 0)..'* عضو')
 return false
 end
-Reply_Status(msg,result.id_,'reply_Add','⎙╮تم تفعيل المجموعه ~ '..chat.title_..'')
+Reply_Status(msg,result.id_,'reply_Add','⎙╮ تم تفعيل المجموعه ~ '..chat.title_..'')
 database:sadd(bot_id..'TiTan:Chek:Groups',msg.chat_id_)  
 database:sadd(bot_id..'TiTan:Basic:Constructor'..msg.chat_id_, msg.sender_user_id_)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
@@ -7035,7 +7035,7 @@ LinkGp = linkgpp.result
 else
 LinkGp = 'لا يوجد'
 end
-Text = '⎙╮تم تفعيل مجموعه جديده\n'..
+Text = '⎙╮ تم تفعيل مجموعه جديده\n'..
 '\n⎙╮بواسطة ~ '..Name..''..
 '\n⎙╮موقعه في المجموعه ~ '..AddPy..'' ..
 '\n⎙╮ايدي المجموعه ~ `'..IdChat..'`'..
@@ -7089,14 +7089,14 @@ database:setex(bot_id..'TiTan:Start:Time'..msg.sender_user_id_,60,true)
 return false
 end
 if not DevTiTan(msg) and not database:sismember(bot_id..'BaN:In:User',msg.sender_user_id_) and not database:get(bot_id..'Texting:In:Bv') then
-send(msg.sender_user_id_,msg.id_,'⎙╮تمت ارسال رسالتك الى ~ ['..UserName..']')    
+send(msg.sender_user_id_,msg.id_,'⎙╮ تمت ارسال رسالتك الى ~ ['..UserName..']')    
 tdcli_function({ID ="GetChat",chat_id_=Id_Sudo},function(arg,chat)  
 tdcli_function({ID ="GetChat",chat_id_=msg.sender_user_id_},function(arg,chat)  
 tdcli_function({ID="ForwardMessages",chat_id_=Id_Sudo,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(arg,ta) 
 if data and data.messages_ and data.messages_[0] ~= false and data.ID ~= "Error" then
 if data and data.messages_ and data.messages_[0].content_.sticker_ then
-sendText(Id_Sudo,'⎙╮تم ارسال الملصق من ~ ['..string.sub(ta.first_name_,0, 40)..'](tg://user?id='..ta.id_..')',0,'md') 
+sendText(Id_Sudo,'⎙╮ تم ارسال الملصق من ~ ['..string.sub(ta.first_name_,0, 40)..'](tg://user?id='..ta.id_..')',0,'md') 
 return false
 end;end;end,nil);end,nil);end,nil);end,nil);end
 if DevTiTan(msg) and msg.reply_to_message_id_ ~= 0  then    
@@ -7123,19 +7123,19 @@ return false
 end 
 if text then    
 send(id_user,msg.id_,text)    
-Text = '⎙╮تمت ارسال الرساله اليه .. '
+Text = '⎙╮ تمت ارسال الرساله اليه .. '
 elseif msg.content_.ID == 'MessageSticker' then    
 sendSticker(id_user, msg.id_, msg.content_.sticker_.sticker_.persistent_id_)   
-Text = '⎙╮تمت ارسال الملصق اليه .. '
+Text = '⎙╮ تمت ارسال الملصق اليه .. '
 elseif msg.content_.ID == 'MessagePhoto' then    
 sendPhoto(id_user, msg.id_,msg.content_.photo_.sizes_[0].photo_.persistent_id_,(msg.content_.caption_ or ''))    
-Text = '⎙╮تمت ارسال الصوره اليه .. '
+Text = '⎙╮ تمت ارسال الصوره اليه .. '
 elseif msg.content_.ID == 'MessageAnimation' then    
 sendDocument(id_user, msg.id_, msg.content_.animation_.animation_.persistent_id_)    
-Text = '⎙╮تمت ارسال المتحركه اليه .. '
+Text = '⎙╮ تمت ارسال المتحركه اليه .. '
 elseif msg.content_.ID == 'MessageVoice' then    
 sendVoice(id_user, msg.id_, msg.content_.voice_.voice_.persistent_id_)    
-Text = '⎙╮تمت ارسال البصمه اليه .. '
+Text = '⎙╮ تمت ارسال البصمه اليه .. '
 end     
 sendText(Id_Sudo,Text..'\n'..'⎙╮ ~ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')',0,'md') 
 end,nil);end,nil);end,nil);end,nil);end 
@@ -7173,7 +7173,7 @@ sendok = sendok + 1
 end
 if #pv == i then 
 if sendok == 0 then
-send(msg.chat_id_, msg.id_,'⎙╮لا يوجد مشتركين وهميين')   
+send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
 send(msg.chat_id_, msg.id_,'*⎙╮عدد المشتركين الان ~ '..#pv..'\n??︙تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
@@ -7212,7 +7212,7 @@ w = w + 1
 end
 if #group == i then 
 if (w + q) == 0 then
-send(msg.chat_id_, msg.id_,'⎙╮لا توجد مجموعات وهميه ')   
+send(msg.chat_id_, msg.id_,'⎙╮ لا توجد مجموعات وهميه ')   
 else
 local taha = (w + q)
 local sendok = #group - taha
@@ -7235,11 +7235,11 @@ return false
 end
 if text == 'تفعيل البوت خدمي ✅' then
 database:del(bot_id..'TiTan:Free:Add:Bots') 
-send(msg.chat_id_, msg.id_,'\n⎙╮تم تفعيل البوت الخدمي ') 
+send(msg.chat_id_, msg.id_,'\n⎙╮ تم تفعيل البوت الخدمي ') 
 end
 if text == 'تعطيل البوت خدمي ❎' then
 database:set(bot_id..'TiTan:Free:Add:Bots',true) 
-send(msg.chat_id_, msg.id_,'\n⎙╮تم تعطيل البوت الخدمي') 
+send(msg.chat_id_, msg.id_,'\n⎙╮ تم تعطيل البوت الخدمي') 
 end
 if text=="اذاعه خاص 🗣️" and msg.reply_to_message_id_ == 0 then
 if database:get(bot_id.."TiTan:Status:Bc") and not DevTiTan(msg) then 
@@ -7279,32 +7279,32 @@ return false
 end 
 if text == "تفعيل الاذاعه 🔔" then
 database:del(bot_id.."TiTan:Status:Bc") 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تفعيل الاذاعه " ) 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تفعيل الاذاعه " ) 
 return false
 end 
 if text == "تعطيل الاذاعه 🔕" then
 database:set(bot_id.."TiTan:Status:Bc",true) 
-send(msg.chat_id_, msg.id_,"\n⎙╮تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"\n⎙╮ تم تعطيل الاذاعه") 
 return false
 end 
 if text == "تفعيل المغادره 🔏" then
 database:del(bot_id.."TiTan:Left:Bot"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"⎙╮تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل مغادرة البوت") 
 return false 
 end
 if text == "تعطيل المغادره 🔓" then
 database:set(bot_id.."TiTan:Left:Bot"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "⎙╮تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "⎙╮ تم تعطيل مغادرة البوت") 
 return false 
 end
 if text and database:get(bot_id..'Start:Bots') then
 if text == 'الغاء ✖' then   
-send(msg.chat_id_, msg.id_,"⎙╮تم الغاء حفظ كليشه ستارت") 
+send(msg.chat_id_, msg.id_,"⎙╮ تم الغاء حفظ كليشه ستارت") 
 database:del(bot_id..'Start:Bots') 
 return false
 end
 database:set(bot_id.."Start:Bot",text)  
-send(msg.chat_id_, msg.id_,'⎙╮تم حفظ كليشه ستارت') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم حفظ كليشه ستارت') 
 database:del(bot_id..'Start:Bots') 
 return false
 end
@@ -7320,11 +7320,11 @@ return false
 end
 if text == 'حذف كليشه ستارت 🗑️' then
 database:del(bot_id..'Start:Bot') 
-send(msg.chat_id_, msg.id_,'⎙╮تم حذف كليشه ستارت') 
+send(msg.chat_id_, msg.id_,'⎙╮ تم حذف كليشه ستارت') 
 end
 if text == ("مسح قائمه العام 📮") and DevTiTan(msg) then
 database:del(bot_id.."TiTan:GBan:User")
-send(msg.chat_id_, msg.id_, "\n⎙╮تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n⎙╮ تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين 👨🏽‍💻") and DevTiTan(msg) then
@@ -7343,7 +7343,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد محظورين عام"
+t = "⎙╮ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -7360,7 +7360,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "⎙╮لا يوجد مطورين"
+t = "⎙╮ لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -7432,7 +7432,7 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,'./File_Libs/'..bot_id..'.json', '⎙╮ عدد مجموعات التي في البوت { '..#list..'}')
 end
 if text == "تحديث السورس ☑️" then
-send(msg.chat_id_,msg.id_,'⎙╮تم التحديث')
+send(msg.chat_id_,msg.id_,'⎙╮ تم التحديث')
 os.execute('rm -rf TiTan.lua')
 os.execute('rm -rf run.lua')
 os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua')
@@ -7442,7 +7442,7 @@ return false
 end
 if text == "تحديث الملفات ??️" then
 dofile("TiTan.lua")  
-send(msg.chat_id_, msg.id_, "⎙╮تم التحديث")
+send(msg.chat_id_, msg.id_, "⎙╮ تم التحديث")
 end
 end
 end --- Chat_Type = 'UserBot' 
@@ -7609,9 +7609,9 @@ if NewCmmd then
 database:del(bot_id.."TiTan:Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
 database:del(bot_id.."TiTan:Set:Cmd:Group:New"..msg.chat_id_)
 database:srem(bot_id.."TiTan:List:Cmd:Group:New"..msg.chat_id_,text)
-send(msg.chat_id_, msg.id_,"⎙╮تم ازالة الامر من المجموعه")  
+send(msg.chat_id_, msg.id_,"⎙╮ تم ازالة الامر من المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"⎙╮لا يوجد امر بهاذا الاسم تاكد من الامر واعد المحاوله")  
+send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد امر بهاذا الاسم تاكد من الامر واعد المحاوله")  
 end
 database:del(bot_id.."TiTan:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
