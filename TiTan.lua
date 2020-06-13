@@ -3706,7 +3706,7 @@ database:del(bot_id.."TiTan:Pin:Id:Msg"..msg.chat_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_,"⎙╮انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
 elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
-send(msg.chat_id_,msg.id_,"??︙ليست لدي صلاحية التثبيت يرجى التحقق من الصلاحيات")  
+send(msg.chat_id_,msg.id_,"⎙╮ ليست لدي صلاحية التثبيت يرجى التحقق من الصلاحيات")  
 end
 end,nil)
 end
@@ -3936,7 +3936,7 @@ end
 if (c - x) == 0 then
 send(msg.chat_id_, msg.id_, "⎙╮ لا توجد بوتات في المجموعه")
 else
-local t = "⎙╮عدد البوتات هنا >> {"..c.."}\n⎙╮عدد البوتات التي هي ادمن >> {"..x.."}\n⎙╮ تم طرد >> {"..(c - x).."} من البوتات"
+local t = "⎙╮ عدد البوتات هنا >> {"..c.."}\n⎙╮ عدد البوتات التي هي ادمن >> {"..x.."}\n⎙╮ تم طرد >> {"..(c - x).."} من البوتات"
 send(msg.chat_id_, msg.id_,t) 
 end 
 end,nil)  
@@ -3969,8 +3969,8 @@ send(msg.chat_id_, msg.id_, "⎙╮ لا توجد بوتات في المجموع
 return false 
 end
 if #admins == i then 
-local a = "\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n⎙╮عدد البوتات التي هنا >> {"..n.."} بوت\n"
-local f = "⎙╮عدد البوتات التي هي ادمن >> {"..t.."}\n⎙╮ملاحضه علامة ال (✯) تعني ان البوت ادمن \n🔰"
+local a = "\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n⎙╮ عدد البوتات التي هنا >> {"..n.."} بوت\n"
+local f = "⎙╮ عدد البوتات التي هي ادمن >> {"..t.."}\n⎙╮ملاحضه علامة ال (✯) تعني ان البوت ادمن \n🔰"
 send(msg.chat_id_, msg.id_, text..a..f)
 end
 end,nil)
@@ -4201,7 +4201,7 @@ database:del(bot_id.."TiTan:Add:Rd:Manager:File"..v..msg.chat_id_)
 database:del(bot_id.."TiTan:Add:Rd:Manager:Audio"..v..msg.chat_id_)
 database:del(bot_id.."TiTan:List:Manager"..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"??︙تم مسح ردود المدير")
+send(msg.chat_id_, msg.id_,"⎙╮ تم مسح ردود المدير")
 end
 if text == ("ردود المدير") and Owner(msg) then
 local list = database:smembers(bot_id.."TiTan:List:Manager"..msg.chat_id_.."")
@@ -5019,7 +5019,7 @@ send(msg.chat_id_, msg.id_,"⎙╮الاذاعه معطله من قبل المط
 return false
 end
 database:setex(bot_id.."TiTan:TiTan:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"⎙╮ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n??︙للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"⎙╮ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n⎙╮ للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
@@ -5362,7 +5362,7 @@ local text =
 "\n".."⎙╮التاك ~⪼ "..lock_hash..
 "\n".."⎙╮البوتات ~⪼ "..lock_bots..
 "\n".."⎙╮التوجيه ~⪼ "..lock_fwd..
-"\n".."??︙التثبيت ~⪼ "..lock_pin..
+"\n".."⎙╮ التثبيت ~⪼ "..lock_pin..
 "\n".."⎙╮الاشعارات ~⪼ "..lock_tagservr..
 "\n".."⎙╮الماركدون ~⪼ "..lock_mark..
 "\n".."⎙╮التعديل ~⪼ "..lock_edit..
@@ -5385,7 +5385,7 @@ local text =
 "\n".."⎙╮الالعاب ~⪼ "..lock_geam..
 "\n".."⎙╮التكرار ~⪼ "..flood..
 "\n".."⎙╮الترحيب ~⪼ "..welcome..
-"\n".."⎙╮عدد التكرار ~⪼ "..Num_Flood..
+"\n".."⎙╮ عدد التكرار ~⪼ "..Num_Flood..
 "\n\n.*"
 send(msg.chat_id_, msg.id_,text)     
 end    
@@ -6011,7 +6011,7 @@ send(msg.chat_id_, msg.id_,Teext)
 end
 if text == 'رسائلي' then
 local nummsg = database:get(bot_id..'TiTan:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 1
-local Text = '*⎙╮عدد رسائلك هنا ~ '..nummsg..'*'
+local Text = '*⎙╮ عدد رسائلك هنا ~ '..nummsg..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح رسائلي' then
@@ -6020,7 +6020,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == 'سحكاتي' or text == 'تعديلاتي' then
 local edit = database:get(bot_id..'TiTan:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
-local Text = '⎙╮عدد التعديلات هنا *~ '..edit..'*'
+local Text = '⎙╮ عدد التعديلات هنا *~ '..edit..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' then
@@ -6029,7 +6029,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == 'جهاتي' then
 local addmem = database:get(bot_id.."TiTan:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
-local Text = '⎙╮عدد جهاتك المضافه هنا *~ '..addmem..'*'
+local Text = '⎙╮ عدد جهاتك المضافه هنا *~ '..addmem..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح جهاتي' then
@@ -6042,7 +6042,7 @@ local Num = database:get(bot_id.."TiTan:Add:Num"..msg.chat_id_..msg.sender_user_
 if Num == 0 then 
 Text = "⎙╮لم تلعب اي لعبه للحصول على جواهر"
 else
-Text = "⎙╮عدد جواهر التي رحبتها هي *~ { "..Num.." } مجوهره *"
+Text = "⎙╮ عدد جواهر التي رحبتها هي *~ { "..Num.." } مجوهره *"
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
@@ -6211,7 +6211,7 @@ if sendok == 0 then
 send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
-send(msg.chat_id_, msg.id_,'*⎙╮عدد المشتركين الان ~ '..#pv..'\n⎙╮ تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
+send(msg.chat_id_, msg.id_,'*⎙╮ عدد المشتركين الان ~ '..#pv..'\n⎙╮ تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
 end
 end
 end,nil)
@@ -6261,7 +6261,7 @@ storm = ''
 else
 storm = '\n⎙╮ تم ازالة ~'..w..' مجموعه لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,'*⎙╮ عدد المجموعات الان ~ '..#group..' مجموعه '..storm..''..taha..'\n??︙اصبح عدد المجموعات الان ~ '..sendok..' مجموعات*\n')   
+send(msg.chat_id_, msg.id_,'*⎙╮ عدد المجموعات الان ~ '..#group..' مجموعه '..storm..''..taha..'\n⎙╮ اصبح عدد المجموعات الان ~ '..sendok..' مجموعات*\n')   
 end
 end
 end,nil)
@@ -6295,7 +6295,7 @@ end
 if text =='الاحصائيات' and DevBot(msg) then
 local Groups = database:scard(bot_id..'TiTan:Chek:Groups')  
 local Users = database:scard(bot_id..'TiTan:UsersBot')  
-send(msg.chat_id_, msg.id_,'⎙╮احصائيات البوت \n\n⎙╮عدد المجموعات *~ '..Groups..'\n⎙╮عدد المشتركين ~ '..Users..'*')
+send(msg.chat_id_, msg.id_,'⎙╮احصائيات البوت \n\n⎙╮ عدد المجموعات *~ '..Groups..'\n⎙╮ عدد المشتركين ~ '..Users..'*')
 end
 if text == 'جلب نسخه احتياطيه' and DevTiTan(msg) then
 local list = database:smembers(bot_id..'TiTan:Chek:Groups')  
@@ -6631,13 +6631,308 @@ send(msg.chat_id_, msg.id_,'⎙╮ تم مسح قائمه منع المتحرك�
 end
 if text == 'مسح قائمه منع الصور' and Owner(msg) then 
 database:del(bot_id.."filterphoto"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'??︙ تم مسح قائمه منع الصور')  
+send(msg.chat_id_, msg.id_,'⎙╮  تم مسح قائمه منع الصور')  
 end
 if text == 'مسح قائمه منع الملصقات' and Owner(msg) then 
 database:del(bot_id.."filtersteckr"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'⎙╮ تم مسح قائمه منع الملصقات')  
 end
 
+if not database:get(bot_id..'TiTan:Reply:Mute'..msg.chat_id_) then
+if text == 'هلو' then
+TextReply = '• هَٰہۧـﮧﮧلْٰاَٰوٍّ໑اَٰتّٰ 🌝☄ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شلونكم' then
+TextReply = '• تّٰمٍٰـﮧاَٰمٍٰ وٍّاَٰنٍٰتّٰـہهَٰہۧ 😽⚡️ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شلونك' then
+TextReply = '• اَٰلْٰـحٌٰمٍٰـﮧﮧدِٰاَٰلْٰلْٰهَٰہۧ وٍّ୭اَٰنٍٰتّٰـهَٰہۧ 😼💛ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'تمام' then
+TextReply = '• دِٰوٍّ൭مٍٰ يَٰـﮧﮧاَٰرِٰبٌِٰ 😻🌪ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'هلاو' then
+TextReply = '• هَٰہۧـہ୪وٍّ୭اَٰتّٰ حٌٰبٌِٰـﮧيَٰ 🤗🌟ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '😐' then
+TextReply = '• شَُـبٌِٰيَٰـكٍٰ صُِـﮧﮧاَٰفِٰنٍٰ عٍِّ خّٰاَٰلْٰتّٰـہكٍٰ😹🖤ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'هاي' then
+TextReply = '• هَٰہۧـاَٰيَٰـﮧﮧاَٰتّٰ يَٰـرِٰوٍّحٌٰـہيَٰ 🙋🏼‍♂💙ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'بوت' then
+TextReply = '• تّٰفِٰـضـﮧلْٰ حٌٰبٌِٰـہيَٰ 🌚💫ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'اريد اكبل' then
+TextReply = '• شَُـوٍّ໑فِٰلْٰيَٰ وٍّيَٰـاَٰكٍٰ حٌٰدِٰيَٰـہقٍٰهَٰہۧ وٍّدِٰاَٰيَٰـﮧحٌٰ رِٰسٌٍمٍٰـہيَٰ😾😹💜ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'لتزحف' then
+TextReply = '• دِٰعٍِّـوٍّ໑فِٰهَٰہۧ زًَاَٰحٌٰـﮧفِٰ عٍِّ خّٰاَٰلْٰـتّٰكٍٰ خّٰـلْٰيَٰ يَٰسٌٍـہتّٰفِٰاَٰدِٰ😾🌈ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'كلخرا' then
+TextReply = '• خّٰـﮧرِٰاَٰ يَٰتّٰـہرِٰسٌٍ حٌٰلْٰكٍٰـﮧكٍٰ يَٰاَٰخّٰـﮧرِٰاَٰاَٰ💩ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'زاحف' then
+TextReply = '• زًَاَٰحٌٰـﮧفِٰ عٍِّ اَٰخّٰتّٰـﮧكٍٰ؟ كٍٰضيَٰـﮧتّٰ عٍِّمٍٰرِٰكٍٰ جًِّرِٰجًِّـﮧفِٰ😾😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'دي' then
+TextReply = '• خّٰلْٰيَٰنٍٰـﮧيَٰ اَٰحٌٰبٌِٰـﮧكٍٰ 😾ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'فرخ' then
+TextReply = '• وٍّيَٰنٍٰـﮧهَٰہۧ؟ خّٰ اَٰحٌٰضـﮧرِٰهَٰہۧ 😾😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'تعالي خاص' then
+TextReply = '• اَٰهَٰہۧـﮧوٍّ໑ ضـﮧلْٰ ضـﮧلْٰ سٌٍـﮧاَٰحٌٰفِٰ كٍٰبٌِٰـﮧرِٰ طَُِمٍٰـہكٍٰ😗😂💚ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'اكرهك' then
+TextReply = '•دِٰيَٰلْٰـﮧهَٰہۧ شَُـﮧوٍّ୭نٍٰ اَٰطَُِيَٰـقٍٰكٍٰ نٍٰـيَٰ 🙎🏼‍♂🖤ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'احبك' then
+TextReply = '•حٌٰبٌِٰيَٰبٌِٰـﮧيَٰ وٍّنٍٰـﮧيَٰ هَٰہۧــمٍٰ😻👅ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'باي' then
+TextReply = '• وٍّيَٰـﮧنٍٰ رِٰاَٰيَٰـہحٌٰ خّٰلْٰيَٰنٍٰـﮧهَٰہۧ مٍٰتّٰوٍّنٍٰسٌٍيَٰـﮧنٍٰ🙁💔ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'واكف' then
+TextReply = '• بٌِٰنٍٰلْٰخّٰـﮧرِٰاَٰ وٍّيَٰـﮧنٍٰ وٍّاَٰكٍٰـﮧفِٰ😐😒ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'وين المدير' then
+TextReply = '• لْٰيَٰـﮧشَُ شَُتّٰـﮧرِٰيَٰدِٰ🤔ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'انجب' then
+TextReply = '• صُِـﮧاَٰرِٰ سٌٍتّٰـﮧاَٰدِٰيَٰ🐸❤️ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'تحبني' then
+TextReply = '• مٍٰـﮧاَٰدِٰرِٰيَٰ اَٰفِٰكٍٰـﮧرِٰ🙁😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🌚' then
+TextReply = '• فِٰـﮧدِٰيَٰتّٰ صُِخّٰـﮧاَٰمٍٰكٍٰ🙊👄ֆ '
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🙄' then
+TextReply = '• نٍٰـہزًَلْٰ عٍِّيَٰـنٍٰكٍٰ عٍِّيَٰـﮧبٌِٰ🌚😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '😒' then
+TextReply = '• شَُبٌِٰيَٰـﮧكٍٰ كٍٰاَٰلْٰـﮧبٌِٰ خّٰلْٰقٍٰتّٰـﮧكٍٰ😟🐈ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '😳' then
+TextReply = '• هَٰہۧـاَٰ بٌِٰسٌٍ لْٰاَٰ شَُفِٰـﮧتّٰ عٍِّمٍٰتّٰـﮧكٍٰ اَٰلْٰعٍِّـﮧوٍّ໑بٌِٰهَٰہۧ😐😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🙁' then
+TextReply = '• تّٰعٍِّـﮧاَٰلْٰ اَٰشَُكٍٰيَٰلْٰـﮧيَٰ هَٰہۧمٍٰوٍّمٍٰـﮧكٍٰ لْٰيَٰـشَُ • ضاَٰيَٰـﮧجًِّ🙁💔ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🚶💔' then
+TextReply = '• تّٰعٍِّـﮧاَٰلْٰ اَٰشَُكٍٰيَٰلْٰـﮧيَٰ هَٰہۧمٍٰوٍّمٍٰـﮧكٍٰ لْٰيَٰـشَُ • ضاَٰيَٰـﮧجًِّ🙁💔ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🙂' then
+TextReply = '• ثِْْكٍٰيَٰـﮧلْٰ نٍٰهَٰہۧنٍٰهَٰہۧنٍٰهَٰہۧنٍٰهَٰہۧ🐛ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '🌝' then
+TextReply = '• مٍٰنٍٰـﮧوٍّ໑رِٰ حٌٰبٌِٰـعٍِّمٍٰـہرِٰيَٰ😽💚ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'صباحو' then
+TextReply = '• صُِبٌِٰاَٰحٌٰـہكٍٰ عٍِّسٌٍـہلْٰ يَٰعٍِّسٌٍـﮧلْٰ😼🤞ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'صباح الخير' then
+TextReply = '• صُِبٌِٰاَٰحٌٰـہكٍٰ عٍِّسٌٍـہلْٰ يَٰعٍِّسٌٍـﮧلْٰ😼🤞ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'كفو' then
+TextReply = '• اَٰهَٰہۧ كٍٰفِٰـﮧوٍّ໑ يَٰبٌِٰہوٍّ୭ اَٰلْٰضـلْٰہوٍّ୭عٍِّ😹ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '😌' then
+TextReply = '• اَٰلْٰمٍٰطَُِلْٰـﮧوٍّ໑بٌِٰ !😕💞ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'اها' then
+TextReply = '• يَٰبٌِٰ قٍٰاَٰبٌِٰـﮧلْٰ اَٰغِِٰشَُـﮧكٍٰ شَُسٌٍاَٰلْٰفِٰـﮧهَٰہۧ حٌٰبٌِٰ😐🌝ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شسمج' then
+TextReply = '• اَٰسٌٍـمٍٰهَٰہۧـﮧاَٰ جًِّعٍِّجًِّـﮧوٍّ໑عٍِّهَٰہۧ😹👊ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شسمك' then
+TextReply = '• اَٰسٌٍمٍٰـﮧهَٰہۧ عٍِّبٌِٰـﮧوٍّ໑سٌٍيَٰ لْٰـوٍّ૭سٌٍہيَٰ😾😹💛ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شوف' then
+TextReply = '• شَُشَُـﮧﮧوٍّ໑فِٰ 🌝🌝ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'مساء الخير' then
+TextReply = '• مٍٰسٌٍـﮧاَٰء اَٰلْٰحٌٰـﮧبٌِٰ يَٰحٌٰہبٌِٰحٌٰہبٌِٰ🌛🔥ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'المدرسه' then
+TextReply = '• لْٰتّٰجًِّيَٰـﮧبٌِٰ اَٰسٌٍمٍٰـﮧهَٰہۧ لْٰاَٰ اَٰطَُِـﮧرِٰدِٰكٍٰ🌞✨ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'منو ديحذف رسائلي' then
+TextReply = '• خّٰـﮧاَٰلْٰتّٰـہكٍٰ 🌚ֆ🌝'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'البوت واكف' then
+TextReply = '• لْٰجًِّـﮧذَْبٌِٰ حٌٰبٌِٰـہيَٰ 🌞⚡️ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'غلس' then
+TextReply = '• وٍّ໑كٍٰ بٌِٰـﮧسٌٍ سٌٍـﮧوٍّ୭لْٰفِٰلْٰيَٰ اَٰلْٰسٌٍـﮧاَٰلْٰفِٰهَٰہۧ بٌِٰعٍِّـﮧدِٰيَٰنٍٰ🌝🦅ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'حارة' then
+TextReply = '• تّٰسٌٍـہمٍٰطَُِ سٌٍمٍٰـﮧطَُِ غِِٰيَٰـﮧرِٰ يَٰرِٰحٌٰمٍٰنٍٰـﮧهَٰہۧ اَٰلْٰاَٰعٍِّبٌِٰـاَٰدِٰيَٰ وٍّيَٰنٍٰـہطَُِيَٰ عٍِّطَُِلْٰـﮧهَٰہۧ 😾💔ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'هههه' then
+TextReply = '• نٍٰشَُـﮧاَٰلْٰلْٰهَٰہۧ دِٰاَٰيَٰمٍٰـﮧهَٰہۧ💆🏻‍♂💘ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'ههههه' then
+TextReply = '• نٍٰشَُـﮧاَٰلْٰلْٰهَٰہۧ دِٰاَٰيَٰمٍٰـﮧهَٰہۧ💆🏻‍♂💘ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == '😹' then
+TextReply = '• نٍٰشَُـﮧاَٰلْٰلْٰهَٰہۧ دِٰاَٰيَٰمٍٰـﮧهَٰہۧ💆🏻‍♂💘ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'وين' then
+TextReply = '• بٌِٰـﮧﮧأرِٰض اَٰلْٰلْٰهَٰہۧ اَٰلْٰـہوٍّاَٰسٌٍعٍِّـﮧهَٰہۧ😽💜ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'كافي لغوة' then
+TextReply = '• كٍٰـيَٰفِٰنٍٰـﮧهَٰہۧ نٍٰتّٰـﮧهَٰہۧ شَُعٍِّـہلْٰيَٰكٍٰ😼👊ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'نايمين' then
+TextReply = '• اَٰنٍٰـﮧيَٰ سٌٍهَٰہۧـہرِٰاَٰنٍٰ اَٰحٌٰرِٰسٌٍـﮧكٍٰمٍٰ مٍٰـﮧטּ تّٰـرِٰاَٰمٍٰـﮧبٌِٰ😿😹🙌ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'اكو احد' then
+TextReply = '• يَٰ عٍِّيَٰـنٍٰـﮧيَٰ اَٰنٍٰـہيَٰ مٍٰـوٍّ૭جًِّـﮧوٍّدِٰ🌝✨ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'فديت' then
+TextReply = '•فِٰـﮧﮧدِٰاَٰكٍٰ/جًِّ ثِْْـﮧوٍّ୪لْٰاَٰنٍٰ اَٰلْٰكٍٰـرِٰوٍّ୭بٌِٰ😟😂💚ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'شكو' then
+TextReply = '• كٍٰلْٰـشَُـﮧﮧيَٰ مٍٰـہاَٰكٍٰـﮧوٍّ اَٰرِٰجًِّـعٍِّ نٍٰـاَٰمٍٰ🐼🌩ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'اوف' then
+TextReply = '• هَٰہۧـﮧﮧاَٰيَٰ اَٰوٍّفِٰ مٍٰنٍٰ يَٰـاَٰ نٍٰـوٍّ୭عٍِّ صُِـاَٰرِٰتّٰ اَٰلْٰـسٌٍاَٰلْٰفِٰهَٰہۧ مٍٰتّٰـنٍٰعٍِّرِٰفِٰ🌚🌙ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'احبج' then
+TextReply = '•جًِّـﮧذَْاَٰبٌِٰ يَٰـرِٰيَٰدِٰ يَٰطَُِـہكٍٰجًِّ😹🌞⚡️ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+if text == 'انتة منو' then
+TextReply = '• اَٰنٍٰـﮧﮧيَٰ بٌِٰـوٍّ໑تّٰ💨🌝ֆ'
+send(msg.chat_id_, msg.id_,'['..TextReply..']')
+return false
+end
+end
+
+if text == 'تفعيل ردود البوت' and Owner(msg) then
+database:del(bot_id..'TiTan:Reply:Mute'..msg.chat_id_)
+send(msg.chat_id_, msg.id_,'☑┇تم تفعيل ردود البوت')
+return false
+end
+
+if text == 'تعطيل ردود البوت' and Owner(msg) then
+database:set(bot_id..'TiTan:Reply:Mute'..msg.chat_id_,true)
+send(msg.chat_id_, msg.id_,'☑┇تم تعطيل ردود البوت')
+return false
+end
+end
 
 if text == "تحديث" and DevTiTan(msg) then
 dofile("TiTan.lua")  
@@ -6794,7 +7089,7 @@ Text = [[
 ⎙╮ رفع الادمنيه
 ⎙╮ اضف/حذف رد
 ⎙╮ الادمنيه
-??︙ردود المدير
+⎙╮ ردود المدير
 
 ⎙╮ تنظيف + عدد
 ⎙╮ مسح الادمنيه
@@ -6902,7 +7197,7 @@ return false
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data)  
 if tonumber(data.member_count_) < tonumber(database:get(bot_id..'TiTan:Num:Add:Bot') or 0) and not DevTiTan(msg) then
-send(msg.chat_id_, msg.id_,'⎙╮عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'TiTan:Num:Add:Bot') or 0)..'* عضو')
+send(msg.chat_id_, msg.id_,'⎙╮ عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'TiTan:Num:Add:Bot') or 0)..'* عضو')
 return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -6931,7 +7226,7 @@ end
 Text = '⎙╮ تم تفعيل مجموعه جديده\n'..
 '\n⎙╮بواسطة ~ '..Name..''..
 '\n⎙╮ايدي المجموعه ~ `'..IdChat..'`'..
-'\n⎙╮عدد اعضاء المجموعه *~ '..NumMember..'*'..
+'\n⎙╮ عدد اعضاء المجموعه *~ '..NumMember..'*'..
 '\n⎙╮اسم المجموعه ~ ['..NameChat..']'..
 '\n⎙╮الرابط ~ ['..LinkGp..']'
 if not DevTiTan(msg) then
@@ -6972,7 +7267,7 @@ LinkGp = linkgpp.result
 else
 LinkGp = 'لا يوجد'
 end
-Text = '??︙تم تعطيل مجموعه جديده\n'..
+Text = '⎙╮ تم تعطيل مجموعه جديده\n'..
 '\n⎙╮بواسطة ~ '..Name..''..
 '\n🔧︙ايدي المجموعه ~ `'..IdChat..'`'..
 '\n⎙╮اسم المجموعه ~ ['..NameChat..']'..
@@ -7012,7 +7307,7 @@ if database:sismember(bot_id..'TiTan:Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'⎙╮المجموعه مفعله سابقا ~ '..chat.title_..'')
 else
 if tonumber(data.member_count_) < tonumber(database:get(bot_id..'TiTan:Num:Add:Bot') or 0) and not DevTiTan(msg) then
-send(msg.chat_id_, msg.id_,'⎙╮عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'TiTan:Num:Add:Bot') or 0)..'* عضو')
+send(msg.chat_id_, msg.id_,'⎙╮ عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'TiTan:Num:Add:Bot') or 0)..'* عضو')
 return false
 end
 Reply_Status(msg,result.id_,'reply_Add','⎙╮ تم تفعيل المجموعه ~ '..chat.title_..'')
@@ -7039,7 +7334,7 @@ Text = '⎙╮ تم تفعيل مجموعه جديده\n'..
 '\n⎙╮بواسطة ~ '..Name..''..
 '\n⎙╮موقعه في المجموعه ~ '..AddPy..'' ..
 '\n⎙╮ايدي المجموعه ~ `'..IdChat..'`'..
-'\n⎙╮عدد اعضاء المجموعه *~ '..NumMember..'*'..
+'\n⎙╮ عدد اعضاء المجموعه *~ '..NumMember..'*'..
 '\n⎙╮اسم المجموعه ~ ['..NameChat..']'..
 '\n⎙╮الرابط ~ ['..LinkGp..']'
 if not DevTiTan(msg) then
@@ -7151,7 +7446,7 @@ end
 if text =='الاحصائيات 📈' then
 local Groups = database:scard(bot_id..'TiTan:Chek:Groups')  
 local Users = database:scard(bot_id..'TiTan:UsersBot')  
-send(msg.chat_id_, msg.id_,'⎙╮احصائيات البوت \n\n⎙╮عدد المجموعات *~ '..Groups..'\n⎙╮عدد المشتركين ~ '..Users..'*')
+send(msg.chat_id_, msg.id_,'⎙╮احصائيات البوت \n\n⎙╮ عدد المجموعات *~ '..Groups..'\n⎙╮ عدد المشتركين ~ '..Users..'*')
 end
 if text == 'ضع اسم للبوت ®' then 
 database:setex(bot_id..'TiTan:Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -7176,7 +7471,7 @@ if sendok == 0 then
 send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد مشتركين وهميين')   
 else
 local ok = #pv - sendok
-send(msg.chat_id_, msg.id_,'*⎙╮عدد المشتركين الان ~ '..#pv..'\n??︙تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
+send(msg.chat_id_, msg.id_,'*⎙╮ عدد المشتركين الان ~ '..#pv..'\n⎙╮ تم العثور على ~ '..sendok..' مشترك قام بحظر البوت\n⎙╮اصبح عدد المشتركين الان ~ '..ok..' مشترك *')   
 end
 end
 end,nil)
