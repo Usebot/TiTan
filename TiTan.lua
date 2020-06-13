@@ -6375,94 +6375,7 @@ sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
 end,nil)
 end
 end
-if text == 'الملفات' and DevTiTan(msg) then
-t = '⎙╮جميع الملفات : \n ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n'
-i = 0
-for v in io.popen('ls TiTan_Files'):lines() do
-if v:match(".lua$") then
-i = i + 1
-t = t..i..'*~ '..v..'*\n'
-end
-end
-send(msg.chat_id_, msg.id_,t)
-end
-if text == "متجر الملفات" or text == 'المتجر' then
-if DevTiTan(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/getfile.json")
-if res == 200 then
-local Get_info, res = pcall(JSON.decode,Get_Files);
-vardump(res.plugins_)
-if Get_info then
-local TextS = "\n⎙╮اهلا بك متجر بوشنكي  \n⎙╮ملفات السورس ↓ \nꔹꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹꔹ\n\n"
-local TextE = "\nꔹꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹꔹ\n⎙╮تدل علامة (✔︎) الملف مفعل\n".."⎙╮تدل علامة (✘) الملف معطل\nꔹꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹꔹ\n⎙╮Ch ~⪼ @TiTancilX\n"
-local NumFile = 0
-for name,Info in pairs(res.plugins_) do
-local Check_File_is_Found = io.open("TiTan_Files/"..name,"r")
-if Check_File_is_Found then
-io.close(Check_File_is_Found)
-CeckFile = "(✔︎)"
-else
-CeckFile = "(✘)"
-end
-NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."~⪼* {"..name..'} ~⪼ '..CeckFile..'\n[🔍 - Link Files]('..Info..')\n'
-end
-send(msg.chat_id_, msg.id_,TextS..TextE) 
-end
-else
-send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد اتصال من ال api \n") 
-end
-return false
-end
-end
 
-if text and text:match("^(تعطيل ملف) (.*)(.lua)$") and DevTiTan(msg) then
-local name_t = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
-local file = name_t[2]..'.lua'
-local file_bot = io.open("TiTan_Files/"..file,"r")
-if file_bot then
-io.close(file_bot)
-t = "*⎙╮ الملف ~⪼ {"..file.."}\n⎙╮ تم تعطيله وحذفه بنجاح \n✓*"
-else
-t = "*⎙╮ بالتاكيد تم تعطيل وحذف ملف ~⪼ {"..file.."} \n✓*"
-end
-local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/Files_TiTan/"..file)
-if res == 200 then
-os.execute("rm -fr TiTan_Files/"..file)
-send(msg.chat_id_, msg.id_,t) 
-dofile('TiTan.lua')  
-else
-send(msg.chat_id_, msg.id_,"*⎙╮ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
-end
-return false
-end
-if text and text:match("^(تفعيل ملف) (.*)(.lua)$") and DevTiTan(msg) then
-local name_t = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
-local file = name_t[2]..'.lua'
-local file_bot = io.open("TiTan_Files/"..file,"r") 
-if file_bot then
-io.close(file_bot)
-t = "*⎙╮ بالتاكيد تم تنزيل وتفعيل ملف ~⪼ {"..file.."} \n✓*"
-else
-t = "*⎙╮ الملف ~⪼ {"..file.."}\n⎙╮ تم تنزيله وتفعيله بنجاح \n💥*"
-end
-local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/Files_TiTan/"..file)
-if res == 200 then
-local chek = io.open("TiTan_Files/"..file,'w+')
-chek:write(json_file)
-chek:close()
-send(msg.chat_id_, msg.id_,t) 
-dofile('TiTan.lua')  
-else
-send(msg.chat_id_, msg.id_,"*⎙╮ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
-end
-return false
-end
-if text == "مسح جميع الملفات" and DevTiTan(msg) then
-os.execute("rm -fr TiTan_Files/*")
-send(msg.chat_id_,msg.id_,"⎙╮ تم حذف جميع الملفات")
-return false
-end
 if text == 'حذف كليشه المطور' and DevTiTan(msg) then
 database:del(bot_id..'TiTan:Text_Dev')
 send(msg.chat_id_, msg.id_,'⎙╮ تم حذف كليشه المطور')
@@ -6561,11 +6474,11 @@ return false
 end
 
 if text == 'تفعيل الردود' and Owner(msg) then  
-send(msg.chat_id_, msg.id_, '🔖┋تم تفعيل الردود')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تفعيل الردود')
 database:del(bot_id..'lock:add'..msg.chat_id_)
 end
 if text == 'تعطيل الردود' and Owner(msg) then  
-send(msg.chat_id_, msg.id_, '✔┋تم تعطيل الردود')
+send(msg.chat_id_, msg.id_, '⎙╮ تم تعطيل الردود')
 database:set(bot_id..'lock:add'..msg.chat_id_, true)
 end
 -------------
@@ -6892,15 +6805,15 @@ send(msg.chat_id_, msg.id_, "⎙╮ تم التحديث")
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 Text = [[
-⎙╮Welcome To Source Titan . 
+⎙ ↬[Channel Titan](https://t.me/joinchat/AAAAAEWcdg2i_Q7bSqSaIA) 
 
-⎙╮ قناة السورس ](https://t.me/joinchat/AAAAAERpvVzYnV_p2U3f8Q)
+⎙ ↬[Information](https://t.me/joinchat/AAAAAEvN2TjHUHaAd8iiMA)
 
-⎙╮ قناة التحديثات ](https://t.me/joinchat/AAAAAFjdkfaJHgTTkiehZg)
+⎙ ↬[Twasl Source](t.me/Ta2bot)
 
-⎙╮ تواصل السورس](https://t.me/Ta2bot)
-...................................................
-⎙╮ تم تطويره في عام 2020/6/12
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+
+⎙ ↬ تم تطويره في عام 2020/6/13
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
