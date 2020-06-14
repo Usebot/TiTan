@@ -6266,6 +6266,34 @@ end,nil)
 end
 return false
 end
+if text == 'فحص البوت' and Manager(msg) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. msg.chat_id_ ..'&user_id='.. bot_id..'')
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.ok == true then
+if Json_Info.result.status == "administrator" then
+if Json_Info.result.can_change_info == true then
+info = 'ꪜ' else info = '✘' end
+if Json_Info.result.can_delete_messages == true then
+delete = 'ꪜ' else delete = '✘' end
+if Json_Info.result.can_invite_users == true then
+invite = 'ꪜ' else invite = '✘' end
+if Json_Info.result.can_pin_messages == true then
+pin = 'ꪜ' else pin = '✘' end
+if Json_Info.result.can_restrict_members == true then
+restrict = 'ꪜ' else restrict = '✘' end
+if Json_Info.result.can_promote_members == true then
+promote = 'ꪜ' else promote = '✘' end 
+send(msg.chat_id_,msg.id_,'\n⎙╮  اهلا عزيزي البوت هنا ادمن'..'\n⎙╮  وصلاحياته هي ↓ \nٴ━━━━━━━━━━'..'\n⎙╮  تغير معلومات المجموعه ↞ ❴ '..info..' ❵'..'\n⎙╮  حذف الرسائل ↞ ❴ '..delete..' ❵'..'\n⎙╮  حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n⎙╮  دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n⎙╮  تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n⎙╮  اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
+end
+end
+end
+if text:match("^كول (.*)$") then
+local txt = {string.match(text, "^(كول) (.*)$")}
+send(msg.chat_id_, 0, txt[2], "md")
+local id = msg.id_
+local msgs = {
+[0] = id
+}
 if text == ("تحديث السورس") and DevTiTan(msg) then  
 send(msg.chat_id_,msg.id_,'⎙╮  تم التحديث')
 os.execute('rm -rf TiTan.lua')
