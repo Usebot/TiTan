@@ -4651,6 +4651,59 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
+if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then 
+function Function_TiTan(extra, result, success)
+if tonumber(SUDO) == tonumber(result.sender_user_id_) then
+send(msg.chat_id_, msg.id_,"⎙╮  لا تستطيع تنزيل المطور الاساسي")
+return false 
+end
+if database:sismember(bot_id.."TiTan:Sudo:User",result.sender_user_id_) then
+dev = "المطور ،" else dev = "" end
+if database:sismember(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_) then
+crr = "منشئ اساسي ،" else crr = "" end
+if database:sismember(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_) then
+cr = "منشئ ،" else cr = "" end
+if database:sismember(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_) then
+own = "مدير ،" else own = "" end
+if database:sismember(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_) then
+mod = "ادمن ،" else mod = "" end
+if database:sismember(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_) then
+vip = "مميز ،" else vip = ""
+end
+if Rank_Checking(result.sender_user_id_,msg.chat_id_) ~= false then
+send(msg.chat_id_, msg.id_,"\n⎙╮  تم تنزيل الشخص من الرتب التاليه \n⎙╮  { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." } \n")
+else
+send(msg.chat_id_, msg.id_,"\n⎙╮ ليس لديه رتب حتى استطيع تنزيله \n")
+end
+if tonumber(Id_Sudo) == tonumber(msg.sender_user_id_) then
+database:srem(bot_id.."TiTan:Sudo:User", result.sender_user_id_)
+database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_,result.sender_user_id_)
+database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
+elseif database:sismember(bot_id.."TiTan:Sudo:User",msg.sender_user_id_) then
+database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_,result.sender_user_id_)
+elseif database:sismember(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, msg.sender_user_id_) then
+database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Constructor"..msg.chat_id_, result.sender_user_id_)
+elseif database:sismember(bot_id.."TiTan:Constructor"..msg.chat_id_, msg.sender_user_id_) then
+database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Manager"..msg.chat_id_, result.sender_user_id_)
+elseif database:sismember(bot_id.."TiTan:Manager"..msg.chat_id_, msg.sender_user_id_) then
+database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_, result.sender_user_id_)
+database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_, result.sender_user_id_)
+end
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
+end
 if text == "تاك للكل" and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
