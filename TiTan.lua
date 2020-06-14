@@ -5519,10 +5519,10 @@ local get_id = get_id:gsub('#game',Num_Games)
 local get_id = get_id:gsub('#photos',Total_Photp) 
 sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,get_id)
 else
-sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'⎙╮ '..Description..'\n⎙╮  ʏᴏᴜʀ ɪᴅ ➣ '..Id..'\n⎙╮  ᴜѕᴇʀɴᴀᴍᴇ ➣ '..UserName_User..'\n⎙╮  ѕᴛᴀᴛѕ ➣ '..Status_Gps..'\n⎙╮  ᴍѕɢѕ ➣ '..NumMsg..'\n⎙╮  ᴇᴅɪᴛ ᴍsɢ ➣ '..message_edit..' \n⎙╮  ᴅᴇᴛᴀɪʟs ➣ '..TotalMsg..'\n⎙╮  ɢᴀᴍᴇ ➣ '..Num_Games)
+sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,' '..Description..'\n⎙ ╮ ايديك ◍ '..Id..'\n⎙ ╮ معرفك ◍ '..UserName_User..'\n⎙ ╮ رتبتك ◍ '..Status_Gps..'\n⎙ ╮ رسائلك ◍ '..NumMsg..'\n⎙ ╮ تعديلاتك ◍ '..message_edit..' \n⎙ ╮ تفاعلك ◍ '..TotalMsg..'\n⎙ ╮ نقاطك ◍ '..Num_Games)
 end
 else
-send(msg.chat_id_, msg.id_,'\n'..'\n*⎙╮  ʏᴏᴜʀ ɪᴅ ➣ '..Id..'\n⎙╮  ᴜѕᴇʀɴᴀᴍᴇ ➣ *['..UserName_User..']*\n⎙╮  ѕᴛᴀᴛѕ ➣ '..Status_Gps..'\n⎙╮  ᴍѕɢѕ ➣ '..NumMsg..'\n⎙╮  ᴇᴅɪᴛ ᴍsɢ ➣ '..message_edit..' \n⎙╮  ᴅᴇᴛᴀɪʟs ➣ '..TotalMsg..'\n⎙╮  ɢᴀᴍᴇ ➣ '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n'..'\n*⎙ ╮ ايديك ◍ '..Id..'\n⎙ ╮ معرفك ◍ *['..UserName_User..']*\n⎙ ╮ رتبتك ◍ '..Status_Gps..'\n⎙ ╮ رسائلك ◍ '..NumMsg..'\n⎙ ╮ تعديلاتك ◍ '..message_edit..' \n⎙ ╮ تفاعلك ◍ '..TotalMsg..'\n⎙ ╮ نقاطك ◍ '..Num_Games..'*') 
 end
 else
 if get_id then
@@ -5538,7 +5538,7 @@ local get_id = get_id:gsub('#game',Num_Games)
 local get_id = get_id:gsub('#photos',Total_Photp) 
 send(msg.chat_id_, msg.id_,'['..get_id..']') 
 else
-send(msg.chat_id_, msg.id_,'\n*⎙╮  ʏᴏᴜʀ ɪᴅ ➣ '..Id..'\n⎙╮  ᴜѕᴇʀɴᴀᴍᴇ ➣ *['..UserName_User..']*\n⎙╮  ѕᴛᴀᴛѕ ➣ '..Status_Gps..'\n⎙╮  ᴍѕɢѕ ➣ '..NumMsg..'\n⎙╮  ᴇᴅɪᴛ ᴍsɢ ➣ '..message_edit..' \n⎙╮  ᴅᴇᴛᴀɪʟs ➣ '..TotalMsg..'\n⎙╮  ɢᴀᴍᴇ ➣ '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n*⎙ ╮ ايديك ◍ '..Id..'\n⎙ ╮ معرفك ◍ *['..UserName_User..']*\n⎙ ╮ رتبتك ◍ '..Status_Gps..'\n⎙ ╮ رسائلك ◍ '..NumMsg..'\n⎙ ╮ تعديلاتك ◍ '..message_edit..' \n⎙ ╮ تفاعلك ◍ '..TotalMsg..'\n⎙ ╮ نقاطك ◍ '..Num_Games..'*') 
 end
 end
 end,nil)   
