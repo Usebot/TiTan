@@ -4652,12 +4652,6 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
 if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then
-local username = text:match("^تنزيل الكل @(.*)$")
-function Function_TiTan(extra, result, success)
-if tonumber(SUDO) == tonumber(result.sender_user_id_) then
-send(msg.chat_id_, msg.id_,"⎙╮  لا تستطيع تنزيل المطور الاساسي")
-return false 
-end
 if database:sismember(bot_id.."TiTan:Sudo:User",result.sender_user_id_) then
 dev = "المطور ،" else dev = "" end
 if database:sismember(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_) then
@@ -5954,7 +5948,7 @@ name = mktlf[math.random(#mktlf)]
 database:del(bot_id.."TiTan:Set:Moktlf:Bot"..msg.chat_id_)
 database:set(bot_id.."TiTan::Set:Moktlf"..msg.chat_id_,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
-name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
+name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀??💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
 name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
