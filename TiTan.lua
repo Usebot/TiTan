@@ -7598,7 +7598,7 @@ os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/run.lua')
 dofile('TiTan.lua')  
 return false
 end
-if text == "تحديث الملفات ??️" then
+if text == "تحديث الملفات 🗂️" then
 dofile("TiTan.lua")  
 send(msg.chat_id_, msg.id_, "⎙╮  تم التحديث")
 end
