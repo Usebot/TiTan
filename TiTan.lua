@@ -6266,13 +6266,6 @@ end,nil)
 end
 return false
 end
-if text:match("^كول (.*)$") then
-local txt = {string.match(text, "^(كول) (.*)$")}
-send(msg.chat_id_, 0, txt[2], "md")
-local id = msg.id_
-local msgs = {
-[0] = id
-}
 if text == ("تحديث السورس") and DevTiTan(msg) then  
 send(msg.chat_id_,msg.id_,'⎙╮  تم التحديث')
 os.execute('rm -rf TiTan.lua')
