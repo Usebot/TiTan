@@ -4651,7 +4651,8 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 end
-if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then 
+if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then
+local username = text:match("^تنزيل الكل @(.*)$")
 function Function_TiTan(extra, result, success)
 if tonumber(SUDO) == tonumber(result.sender_user_id_) then
 send(msg.chat_id_, msg.id_,"⎙╮  لا تستطيع تنزيل المطور الاساسي")
