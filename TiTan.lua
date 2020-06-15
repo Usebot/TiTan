@@ -6269,9 +6269,9 @@ end
 if text == ("تحديث السورس") and DevTiTan(msg) then  
 send(msg.chat_id_,msg.id_,'⎙╮  تم التحديث')
 os.execute('rm -rf TiTan.lua')
-os.execute('rm -rf run.lua')
+os.execute('rm -rf start.lua')
 os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua')
-os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/run.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/start.lua')
 dofile('TiTan.lua')  
 return false
 end
@@ -7592,9 +7592,9 @@ end
 if text == "تحديث السورس ☑️" then
 send(msg.chat_id_,msg.id_,'⎙╮  تم التحديث')
 os.execute('rm -rf TiTan.lua')
-os.execute('rm -rf run.lua')
+os.execute('rm -rf start.lua')
 os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua')
-os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/run.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/TiTan/master/start.lua')
 dofile('TiTan.lua')  
 return false
 end
