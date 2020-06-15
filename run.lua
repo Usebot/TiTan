@@ -52,6 +52,8 @@ RunTiTan:write([[
 #!/usr/bin/env bash
 cd $HOME/TiTan
 token="]]..database:get(Server_TiTan.."Token_TiTan")..[["
+rm -fr TiTan.lua
+wget "https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./TiTan.lua -p PROFILE --bot=$token
