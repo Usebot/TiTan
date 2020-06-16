@@ -4667,12 +4667,12 @@ x = x + 1
 if database:get(bot_id.."TiTan:User:Name"..v.user_id_) then
 t = t..""..x.." - {[@"..database:get(bot_id.."TiTan:User:Name"..v.user_id_).."]}\n"
 else
+t = t..""..x.." - {"..v.user_id_.."}\n"
 end
 end
 send(msg.chat_id_,msg.id_,t)
 end,nil)
 end
-
 if text == "رتبتي" then
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
 send(msg.chat_id_, msg.id_,"⎙╮  رتبتك في البوت ~⪼ "..rtp)
@@ -6147,6 +6147,16 @@ end
 end
 end
 end,nil)   
+end
+if text == 'تفعيل تعليق الصور' and Owner(msg) then
+database:del(bot_id..'TiTan:Cheng:Photo'..msg.chat_id_)
+send(msg.chat_id_, msg.id_,'⎙╮  تم تفعيل تعليق الصور')
+return false
+end
+if text == 'تعطيل تعليق الصور' and Owner(msg) then
+database:set(bot_id..'TiTan:Cheng:Photo'..msg.chat_id_,true)
+send(msg.chat_id_, msg.id_,'⎙╮  تم تعطيل تعليق الصور')
+return false
 end
 if text == 'تفعيل ضافني' and Owner(msg) then   
 database:del(bot_id..'TiTan:Lock:Added:Me'..msg.chat_id_)  
