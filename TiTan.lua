@@ -6119,46 +6119,6 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
 end
-if text then 
-if not database:get(bot_id..'TiTan:Cheng:Photo'..msg.chat_id_) then
-tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
-if data.id_ then 
-if data.id_ ~= bot_id then 
-local TiTanChengPhoto = database:get(bot_id.."TiTan:Cheng:Photo"..data.id_)
-if not data.profile_photo_ then 
-if TiTanChengPhoto then 
-send(msg.chat_id_, msg.id_, "حذف كل صوره الحلو 😂👌🏻")
-database:del(bot_id.."TiTan:Cheng:Photo"..data.id_) 
-end
-end
-if data.profile_photo_.big_.persistent_id_ then 
-if TiTanChengPhoto ~= data.profile_photo_.big_.persistent_id_ then 
-local Text = {
-"شوكت غيرت صورتك 😉❤️ ",
-  "منور صوره جديده ياب 🤣",
-  "ها شو غيرت صورتك 🤔😹",
-  "كل شوي مغير صوره شتحس 🙂",
-  "وفووف الصوره قميله 🤤",
-  "شهل صوره يكيوت 🥺💞",
-}
-send(msg.chat_id_, msg.id_,Text[math.random(#Text)])
-end  
-database:set(bot_id.."TiTan:Cheng:Photo"..data.id_, data.profile_photo_.big_.persistent_id_) 
-end
-end
-end
-end,nil)   
-end
-if text == 'تفعيل تعليق الصور' and Owner(msg) then
-database:del(bot_id..'TiTan:Cheng:Photo'..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'⎙╮  تم تفعيل تعليق الصور')
-return false
-end
-if text == 'تعطيل تعليق الصور' and Owner(msg) then
-database:set(bot_id..'TiTan:Cheng:Photo'..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_,'⎙╮  تم تعطيل تعليق الصور')
-return false
-end
 if text == 'تفعيل ضافني' and Owner(msg) then   
 database:del(bot_id..'TiTan:Lock:Added:Me'..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,'⎙╮  تم تفعيل امر منو ضافني') 
