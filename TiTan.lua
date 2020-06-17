@@ -4695,11 +4695,6 @@ end
 if text == 'ايديي' then
 send(msg.chat_id_, msg.id_,'⎙╮  ايديك ← '..msg.sender_user_id_)
 end
-if text:match('^الحساب (%d+)$') then
-local id = text:match('^الحساب (%d+)$')
-local text = '⎙╮  اضغط هنا لمشاهدة الحساب •'
-tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=19, user_id_=id}}}}, dl_cb, nil)
-end
 if text==("عدد الكروب") and Addictive(msg) then  
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_,msg.id_,"⎙╮  البوت ليس ادمن هنا \n") 
