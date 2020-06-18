@@ -399,7 +399,7 @@ for TiTan in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = TiTan
 end
 local NameUser = "⎙╮  بواسطه - ["..data.first_name_.."](T.me/"..UserName..")"
-local NameUserr = "⎙╮  العضو -  ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUserr = "⎙╮  العضو ⋙  ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "lock" then
 send(msg.chat_id_, msg.id_,NameUser.."\n"..text.."\n⎙╮ خاصية - المسح\n")
 return false
@@ -3032,19 +3032,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم رفعه "..RTPA.." في البوت\n")   
 end
 end,nil)   
 end   
@@ -3064,19 +3064,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..data.first_name_.."](t.me/"..(data.username_ or "TiTan")..")".."✓\n⎙╮  تم تنزيلة من "..RTPA.." البوت\n")   
 end
 end,nil)   
 end   
@@ -3096,19 +3096,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
 database:sadd(bot_id.."TiTan:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم رفعه "..text1[2].." في البوت ")   
 end
 else
 info = "⎙╮ المعرف غلط"
@@ -3131,19 +3131,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local TiTanrt = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if TiTanrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
 database:srem(bot_id.."TiTan:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TiTan:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif TiTanrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⎙╮  العضو - ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
+send(msg.chat_id_, msg.id_,"\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(text1[3] or "TiTan")..")".."✓\n⎙╮  تم تنريله من "..text1[2].." البوت")   
 end
 else
 info = "⎙╮ المعرف غلط"
@@ -3625,14 +3625,14 @@ end
 if text == "تعطيل الطرد" or text == "تعطيل الحظر" then
 if Constructor(msg) then
 database:set(bot_id.."Ban:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '⎙╮  تم تعطيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '⎙╮  تم تعطيل ⋙ الحظر ~ والطرد ')
 return false
 end
 end
 if text == "تفعيل الطرد" or text == "تفعيل الحظر" then
 if Constructor(msg) then
 database:del(bot_id.."Ban:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '⎙╮  تم تفعيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '⎙╮  تم تفعيل ⋙ الحظر ~ والطرد ')
 return false
 end
 end
@@ -3645,7 +3645,7 @@ send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لاي�
 return false 
 end
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '⎙╮  تم تعطيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '⎙╮  تم تعطيل رفع ⋙ الادمن ~ المميز ')
 return false
 end
 end
@@ -3658,7 +3658,7 @@ send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لاي�
 return false 
 end
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '⎙╮  تم تفعيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '⎙╮  تم تفعيل رفع ⋙ الادمن ~ المميز ')
 return false
 end
 end
@@ -3792,7 +3792,7 @@ if text == "ضع ترحيب" or text == "وضع ترحيب" then
 if Addictive(msg) then
 database:setex(bot_id.."TiTan:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
 t  = "⎙╮ ارسل لي الترحيب الان"
-tt = "\n⎙╮ تستطيع اضافة مايلي !\n⎙╮ دالة عرض الاسم ~⪼{`name`}\n⎙╮ دالة عرض المعرف ~⪼{`user`}"
+tt = "\n⎙╮ تستطيع اضافة مايلي !\n⎙╮ دالة عرض الاسم ⋙{`name`}\n⎙╮ دالة عرض المعرف ⋙{`user`}"
 send(msg.chat_id_, msg.id_,t..tt) 
 end
 return false  
@@ -3839,7 +3839,7 @@ local list = database:smembers(bot_id.."TiTan:List:Filter"..msg.chat_id_)
 t = "\n⎙╮ قائمة المنع \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do  
 local TiTan_Msg = database:get(bot_id.."TiTan:Add:Filter:Rp2"..v..msg.chat_id_)   
-t = t..""..k.."- "..v.." ~⪼ {"..TiTan_Msg.."}\n"    
+t = t..""..k.."- "..v.." ⋙ {"..TiTan_Msg.."}\n"    
 end  
 if #list == 0 then  
 t = "⎙╮  لا يوجد كلمات ممنوعه"  
@@ -4128,37 +4128,37 @@ end
 if text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
 database:set(bot_id.."TiTan:Sudo:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المطور الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المطور الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
 database:set(bot_id.."TiTan:BasicConstructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المنشئ الاساسي الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المنشئ الاساسي الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المنشئ (.*)$") 
 database:set(bot_id.."TiTan:Constructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المنشئ الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المنشئ الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المدير (.*)$") 
 database:set(bot_id.."TiTan:Manager:Rd"..msg.chat_id_,Teext) 
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المدير الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المدير الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد الادمن (.*)$") 
 database:set(bot_id.."TiTan:Mod:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد الادمن الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد الادمن الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المميز (.*)$") 
 database:set(bot_id.."TiTan:Special:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المميز الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المميز الى ⋙ "..Teext)
 end
 if text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد العضو (.*)$") 
 database:set(bot_id.."TiTan:Memp:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد العضو الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد العضو الى ⋙ "..Teext)
 end
 
 
@@ -4198,7 +4198,7 @@ db = "ملف 📁"
 elseif database:get(bot_id.."TiTan:Add:Rd:Manager:Audio"..v..msg.chat_id_) then
 db = "اغنيه 🎵"
 end
-text = text..""..k..">> ("..v..") ~⪼ {"..db.."}\n"
+text = text..""..k..">> ("..v..") ⋙ {"..db.."}\n"
 end
 if #list == 0 then
 text = "⎙╮  لا يوجد ردود للمدير"
@@ -4400,7 +4400,7 @@ db = "ملف 📁"
 elseif database:get(bot_id.."TiTan:Add:Rd:Sudo:Audio"..v) then
 db = "اغنيه 🎵"
 end
-text = text..""..k.." >> ("..v..") ~⪼ {"..db.."}\n"
+text = text..""..k.." >> ("..v..") ⋙ {"..db.."}\n"
 end
 if #list == 0 then
 text = "⎙╮  لا يوجد ردود للمطور"
@@ -4658,7 +4658,7 @@ end,nil)
 end
 if text == "رتبتي" then
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
-send(msg.chat_id_, msg.id_,"⎙╮  رتبتك في البوت ~⪼ "..rtp)
+send(msg.chat_id_, msg.id_,"⎙╮  رتبتك في البوت ⋙ "..rtp)
 end
 if text == "اسمي"  then 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
@@ -4742,7 +4742,7 @@ if DevTiTan(msg) then
 database:srem(bot_id.."TiTan:GBan:User",result.id_)
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.id_)
-usertext = "\n⎙╮  العضو -  ~⪼ ["..result.title_.."](t.me/"..(username or "kenwa")..")"
+usertext = "\n⎙╮  العضو ⋙ ["..result.title_.."](t.me/"..(username or "kenwa")..")"
 status  = "\n⎙╮  تم الغاء القيود عنه  "
 texts = usertext..status
 send(msg.chat_id_, msg.id_,texts)
@@ -4769,7 +4769,7 @@ else
 database:srem(bot_id.."TiTan:Ban:User"..msg.chat_id_,result.sender_user_id_)
 database:srem(bot_id.."TiTan:Muted:User"..msg.chat_id_,result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = "\n⎙╮  العضو -  ["..data.first_name_.."](t.me/"..(data.username_ or "kenwa").."✓)"
+usertext = "\n⎙╮  العضو ⋙  ["..data.first_name_.."](t.me/"..(data.username_ or "kenwa").."✓)"
 status  = "\n⎙╮  تم الغاء القيود عنه  "
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
@@ -4796,7 +4796,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-send(msg.chat_id_, msg.id_,"⎙╮  الحظر العام ~⪼ "..GBan.."\n⎙╮  الحظر ~⪼ "..Ban.."\n⎙╮  الكتم ~⪼ "..Muted)
+send(msg.chat_id_, msg.id_,"⎙╮  الحظر العام ⋙ "..GBan.."\n⎙╮  الحظر ⋙ "..Ban.."\n⎙╮  الكتم ⋙ "..Muted)
 else
 send(msg.chat_id_, msg.id_,"⎙╮  المعرف غلط")
 end
@@ -4821,7 +4821,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-Textt = "⎙╮  الحظر العام ~⪼ "..GBan.."\n⎙╮  الحظر ~⪼ "..Ban.."\n⎙╮  الكتم ~⪼ "..Muted..""
+Textt = "⎙╮  الحظر العام ⋙ "..GBan.."\n⎙╮  الحظر ⋙ "..Ban.."\n⎙╮  الكتم ⋙ "..Muted..""
 send(msg.chat_id_, msg.id_,Textt)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
@@ -5333,35 +5333,35 @@ local text =
 "\n⎙╮ علامة ال {✓} تعني مفعل"..
 "\n⎙╮ علامة ال {✘} تعني معطل"..
 "\n••━━⎙━━━━⎙━━••  "..
-"\n⎙╮ الروابط ~⪼ "..lock_links..
-"\n".."⎙╮ المعرفات ~⪼ "..lock_user..
-"\n".."⎙╮ التاك ~⪼ "..lock_hash..
-"\n".."⎙╮ البوتات ~⪼ "..lock_bots..
-"\n".."⎙╮ التوجيه ~⪼ "..lock_fwd..
-"\n".."⎙╮  التثبيت ~⪼ "..lock_pin..
-"\n".."⎙╮ الاشعارات ~⪼ "..lock_tagservr..
-"\n".."⎙╮ الماركدون ~⪼ "..lock_mark..
-"\n".."⎙╮ التعديل ~⪼ "..lock_edit..
+"\n⎙╮ الروابط ⋙ "..lock_links..
+"\n".."⎙╮ المعرفات ⋙ "..lock_user..
+"\n".."⎙╮ التاك ⋙ "..lock_hash..
+"\n".."⎙╮ البوتات ⋙ "..lock_bots..
+"\n".."⎙╮ التوجيه ⋙ "..lock_fwd..
+"\n".."⎙╮  التثبيت ⋙ "..lock_pin..
+"\n".."⎙╮ الاشعارات ⋙ "..lock_tagservr..
+"\n".."⎙╮ الماركدون ⋙ "..lock_mark..
+"\n".."⎙╮ التعديل ⋙ "..lock_edit..
 "\n••━━⎙━━━━⎙━━••  "..
-"\n".."⎙╮ الكلايش ~⪼ "..lock_spam..
-"\n".."⎙╮ الكيبورد ~⪼ "..lock_inlin..
-"\n".."⎙╮ الاغاني ~⪼ "..lock_vico..
-"\n".."⎙╮ المتحركه ~⪼ "..lock_gif..
-"\n".."⎙╮ الملفات ~⪼ "..lock_file..
-"\n".."⎙╮ الدردشه ~⪼ "..lock_text..
-"\n".."⎙╮ الفيديو ~⪼ "..lock_ved..
-"\n".."⎙╮ الصور ~⪼ "..lock_photo..
+"\n".."⎙╮ الكلايش ⋙ "..lock_spam..
+"\n".."⎙╮ الكيبورد ⋙ "..lock_inlin..
+"\n".."⎙╮ الاغاني ⋙ "..lock_vico..
+"\n".."⎙╮ المتحركه ⋙ "..lock_gif..
+"\n".."⎙╮ الملفات ⋙ "..lock_file..
+"\n".."⎙╮ الدردشه ⋙ "..lock_text..
+"\n".."⎙╮ الفيديو ⋙ "..lock_ved..
+"\n".."⎙╮ الصور ⋙ "..lock_photo..
 "\n••━━⎙━━━━⎙━━••  "..
-"\n".."⎙╮ الصوت ~⪼ "..lock_muse..
-"\n".."⎙╮ الملصقات ~⪼ "..lock_ste..
-"\n".."⎙╮ الجهات ~⪼ "..lock_phon..
-"\n".."⎙╮ الدخول ~⪼ "..lock_join..
-"\n".."⎙╮ الاضافه ~⪼ "..lock_add..
-"\n".."⎙╮ السيلفي ~⪼ "..lock_self..
-"\n".."⎙╮ الالعاب ~⪼ "..lock_geam..
-"\n".."⎙╮ التكرار ~⪼ "..flood..
-"\n".."⎙╮ الترحيب ~⪼ "..welcome..
-"\n".."⎙╮  عدد التكرار ~⪼ "..Num_Flood..
+"\n".."⎙╮ الصوت ⋙ "..lock_muse..
+"\n".."⎙╮ الملصقات ⋙ "..lock_ste..
+"\n".."⎙╮ الجهات ⋙ "..lock_phon..
+"\n".."⎙╮ الدخول ⋙ "..lock_join..
+"\n".."⎙╮ الاضافه ⋙ "..lock_add..
+"\n".."⎙╮ السيلفي ⋙ "..lock_self..
+"\n".."⎙╮ الالعاب ⋙ "..lock_geam..
+"\n".."⎙╮ التكرار ⋙ "..flood..
+"\n".."⎙╮ الترحيب ⋙ "..welcome..
+"\n".."⎙╮  عدد التكرار ⋙ "..Num_Flood..
 "\n\n.*"
 send(msg.chat_id_, msg.id_,text)     
 end    
@@ -5971,17 +5971,17 @@ if text == 'الالعاب' then
 Teext = [[
 ⎙╮ قائمه الالعاب الموجوده 
 ••━━⎙━━━━⎙━━•• 
-⎙╮ لعبة البات ~⪼ بات
-⎙╮ لعبة التخمين ~⪼ خمن
-⎙╮ لعبه الاسرع ~⪼ الاسرع
-⎙╮ لعبة السمايلات ~⪼ سمايلات
-⎙╮ لعبة المختلف ~⪼ المختلف
-⎙╮ لعبة الامثله ~⪼ امثله
-⎙╮ لعبة العكس ~⪼ العكس 
-⎙╮ لعبة الحزوره ~⪼ حزوره
-⎙╮ لعبة المعاني ~⪼ معاني
+⎙╮ لعبة البات ⋙ بات
+⎙╮ لعبة التخمين ⋙ خمن
+⎙╮ لعبه الاسرع ⋙ الاسرع
+⎙╮ لعبة السمايلات ⋙ سمايلات
+⎙╮ لعبة المختلف ⋙ المختلف
+⎙╮ لعبة الامثله ⋙ امثله
+⎙╮ لعبة العكس ⋙ العكس 
+⎙╮ لعبة الحزوره ⋙ حزوره
+⎙╮ لعبة المعاني ⋙ معاني
 ••━━⎙━━━━⎙━━•• 
-⎙╮ Ch ~⪼ @TiTancil
+⎙╮ Ch ⋙ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Teext) 
 end
@@ -6147,9 +6147,9 @@ for i = 1, #pv do
 tdcli_function({ID='GetChat',chat_id_ = pv[i]},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = pv[i], action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,data) 
 if data.ID and data.ID == "Ok"  then
-print('\27[30;33m~⪼~⪼ THE USER IS SAVE ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;33m⋙⋙ THE USER IS SAVE ME ↓\n⋙⋙ '..pv[i]..'\n\27[1;37m')
 else
-print('\27[30;31m~⪼~⪼ THE USER IS BLOCK ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;31m⋙⋙ THE USER IS BLOCK ME ↓\n⋙⋙ '..pv[i]..'\n\27[1;37m')
 database:srem(bot_id..'TiTan:UsersBot',pv[i])  
 sendok = sendok + 1
 end
@@ -6174,19 +6174,19 @@ for i = 1, #group do
 tdcli_function({ID='GetChat',chat_id_ = group[i]
 },function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
-print('\27[30;34m~⪼~⪼ THE BOT IS NOT ADMIN ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;34m⋙⋙ THE BOT IS NOT ADMIN ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 w = w + 1
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;35m~⪼~⪼ THE BOT IS LEFT GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;35m⋙⋙ THE BOT IS LEFT GROUP ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;36m~⪼~⪼ THE BOT IS KICKED GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;36m⋙⋙ THE BOT IS KICKED GROUP ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 end
 if data and data.code_ and data.code_ == 400 then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
@@ -6752,15 +6752,15 @@ send(msg.chat_id_, msg.id_, "⎙╮  تم التحديث")
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 Text = [[
-⎙ ↬[Channel Titan](https://t.me/joinchat/AAAAAEWcdg2i_Q7bSqSaIA) 
+⎙ = TEAM TiTAN
+━━━━━━━━━━━━━
 
-⎙ ↬[Information](https://t.me/joinchat/AAAAAEvN2TjHUHaAd8iiMA)
+⋙ [Channel Source ،](https://t.me/joinchat/AAAAAEWcdg2i_Q7bSqSaIA)
 
-⎙ ↬[Twasl Source](t.me/Ta2bot)
+⋙ [Files Source](t.me/TiTanFiles)
 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-
-⎙ ↬ تم تطويره في عام 2020/6/13
+━━━━━━━━━━━━━
+⎙ = [Twasl Source !](t.me/Ta2bot)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -6780,11 +6780,11 @@ if text == 'الاوامر' and Addictive(msg) then
 Text = [[
 ⎙╮ هناك {5} اوامر لعرضها
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-⎙╮ م1 ~⪼ لعرض اوامر الحمايه
-⎙╮ م2 ~⪼ لعرض اوامر الادمنيه
-⎙╮ م3 ~⪼ لعرض اوامر المدراء
-⎙╮ م4 ~⪼ لعرض اوامر المنشئين
-⎙╮ م5 ~⪼ لعرض اوامر المطورين
+⎙╮ م1 ⋙ لعرض اوامر الحمايه
+⎙╮ م2 ⋙ لعرض اوامر الادمنيه
+⎙╮ م3 ⋙ لعرض اوامر المدراء
+⎙╮ م4 ⋙ لعرض اوامر المنشئين
+⎙╮ م5 ⋙ لعرض اوامر المطورين
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ⎙╮ CH @TiTancil
 ]]
@@ -6824,7 +6824,7 @@ Text = [[
 ⎙╮  الكلايش
 ⎙╮  السيلفي
 ••━━⎙━━━━⎙━━•• 
-⎙╮ Ch ~⪼ @TiTancil
+⎙╮ Ch ⋙ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6973,7 +6973,7 @@ Text = [[
 ⎙╮  ردود المطور 
 ⎙╮  وضع /حذف كليشه المطور 
 
-⎙╮   العضو  ~⪼تحديث  + تحديث السورس 
+⎙╮   العضو  ⋙تحديث  + تحديث السورس 
 
 ⎙╮  تفعيل/تعطيل البوت الخدمي 
 ⎙╮   تعين عدد الاعضاء + العدد
@@ -7176,7 +7176,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' then  
 if DevTiTan(msg) then
-local Text = '⎙╮ مرحبا عزيزي المطور آلاساسي ،\n⎙╮ يمكنك اختيار الامر من الكيبورد\n⎙╮ اضغط على الأمر الذي تـريده !\n⎙╮ Ch ~⪼ @TiTancil'
+local Text = '⎙╮ مرحبا عزيزي المطور آلاساسي ،\n⎙╮ يمكنك اختيار الامر من الكيبورد\n⎙╮ اضغط على الأمر الذي تـريده !\n⎙╮ Ch ⋙ @TiTancil'
 local keyboard = {
 {'تعطيل التواصل ✖️','تفعيل التواصل 🔛'},
 {'ضع اسم للبوت ®','الاحصائيات 📈'},
@@ -7225,12 +7225,12 @@ id_user = result.forward_info_.sender_user_id_
 end     
 tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data) 
 if text == 'حظر' then
-sendText(Id_Sudo,'⎙╮  لشخص ~⪼ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n⎙╮  تم حظره من التواصل ',msg.id_/2097152/0.5,'md')
+sendText(Id_Sudo,'⎙╮  لشخص ⋙ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n⎙╮  تم حظره من التواصل ',msg.id_/2097152/0.5,'md')
 database:sadd(bot_id..'BaN:In:User',data.id_)  
 return false  
 end 
 if text =='الغاء الحظر' then
-sendText(Id_Sudo,'⎙╮ الشخص ~⪼ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n⎙╮  تم الغاء حظره من التواصل ',msg.id_/2097152/0.5,'md')
+sendText(Id_Sudo,'⎙╮ الشخص ⋙ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n⎙╮  تم الغاء حظره من التواصل ',msg.id_/2097152/0.5,'md')
 database:srem(bot_id..'BaN:In:User',data.id_)  
 return false  
 end 
@@ -7284,9 +7284,9 @@ for i = 1, #pv do
 tdcli_function({ID='GetChat',chat_id_ = pv[i]},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = pv[i], action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,data) 
 if data.ID and data.ID == "Ok"  then
-print('\27[30;33m~⪼~⪼ THE USER IS SAVE ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;33m⋙⋙ THE USER IS SAVE ME ↓\n⋙⋙ '..pv[i]..'\n\27[1;37m')
 else
-print('\27[30;31m~⪼~⪼ THE USER IS BLOCK ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;31m⋙⋙ THE USER IS BLOCK ME ↓\n⋙⋙ '..pv[i]..'\n\27[1;37m')
 database:srem(bot_id..'TiTan:UsersBot',pv[i])  
 sendok = sendok + 1
 end
@@ -7311,19 +7311,19 @@ for i = 1, #group do
 tdcli_function({ID='GetChat',chat_id_ = group[i]
 },function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
-print('\27[30;34m~⪼~⪼ THE BOT IS NOT ADMIN ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;34m⋙⋙ THE BOT IS NOT ADMIN ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 w = w + 1
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;35m~⪼~⪼ THE BOT IS LEFT GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;35m⋙⋙ THE BOT IS LEFT GROUP ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;36m~⪼~⪼ THE BOT IS KICKED GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;36m⋙⋙ THE BOT IS KICKED GROUP ↓\n⋙⋙ '..group[i]..'\n\27[1;37m')
 end
 if data and data.code_ and data.code_ == 400 then
 database:srem(bot_id..'TiTan:Chek:Groups',group[i])  
@@ -7673,9 +7673,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.sticker_.set_id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, "⎙╮  عذرا يا ~⪼ { (@"..data.username_..")}\n⎙╮  الملصق الذي ارسلته تم منعه من المجموعه \n") 
+send(msg.chat_id_,0, "⎙╮  عذرا يا ⋙ { (@"..data.username_..")}\n⎙╮  الملصق الذي ارسلته تم منعه من المجموعه \n") 
 else
-send(msg.chat_id_,0, "⎙╮  عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  الملصق الذي ارسلته تم منعه من المجموعه \n") 
+send(msg.chat_id_,0, "⎙╮  عذرا يا ⋙ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  الملصق الذي ارسلته تم منعه من المجموعه \n") 
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7691,9 +7691,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.photo_.id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, 1, "⎙╮  عذرا يا ~⪼ { (@"..data.username_..")}\n⎙╮  الصوره التي ارسلتها تم منعها من المجموعه \n") 
+send(msg.chat_id_,0, 1, "⎙╮  عذرا يا ⋙ { (@"..data.username_..")}\n⎙╮  الصوره التي ارسلتها تم منعها من المجموعه \n") 
 else
-send(msg.chat_id_,0,"⎙╮  عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  الصوره التي ارسلتها تم منعها من المجموعه \n") 
+send(msg.chat_id_,0,"⎙╮  عذرا يا ⋙ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  الصوره التي ارسلتها تم منعها من المجموعه \n") 
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7709,9 +7709,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.animation_.animation_.persistent_id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, "⎙╮  عذرا يا ~⪼ { (@"..data.username_..")}\n⎙╮  المتحركه التي ارسلتها تم منعها من المجموعه \n" ) 
+send(msg.chat_id_,0, "⎙╮  عذرا يا ⋙ { (@"..data.username_..")}\n⎙╮  المتحركه التي ارسلتها تم منعها من المجموعه \n" ) 
 else
-send(msg.chat_id_,0, "⎙╮  عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  المتحركه التي ارسلتها تم منعها من المجموعه \n" )
+send(msg.chat_id_,0, "⎙╮  عذرا يا ⋙ {["..data.first_name_.."](T.ME/JJJUU)}\n⎙╮  المتحركه التي ارسلتها تم منعها من المجموعه \n" )
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7915,7 +7915,7 @@ end
 end
 end
 if (data.ID == "UpdateOption" and data.value_.value_ == "Ready") then
-print('\27[30;32m~⪼~⪼ يرجى الاننتضار لحين تنظيف المجموعات الوهميه ««\n\27[1;37m')
+print('\27[30;32m⋙⋙ يرجى الاننتضار لحين تنظيف المجموعات الوهميه ««\n\27[1;37m')
 local list = database:smembers(bot_id..'TiTan:UsersBot')  
 for k,v in pairs(list) do 
 tdcli_function({ID='GetChat',chat_id_ = v},function(arg,data) end,nil) 
