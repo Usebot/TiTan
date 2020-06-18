@@ -2305,23 +2305,19 @@ database:srem(bot_id.."TiTan:Sudo:User", userid)
 Reply_Status(msg,userid,"reply","⎙╮  تم تنزيلة مطور من البوت")  
 return false 
 end
-if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
+if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
-tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
-if da.status_.ID == "ChatMemberStatusCreator" then
 function Function_TiTan(extra, result, success)
 database:sadd(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","⎙╮  تم رفعة منشئ اساسي في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TiTan, nil)
 return false
-end
-end,nil)
 end
 if text and text:match("^رفع منشئ اساسي @(.*)$") then 
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
