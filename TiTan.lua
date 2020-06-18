@@ -1076,7 +1076,7 @@ local GetWelcomeGroup = database:get(bot_id.."TiTan:Get:Welcome:Group"..msg.chat
 if GetWelcomeGroup then 
 t = GetWelcomeGroup
 else  
-t = "\n• نورت حبي \n•  name \n• user" 
+t = "\n⎙╮܊ ܁ ههلو عمري نورتنا 💞 . \n⎙╮ name \n⎙╮user" 
 end 
 t = t:gsub("name",result.first_name_) 
 t = t:gsub("user",("@"..result.username_ or "لا يوجد")) 
@@ -1989,7 +1989,7 @@ send(msg.chat_id_, msg.id_, "\n⎙╮  تم مسح المحظورين")
 end
 if text == ("قائمه العام") and DevTiTan(msg) then
 local list = database:smembers(bot_id.."TiTan:GBan:User")
-t = "\n⎙╮ قائمة المحظورين عام \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المحظورين عام \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2006,7 +2006,7 @@ return false
 end
 if text == ("المطورين") and DevTiTan(msg) then
 local list = database:smembers(bot_id.."TiTan:Sudo:User")
-t = "\n⎙╮ قائمة مطورين البوت \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة مطورين البوت \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2022,7 +2022,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_)
-t = "\n⎙╮ قائمة المنشئين الاساسين \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المنشئين الاساسين \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2039,7 +2039,7 @@ return false
 end
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id.."TiTan:Constructor"..msg.chat_id_)
-t = "\n⎙╮ قائمة المنشئين \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المنشئين \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2055,7 +2055,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id.."TiTan:Manager"..msg.chat_id_)
-t = "\n⎙╮ قائمة المدراء \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المدراء \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2071,7 +2071,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الادمنيه") and Owner(msg) then
 local list = database:smembers(bot_id.."TiTan:Mod:User"..msg.chat_id_)
-t = "\n⎙╮ قائمة الادمنيه \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة الادمنيه \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2087,7 +2087,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المميزين") and Addictive(msg) then
 local list = database:smembers(bot_id.."TiTan:Special:User"..msg.chat_id_)
-t = "\n⎙╮ قائمة مميزين المجموعه \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة مميزين المجموعه \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2103,7 +2103,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المطايه") and Addictive(msg) then
 local list = database:smembers(bot_id.."TiTan:Mote:User"..msg.chat_id_)
-t = "\n⎙╮ قائمة المطايه\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المطايه\n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2119,7 +2119,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المكتومين") and Addictive(msg) then
 local list = database:smembers(bot_id.."TiTan:Muted:User"..msg.chat_id_)
-t = "\n⎙╮ قائمة المكتومين \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المكتومين \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2136,7 +2136,7 @@ end
 
 if text == ("المحظورين") then
 local list = database:smembers(bot_id.."TiTan:Ban:User"..msg.chat_id_)
-t = "\n⎙╮ قائمة محظورين المجموعه \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة محظورين المجموعه \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2155,7 +2155,7 @@ if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2245,7 +2245,7 @@ if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and D
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2276,7 +2276,7 @@ if text and text:match("^رفع مطور (%d+)$") and DevTiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع مطور (%d+)$")
@@ -2315,7 +2315,7 @@ if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2333,7 +2333,7 @@ if text and text:match("^رفع منشئ اساسي @(.*)$") then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2360,7 +2360,7 @@ if text and text:match("^رفع منشئ اساسي (%d+)$") then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2376,7 +2376,7 @@ if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2394,7 +2394,7 @@ if text and text:match("^تنزيل منشئ اساسي @(.*)$") then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2418,7 +2418,7 @@ if text and text:match("^تنزيل منشئ اساسي (%d+)$") then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
@@ -2435,7 +2435,7 @@ if text == "المنشئين الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
 local list = database:smembers(bot_id.."TiTan:Basic:Constructor"..msg.chat_id_)
-t = "\n⎙╮ قائمة المنشئين الاساسين \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المنشئين الاساسين \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -2468,7 +2468,7 @@ if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2482,7 +2482,7 @@ if text and text:match("^رفع منشئ اساسي @(.*)$") and DevBot(msg) the
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^رفع منشئ اساسي @(.*)$")
@@ -2505,7 +2505,7 @@ if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) the
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
@@ -2517,7 +2517,7 @@ if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2531,7 +2531,7 @@ if text and text:match("^تنزيل منشئ اساسي @(.*)$") and DevBot(msg)
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل منشئ اساسي @(.*)$")
@@ -2551,7 +2551,7 @@ if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg)
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
@@ -2564,7 +2564,7 @@ if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and Bas
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2577,7 +2577,7 @@ if text and text:match("^رفع منشئ @(.*)$") and BasicConstructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^رفع منشئ @(.*)$")
@@ -2600,7 +2600,7 @@ if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع منشئ (%d+)$")
@@ -2611,7 +2611,7 @@ if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_messag
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2625,7 +2625,7 @@ if text and text:match("^تنزيل منشئ @(.*)$") and BasicConstructor(msg) 
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل منشئ @(.*)$")
@@ -2644,7 +2644,7 @@ if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) 
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^تنزيل منشئ (%d+)$")
@@ -2656,7 +2656,7 @@ if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and C
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2670,7 +2670,7 @@ if text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^رفع مدير @(.*)$") 
@@ -2694,7 +2694,7 @@ if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع مدير (%d+)$") 
@@ -2706,7 +2706,7 @@ if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2720,7 +2720,7 @@ if text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل مدير @(.*)$")
@@ -2739,7 +2739,7 @@ if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^تنزيل مدير (%d+)$") 
@@ -2752,7 +2752,7 @@ if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and O
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2770,7 +2770,7 @@ if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^رفع ادمن @(.*)$")
@@ -2797,7 +2797,7 @@ if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع ادمن (%d+)$")
@@ -2813,7 +2813,7 @@ if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2827,7 +2827,7 @@ if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل ادمن @(.*)$") 
@@ -2846,7 +2846,7 @@ if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^تنزيل ادمن (%d+)$")
@@ -2893,7 +2893,7 @@ if text == ("رفع مطي") and tonumber(msg.reply_to_message_id_) ~= 0 and Add
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2911,7 +2911,7 @@ if text and text:match("^رفع مطي @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^رفع مطي @(.*)$") 
@@ -2939,7 +2939,7 @@ if (text == ("تنزيل مطي")) and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -2953,7 +2953,7 @@ if text and text:match("^تنزيل مطي @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل مطي @(.*)$") 
@@ -2973,7 +2973,7 @@ if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local userid = text:match("^رفع مميز (%d+)$")
@@ -2990,7 +2990,7 @@ if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3004,7 +3004,7 @@ if text and text:match("^تنزيل مميز @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تنزيل مميز @(.*)$") 
@@ -3029,7 +3029,7 @@ if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local RTPA = text:match("رفع (.*)")
@@ -3061,7 +3061,7 @@ if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_)
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local RTPA = text:match("تنزيل (.*)")
@@ -3093,7 +3093,7 @@ if text and text:match("^رفع (.*) @(.*)") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local text1 = {string.match(text, "^(رفع) (.*) @(.*)$")}
@@ -3128,7 +3128,7 @@ if text and text:match("^تنزيل (.*) @(.*)") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local text1 = {string.match(text, "^(تنزيل) (.*) @(.*)$")}
@@ -3164,7 +3164,7 @@ if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3198,7 +3198,7 @@ if text and text:match("^حظر @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^حظر @(.*)$")
@@ -3269,7 +3269,7 @@ if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3289,7 +3289,7 @@ if text and text:match("^الغاء حظر @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^الغاء حظر @(.*)$") 
@@ -3326,7 +3326,7 @@ if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3348,7 +3348,7 @@ if text and text:match("^كتم @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^كتم @(.*)$")
@@ -3393,7 +3393,7 @@ if text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3407,7 +3407,7 @@ if text and text:match("^الغاء كتم @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^الغاء كتم @(.*)$")
@@ -3434,7 +3434,7 @@ if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictiv
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3453,7 +3453,7 @@ if text and text:match("^تقيد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^تقيد @(.*)$")
@@ -3492,7 +3492,7 @@ if text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 a
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 function Function_TiTan(extra, result, success)
@@ -3507,7 +3507,7 @@ if text and text:match("^الغاء تقيد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^الغاء تقيد @(.*)$")
@@ -3533,7 +3533,7 @@ if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3565,7 +3565,7 @@ if text and text:match("^طرد @(.*)$") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local username = text:match("^طرد @(.*)$")
@@ -3647,7 +3647,7 @@ if Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
@@ -3660,7 +3660,7 @@ if Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
@@ -3715,7 +3715,7 @@ if text == "ضع رابط" or text == "وضع رابط" then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if msg.reply_to_message_id_ == 0  and Addictive(msg) then  
@@ -3729,7 +3729,7 @@ if Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:set(bot_id.."TiTan:Link_Group"..msg.chat_id_,true) 
@@ -3742,7 +3742,7 @@ if Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:del(bot_id.."TiTan:Link_Group"..msg.chat_id_) 
@@ -3812,16 +3812,6 @@ end
 send(msg.chat_id_, msg.id_,"["..Welcome.."]") 
 return false  
 end
-if text == "فتح الكانسر" and Owner(msg) then 
-database:set(bot_id.."TiTan:Num:kansers"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"⎙╮  تم تفعيل ترحيب المجموعه") 
-return false  
-end
-if text == "قفل الكانسر" and Owner(msg) then 
-database:del(bot_id.."TiTan:Num:kansers"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"⎙╮  تم تعطيل ترحيب المجموعه") 
-return false  
-end
 if text == "تفعيل الترحيب" and Addictive(msg) then  
 database:set(bot_id.."TiTan:Chek:Welcome"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"⎙╮  تم تفعيل ترحيب المجموعه") 
@@ -3852,7 +3842,7 @@ end
 
 if text == "قائمه المنع" and Addictive(msg) then   
 local list = database:smembers(bot_id.."TiTan:List:Filter"..msg.chat_id_)  
-t = "\n⎙╮ قائمة المنع \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المنع \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do  
 local TiTan_Msg = database:get(bot_id.."TiTan:Add:Filter:Rp2"..v..msg.chat_id_)   
 t = t..""..k.."- "..v.." ~⪼ {"..TiTan_Msg.."}\n"    
@@ -3907,7 +3897,7 @@ if text == "مسح البوتات" and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
@@ -3935,12 +3925,12 @@ if text == ("كشف البوتات") and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n⎙╮ قائمة البوتات الموجوده \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+text = "\n⎙╮ قائمة البوتات الموجوده \n••━━⎙━━━━⎙━━••  \n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -3959,7 +3949,7 @@ send(msg.chat_id_, msg.id_, "⎙╮  لا توجد بوتات في المجمو�
 return false 
 end
 if #admins == i then 
-local a = "\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n⎙╮  عدد البوتات التي هنا >> {"..n.."} بوت\n"
+local a = "\n••━━⎙━━━━⎙━━••  \n⎙╮  عدد البوتات التي هنا >> {"..n.."} بوت\n"
 local f = "⎙╮  عدد البوتات التي هي ادمن >> {"..t.."}\n⎙╮ ملاحضه علامة ال (✯) تعني ان البوت ادمن \n🔰"
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -4004,11 +3994,11 @@ if text == "الاوامر المضافه" and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 local list = database:smembers(bot_id.."TiTan:List:Cmd:Group:New"..msg.chat_id_.."")
-t = "⎙╮ قائمه الاوامر المضافه  \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "⎙╮ قائمه الاوامر المضافه  \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."TiTan:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
@@ -4036,7 +4026,7 @@ if text == "اضف امر" and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:set(bot_id.."TiTan:Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
@@ -4057,7 +4047,7 @@ if #list == 0 then
 send(msg.chat_id_, msg.id_,"⎙╮  لا توجد صلاحيات مضافه")
 return false
 end
-t = "\n⎙╮ قائمة الصلاحيات المضافه \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة الصلاحيات المضافه \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 var = database:get(bot_id.."TiTan:Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
@@ -4081,7 +4071,7 @@ ComdNew = text:match("^اضف صلاحيه (.*)$")
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:set(bot_id.."TiTan:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
@@ -4094,7 +4084,7 @@ ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلا
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:del(bot_id.."TiTan:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
@@ -4195,7 +4185,7 @@ send(msg.chat_id_, msg.id_,"⎙╮  تم مسح ردود المدير")
 end
 if text == ("ردود المدير") and Owner(msg) then
 local list = database:smembers(bot_id.."TiTan:List:Manager"..msg.chat_id_.."")
-text = "📑︙قائمه ردود المدير \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ\n"
+text = "📑︙قائمه ردود المدير \n••━━⎙━━━━⎙━━•• \n"
 for k,v in pairs(list) do
 if database:get(bot_id.."TiTan:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
@@ -4273,7 +4263,7 @@ if text == "اضف رد" and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل الكلمه التي تريد اضافتها")
@@ -4284,7 +4274,7 @@ if text == "حذف رد" and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل الكلمه التي تريد حذفها")
@@ -4397,7 +4387,7 @@ send(msg.chat_id_, msg.id_,"⎙╮  تم مسح ردود المطور")
 end
 if text == ("ردود المطور") and DevTiTan(msg) then 
 local list = database:smembers(bot_id.."TiTan:List:Rd:Sudo")
-text = "\n⎙╮ قائمة ردود المطور \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ\n"
+text = "\n⎙╮ قائمة ردود المطور \n••━━⎙━━━━⎙━━•• \n"
 for k,v in pairs(list) do
 if database:get(bot_id.."TiTan:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -4476,7 +4466,7 @@ if text == "اضف رد للكل" and DevTiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 send(msg.chat_id_, msg.id_,"⎙╮  ارسل الكلمه التي تريد اضافتها")
@@ -4655,11 +4645,11 @@ if text == "تاك للكل" and Addictive(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
-local t = "\n*⎙╮  قائمة الاعضاء \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ* \n"
+local t = "\n*⎙╮  قائمة الاعضاء \n••━━⎙━━━━⎙━━•• * \n"
 x = 0
 local list = taha.members_
 for k, v in pairs(list) do
@@ -4667,7 +4657,6 @@ x = x + 1
 if database:get(bot_id.."TiTan:User:Name"..v.user_id_) then
 t = t..""..x.." - {[@"..database:get(bot_id.."TiTan:User:Name"..v.user_id_).."]}\n"
 else
-t = t..""..x.." - {"..v.user_id_.."}\n"
 end
 end
 send(msg.chat_id_,msg.id_,t)
@@ -4971,7 +4960,7 @@ return false
 end
 
 if text == "بوت" then
-Namebot = (database:get(bot_id.."TiTan:Name:Bot") or "TiTan")
+Namebot = (database:get(bot_id.."TiTan:Name:Bot") or "تيتان")
 send(msg.chat_id_, msg.id_,"اسمي الورد ["..Namebot.."] ") 
 end
 if text == "تغير اسم البوت" or text == "تغيير اسم البوت" then 
@@ -5346,10 +5335,10 @@ end
 Num_Flood = database:hget(bot_id.."TiTan:flooding:settings:"..msg.chat_id_,"floodmax") or 0
 local text = 
 "*\n⎙╮ ااعدادات المجموعه "..
-"\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ "..
+"\n••━━⎙━━━━⎙━━••  "..
 "\n⎙╮ علامة ال {✓} تعني مفعل"..
 "\n⎙╮ علامة ال {✘} تعني معطل"..
-"\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ "..
+"\n••━━⎙━━━━⎙━━••  "..
 "\n⎙╮ الروابط ~⪼ "..lock_links..
 "\n".."⎙╮ المعرفات ~⪼ "..lock_user..
 "\n".."⎙╮ التاك ~⪼ "..lock_hash..
@@ -5359,7 +5348,7 @@ local text =
 "\n".."⎙╮ الاشعارات ~⪼ "..lock_tagservr..
 "\n".."⎙╮ الماركدون ~⪼ "..lock_mark..
 "\n".."⎙╮ التعديل ~⪼ "..lock_edit..
-"\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ "..
+"\n••━━⎙━━━━⎙━━••  "..
 "\n".."⎙╮ الكلايش ~⪼ "..lock_spam..
 "\n".."⎙╮ الكيبورد ~⪼ "..lock_inlin..
 "\n".."⎙╮ الاغاني ~⪼ "..lock_vico..
@@ -5368,7 +5357,7 @@ local text =
 "\n".."⎙╮ الدردشه ~⪼ "..lock_text..
 "\n".."⎙╮ الفيديو ~⪼ "..lock_ved..
 "\n".."⎙╮ الصور ~⪼ "..lock_photo..
-"\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ "..
+"\n••━━⎙━━━━⎙━━••  "..
 "\n".."⎙╮ الصوت ~⪼ "..lock_muse..
 "\n".."⎙╮ الملصقات ~⪼ "..lock_ste..
 "\n".."⎙╮ الجهات ~⪼ "..lock_phon..
@@ -5386,7 +5375,7 @@ if text == "تعطيل اوامر التحشيش" and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 send(msg.chat_id_, msg.id_, '⎙╮  تم تعطيل اوامر التحشيش')
@@ -5401,7 +5390,7 @@ if text == 'تفعيل الايدي' and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:del(bot_id..'TiTan:Lock:ID:Bot'..msg.chat_id_) 
@@ -5415,7 +5404,7 @@ if text == 'تفعيل الايدي بالصوره' and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end  
 database:del(bot_id..'TiTan:Lock:ID:Bot:Photo'..msg.chat_id_) 
@@ -5429,7 +5418,7 @@ if text == 'تعين الايدي' and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:setex(bot_id.."TiTan:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
@@ -5978,7 +5967,7 @@ if text == "تفعيل الالعاب" and Owner(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 database:set(bot_id.."TiTan:Lock:Games"..msg.chat_id_,true) 
@@ -5987,7 +5976,7 @@ end
 if text == 'الالعاب' then
 Teext = [[
 ⎙╮ قائمه الالعاب الموجوده 
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ لعبة البات ~⪼ بات
 ⎙╮ لعبة التخمين ~⪼ خمن
 ⎙╮ لعبه الاسرع ~⪼ الاسرع
@@ -5997,7 +5986,7 @@ Teext = [[
 ⎙╮ لعبة العكس ~⪼ العكس 
 ⎙╮ لعبة الحزوره ~⪼ حزوره
 ⎙╮ لعبة المعاني ~⪼ معاني
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ Ch ~⪼ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Teext) 
@@ -6811,10 +6800,10 @@ end
 if text == 'م1' and Addictive(msg) then
 Text = [[
 ⎙╮   اوامر حمايه المجموعه
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  تستخدم الاوامر كلتالي ↓
 ⎙╮  قفل/فتح+الامر/بلكتم/بالطرد/بالتقيد
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  الروابط
 ⎙╮  المعرف
 ⎙╮  التاك
@@ -6840,7 +6829,7 @@ Text = [[
 ⎙╮  التكرار
 ⎙╮  الكلايش
 ⎙╮  السيلفي
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ Ch ~⪼ @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -6849,26 +6838,26 @@ end
 if text == 'م2' and Addictive(msg) then
 Text = [[
 ⎙╮  اوامر الادمنيه ↓
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  رفع/تنزيل مميز
 ⎙╮  كتم/حظر/طرد/منع/تقيد
 ⎙╮  الغاء حظر/الغاء كتم
 ⎙╮  الغاء تقيد/الغاء منع
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  المحظورين
 ⎙╮  المكتومين
 ⎙╮  المميزين
 ⎙╮  الصلاحيات
 ⎙╮  قائمه المنع
 ⎙╮  عدد الكروب
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  تثبيت
 ⎙╮  الغاء تثبيت
 ⎙╮  الاعدادات
 ⎙╮  الرابط
 ⎙╮  القوانين
 ⎙╮  تاك للكل
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  الترحيب
 ⎙╮  تفعيل/تعطيل الترحيب
 ⎙╮  اضف /مسح صلاحيه 
@@ -6878,18 +6867,18 @@ Text = [[
 ⎙╮  سحكاتي
 ⎙╮  رسائلي
 ⎙╮  كشف البوتات
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  وضع + الاوامر الادناه
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  اسم
 ⎙╮  رابط
 ⎙╮  صوره
 ⎙╮  وصف
 ⎙╮  قوانين
 ⎙╮  ترحيب
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  مسح + الاوامر الادناه
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  قائمه المنع
 ⎙╮  المحظورين
 ⎙╮  المميزين
@@ -6900,7 +6889,7 @@ Text = [[
 ⎙╮  الصوره
 ⎙╮  الصلاحيات
 ⎙╮  الرابط
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -6909,7 +6898,7 @@ end
 if text == 'م3' and Owner(msg) then
 Text = [[
 ⎙╮  اوامر المدراء
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  رفع/تنزيل ادمن
 ⎙╮  رفع/كشف القيود
 ⎙╮  تنزيل الكل
@@ -6935,7 +6924,7 @@ Text = [[
 ⎙╮  تنظيف + عدد
 ⎙╮  مسح الادمنيه
 ⎙╮  مسح ردود المدير
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  لتغير ردود الايدي :- 
 تغير رد المطور + النص
 تغير رد المنشئ الاساسي + النص
@@ -6944,7 +6933,7 @@ Text = [[
 تغير رد الادمن + النص
 تغير رد المميز + النص
 تغير رد العضو + النص
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -6953,13 +6942,13 @@ end
 if text == 'م4' and Constructor(msg) then
 Text = [[
 ⎙╮  اوامر المنشئين الاساسين 
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  رفع/تنزيل منشئ
 ⎙╮  المنشئين
 ⎙╮  مسح المنشئين
 
 ⎙╮  اوامر المنشئين
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  رفع/تنزيل مدير
 ⎙╮  المدراء
 ⎙╮  مسح المدراء
@@ -6969,7 +6958,7 @@ Text = [[
 ⎙╮  حذف/مسح الاوامر المضافه
 ⎙╮  اضف رسائل + العدد بالرد
 ⎙╮  اضف مجوهرات + العدد بالرد
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -6978,7 +6967,7 @@ end
 if text == 'م5' and DevBot(msg) then
 Text = [[
 ⎙╮  اوامر المطور الاساسي  
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  حظر عام
 ⎙╮  الغاء العام
 ⎙╮  مسح قائمه العام
@@ -7001,7 +6990,7 @@ Text = [[
 ⎙╮  مسح جميع الملفات 
 ⎙╮  المتجر 
 ⎙╮  اوامر المطور 
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮  تفعيل /تعطيل
 
 ⎙╮  رفع/تنزيل منشئ اساسي
@@ -7015,7 +7004,7 @@ Text = [[
 ⎙╮  اذاعه خاص 
 ⎙╮  اذاعه بالتثبيت 
 ⎙╮  الاحصائيات 
-ꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ
+••━━⎙━━━━⎙━━•• 
 ⎙╮ CH @TiTancil
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -7029,7 +7018,7 @@ if text == 'تفعيل' and DevBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -7082,7 +7071,7 @@ if text == 'تعطيل' and DevBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -7124,7 +7113,7 @@ if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'TiTan:
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي ⎙╮ \n• لايمكنك استخدام البوت ⎙╮ \n• عليك الاشتراك في القناة ⎙╮ \n• [@TiTancil] ⎙╮ ')
+send(msg.chat_id_,msg.id_,'⎙╮اهلا بك عزيزي ⎙╮ \n⎙╮لايمكنك استخدام البوت ⎙╮ \n⎙╮عليك الاشتراك في القناة ⎙╮ \n⎙╮[@TiTancil] ⎙╮ ')
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -7469,7 +7458,7 @@ send(msg.chat_id_, msg.id_, "\n⎙╮  تم مسح قائمة المطورين")
 end
 if text == ("قائمه العام 🚷") and DevTiTan(msg) then
 local list = database:smembers(bot_id.."TiTan:GBan:User")
-t = "\n⎙╮ قائمة المحظورين عام \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة المحظورين عام \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -7486,7 +7475,7 @@ return false
 end
 if text == ("المطورين 🕹") and DevTiTan(msg) then
 local list = database:smembers(bot_id.."TiTan:Sudo:User")
-t = "\n⎙╮ قائمة مطورين البوت \nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+t = "\n⎙╮ قائمة مطورين البوت \n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
@@ -7794,13 +7783,12 @@ local list = database:smembers(bot_id.."TiTan:Constructor"..msg.chat_id_)
 if #list == 0 then
 Reply_Status(result,result.sender_user_id_,"reply","⎙╮ قام بالتعديل على الميديا")  
 else
-tt = "\n⎙╮ يا منشئين\nꔹ┉⎙️┉ ┉ ┉ ┉⎙┉ꔹ \n"
+tt = "\n⎙╮ يا منشئين\n••━━⎙━━━━⎙━━••  \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
 tt = tt..""..k.."- ([@"..username.."])\n"
 else
-tt = tt..""..k.."- (`"..v.."`)\n"
 end
 end
 Reply_Status(result,result.sender_user_id_,"reply",tt.."\n⎙╮ قام بالتعديل على الميديا")  
