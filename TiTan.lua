@@ -1993,9 +1993,9 @@ t = "\n⎙╮ قائمة المحظورين عام \n••━━⎙━━━━
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
+t = t..""..k.." ┤(`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2010,9 +2010,8 @@ t = "\n⎙╮ قائمة مطورين البوت \n••━━⎙━━━━�
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2026,9 +2025,8 @@ t = "\n⎙╮ قائمة المنشئين الاساسين \n••━━⎙━�
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2043,9 +2041,8 @@ t = "\n⎙╮ قائمة المنشئين \n••━━⎙━━━━⎙━━
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2059,9 +2056,8 @@ t = "\n⎙╮ قائمة المدراء \n••━━⎙━━━━⎙━━�
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2075,9 +2071,8 @@ t = "\n⎙╮ قائمة الادمنيه \n••━━⎙━━━━⎙━━
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -2091,9 +2086,8 @@ t = "\n⎙╮ قائمة مميزين المجموعه \n••━━⎙━━�
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
@@ -4655,7 +4649,7 @@ local list = taha.members_
 for k, v in pairs(list) do
 x = x + 1
 if database:get(bot_id.."TiTan:User:Name"..v.user_id_) then
-t = t..""..x.." - {[@"..database:get(bot_id.."TiTan:User:Name"..v.user_id_).."]}\n"
+t = t..""..x.." ┤ {[@"..database:get(bot_id.."TiTan:User:Name"..v.user_id_).."]}\n"
 else
 end
 end
@@ -7479,9 +7473,8 @@ t = "\n⎙╮ قائمة مطورين البوت \n••━━⎙━━━━�
 for k,v in pairs(list) do
 local username = database:get(bot_id.."TiTan:User:Name" .. v)
 if username then
-t = t..""..k.."- ([@"..username.."])\n"
+t = t..""..k.." ┤ ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
