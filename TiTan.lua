@@ -1381,33 +1381,33 @@ return false
 end 
 if text == "فتح البوتات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:del(bot_id.."TiTan:Lock:Bot:kick"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح البوتات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح البوتات")  
 return false
 end 
 if text == "فتح البوتات " and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:del(bot_id.."TiTan:Lock:Bot:kick"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","🍃\n💢️︙تم فـتح البوتات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","🍃\n⎙╮  تم فـتح البوتات")  
 return false
 end 
 if text == "فتح الاشعارات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 database:del(bot_id.."TiTan:Lock:tagservr"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح الاشعارات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح الاشعارات")  
 return false
 end 
 if text == "فتح التثبيت" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:del(bot_id.."TiTan:lockpin"..msg.chat_id_)  
 database:srem(bot_id.."TiTan:Lock:pin",msg.chat_id_)
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح التثبيت هنا")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح التثبيت هنا")  
 return false
 end 
 if text == "فتح التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:del(bot_id.."TiTan:Lock:edit"..msg.chat_id_) 
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح تعديل")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح تعديل")  
 return false
 end 
 if text == "فتح التعديل الميديا" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:del(bot_id.."TiTan:Lock:edit"..msg.chat_id_) 
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح تعديل")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح تعديل")  
 return false
 end 
 if text == "فتح الكل" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
@@ -1416,7 +1416,7 @@ list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","L
 for i,lock in pairs(list) do 
 database:del(bot_id..'TiTan:'..lock..msg.chat_id_)    
 end
-Reply_Status(msg,msg.sender_user_id_,"unlock","💢️︙تم فـتح جميع الاوامر")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⎙╮  تم فـتح جميع الاوامر")  
 return false
 end 
 --------------------------------------------------------------------------------------------------------------
