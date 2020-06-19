@@ -775,15 +775,6 @@ end
 end
 ---------------------------------------------
 if text and not Owner(msg) then
-if database:get(bot_id.."TiTan:Lock:Fars"..msg.chat_id_) == "del" and not Owner(msg) then
-list = {"ڄ","گ","که","پی","خسته","برم","راحتی","بیام","بپوشم","گرمه","چه","چ","ڬ","ٺ","چ","ڇ","ڿ","ڀ","ڎ","ݫ","ژ","ڟ","ݜ","ڸ","پ","۴","زدن","دخترا","دیوث","مک","زدن"}
-for k,v in pairs(list) do
-if string.find(text,v) ~= nil then
-DeleteMessage(msg.chat_id_,{[0] = msg.id_}) 
-return false
-end
-end
-if text and not Owner(msg) then
 if database:get(bot_id.."TiTan:Lock:Fshar"..msg.chat_id_) == "del" and not Owner(msg) then
 list = {"كس","كسمك","كسختك","عير","كسخالتك","خرا بالله","عير بالله","كسخواتكم","كحاب","مناويج","مناويج","كحبه","ابن الكحبه","فرخ","فروخ","طيزك","طيزختك"}
 for k,v in pairs(list) do
@@ -1797,16 +1788,6 @@ end
 if text == "قفل السيلفي بالطرد" and Addictive(msg) then
 database:set(bot_id.."TiTan:Lock:Unsupported"..msg.chat_id_,"kick")  
 Reply_Status(msg,msg.sender_user_id_,"lockkick","⎙╮  تم قفـل السيلفي")  
-return false
-end 
-if text == "قفل الفارسيه" and Addictive(msg) then
-database:set(bot_id.."TiTan:Lock:Fars"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","⎙╮  تم قفـل الفارسيه")  
-return false
-end 
-if text == "فتح الفارسيه" and Addictive(msg) then
-database:del(bot_id.."TiTan:Lock:Fars"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"lock","⎙╮  تم فتح الفارسيه")  
 return false
 end 
 if text == "قفل الفشار" and Addictive(msg) then
