@@ -6751,7 +6751,7 @@ Text = [[
 ⎙ = TEAM TiTAN
 ━━━━━━━━━━━━━
 
-⋙ [Channel Source ،](https://t.me/joinchat/AAAAAEWcdg2i_Q7bSqSaIA)
+⋙ [Channel Source ،](t.me/titancil)
 
 ⋙ [Files Source](t.me/TiTanFiles)
 
