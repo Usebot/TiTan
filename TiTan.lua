@@ -524,7 +524,7 @@ height_ = 0
 end
 ------------------------------------------------------------------------------------------------------------
 function tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/TiTankid/TiTan/master/Script.lua'
+url = 'https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua'
 file_path = 'Script.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -2164,11 +2164,11 @@ dofile("TiTan.lua")
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث ملفات البوت")
 elseif text == 'تحديث السورس 🔂' then
 download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua','TiTan.lua') 
-download_to_file('https://raw.githubusercontent.com/TiTankid/TiTan/master/Script.lua','Script.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua','Script.lua') 
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث السورس وتنزيل اخر تحديث للملفات")
 elseif text == 'تحديث السورس' then
 download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua','TiTan.lua') 
-download_to_file('https://raw.githubusercontent.com/TiTankid/TiTan/master/Script.lua','Script.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua','Script.lua') 
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث السورس وتنزيل اخر تحديث للملفات")
 end
 if text == 'الملفات' then
