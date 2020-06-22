@@ -71,7 +71,7 @@ DevTiTan_Info_Sudo:close()
 local Run_File_TiTan = io.open("TiTan", 'w')
 Run_File_TiTan:write([[
 #!/usr/bin/env bash
-cd $HOME/Storm
+cd $HOME/TiTan
 token="]]..redis:get(Server_TiTan.."Token_DevTiTan")..[["
 while(true) do
 rm -fr ../.telegram-cli
@@ -83,7 +83,7 @@ Run_File_TiTan:close()
 local Run_SM = io.open("tk", 'w')
 Run_SM:write([[
 #!/usr/bin/env bash
-cd $HOME/Storm
+cd $HOME/TiTan
 while(true) do
 rm -fr ../.telegram-cli
 screen -S TiTan -X kill
