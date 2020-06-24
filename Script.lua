@@ -7,23 +7,23 @@ serpent = dofile("./lib/serpent.lua")
 redis = dofile("./lib/redis.lua").connect("127.0.0.1", 6379)
 sudos = dofile("./Info_Sudo.lua")
 token = sudos.Token_Bot
-UserName_Dev = sudos.UserName_Devel
+UserName_Dev = sudos.UserName_TiTan
 bot_id = token:match("(%d+)")  
-Id_Dev = sudos.Id_DevDevel
-Ids_Dev = {sudos.Id_DevDevel}
+Id_Dev = sudos.Id_DevTiTan
+Ids_Dev = {sudos.Id_DevTiTan}
 Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "تيكتوك"
 function dl_cb(arg,data)
 -- var(data)  
 end
 ------------------------------------------------------------------------------------------------------------
-function Dev_Devel(msg)  
-local Dev_Devel = false  
+function Dev_TiTan(msg)  
+local Dev_TiTan = false  
 for k,v in pairs(Ids_Dev) do  
 if msg.sender_user_id_ == v then  
-Dev_Devel = true  
+Dev_TiTan = true  
 end  
 end  
-return Dev_Devel  
+return Dev_TiTan  
 end 
 function Bot(msg)  
 local idbot = false  
@@ -32,18 +32,18 @@ idbot = true
 end  
 return idbot  
 end 
-function Dev_Devel_User(user)  
-local Dev_Devel_User = false  
+function Dev_TiTan_User(user)  
+local Dev_TiTan_User = false  
 for k,v in pairs(Ids_Dev) do  
 if user == v then  
-Dev_Devel_User = true  
+Dev_TiTan_User = true  
 end  
 end  
-return Dev_Devel_User  
+return Dev_TiTan_User  
 end 
-function DeveloperBot(msg) 
-local Status = redis:sismember(bot_id.."Developer:Bot", msg.sender_user_id_) 
-if Status or Dev_Devel(msg) or Bot(msg) then  
+function TiTanoperBot(msg) 
+local Status = redis:sismember(bot_id.."TiTanoper:Bot", msg.sender_user_id_) 
+if Status or Dev_TiTan(msg) or Bot(msg) then  
 return true  
 else  
 return false  
@@ -51,7 +51,7 @@ end
 end
 function PresidentGroup(msg)
 local hash = redis:sismember(bot_id.."President:Group"..msg.chat_id_, msg.sender_user_id_) 
-if hash or Dev_Devel(msg) or DeveloperBot(msg) or Bot(msg) then  
+if hash or Dev_TiTan(msg) or TiTanoperBot(msg) or Bot(msg) then  
 return true 
 else 
 return false 
@@ -59,7 +59,7 @@ end
 end
 function Constructor(msg)
 local hash = redis:sismember(bot_id..'Constructor:Group'..msg.chat_id_, msg.sender_user_id_) 
-if hash or Dev_Devel(msg) or DeveloperBot(msg) or PresidentGroup(msg) or Bot(msg) then     
+if hash or Dev_TiTan(msg) or TiTanoperBot(msg) or PresidentGroup(msg) or Bot(msg) then     
 return true    
 else    
 return false    
@@ -67,7 +67,7 @@ end
 end
 function Owner(msg)
 local hash = redis:sismember(bot_id..'Manager:Group'..msg.chat_id_,msg.sender_user_id_)    
-if hash or Dev_Devel(msg) or DeveloperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Bot(msg) then     
+if hash or Dev_TiTan(msg) or TiTanoperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Bot(msg) then     
 return true    
 else    
 return false    
@@ -75,7 +75,7 @@ end
 end
 function Admin(msg)
 local hash = redis:sismember(bot_id..'Admin:Group'..msg.chat_id_,msg.sender_user_id_)    
-if hash or Dev_Devel(msg) or DeveloperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Owner(msg) or Bot(msg) then     
+if hash or Dev_TiTan(msg) or TiTanoperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Owner(msg) or Bot(msg) then     
 return true    
 else    
 return false    
@@ -83,7 +83,7 @@ end
 end
 function Vips(msg)
 local hash = redis:sismember(bot_id..'Vip:Group'..msg.chat_id_,msg.sender_user_id_) 
-if hash or Dev_Devel(msg) or DeveloperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Owner(msg) or Admin(msg) or Bot(msg) then     
+if hash or Dev_TiTan(msg) or TiTanoperBot(msg) or PresidentGroup(msg) or Constructor(msg) or Owner(msg) or Admin(msg) or Bot(msg) then     
 return true 
 else 
 return false 
@@ -91,11 +91,11 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 function Rank_Checking(user_id,chat_id)
-if Dev_Devel_User(user_id) then
+if Dev_TiTan_User(user_id) then
 Status = true  
 elseif tonumber(user_id) == tonumber(bot_id) then  
 Status = true  
-elseif redis:sismember(bot_id.."Developer:Bot", user_id) then
+elseif redis:sismember(bot_id.."TiTanoper:Bot", user_id) then
 Status = true  
 elseif redis:sismember(bot_id.."President:Group"..chat_id, user_id) then
 Status = true
@@ -114,12 +114,12 @@ return Status
 end 
 ------------------------------------------------------------------------------------------------------------
 function Get_Rank(user_id,chat_id)
-if Dev_Devel_User(user_id) == true then
+if Dev_TiTan_User(user_id) == true then
 Status = "المطور الاساسي"  
 elseif tonumber(user_id) == tonumber(bot_id) then  
 Status = "البوت"
-elseif redis:sismember(bot_id.."Developer:Bot", user_id) then
-Status = redis:get(bot_id.."Developer:Bot:Reply"..chat_id) or redis:get(bot_id.."Add:Validity:Users"..chat_id..user_id) or "المطور"  
+elseif redis:sismember(bot_id.."TiTanoper:Bot", user_id) then
+Status = redis:get(bot_id.."TiTanoper:Bot:Reply"..chat_id) or redis:get(bot_id.."Add:Validity:Users"..chat_id..user_id) or "المطور"  
 elseif redis:sismember(bot_id.."President:Group"..chat_id, user_id) then
 Status = redis:get(bot_id.."President:Group:Reply"..chat_id) or redis:get(bot_id.."Add:Validity:Users"..chat_id..user_id) or "المنشئ اساسي"
 elseif redis:sismember(bot_id..'Constructor:Group'..chat_id, user_id) then
@@ -370,7 +370,7 @@ end
 ------------------------------------------------------------------------------------------------------------ 
 function tdcli_update_callback_value_(Data) 
 tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Usebot/Devel/master/Devel.lua'
+url = 'https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua'
 file_path = 'TiTan.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -559,20 +559,20 @@ return false
 end
 end  
 ------------------------------------------------------------------------------------------------------------
-function FilesDevel(msg)
+function FilesTiTan(msg)
 File_Bot = dofile("Script.lua")
-if File_Bot.Devel and msg then
-Text_File = File_Bot.Devel(msg)
+if File_Bot.TiTan and msg then
+Text_File = File_Bot.TiTan(msg)
 end
 send(msg.chat_id_, msg.id_,Text_File)  
 return false
 end
-function FilesDevelBot(msg)
+function FilesTiTanBot(msg)
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
 Text_FileBot = dofile("Files/"..v)
-if Text_FileBot.DevelFile and msg then
-Text_FileBot = Text_FileBot.DevelFile(msg)
+if Text_FileBot.TiTanFile and msg then
+Text_FileBot = Text_FileBot.TiTanFile(msg)
 end
 end
 end
@@ -632,7 +632,7 @@ end
 end
 if Info_Group.Status_Dev then
 if Info_Group.Status_Dev ~= "" then
-redis:set(bot_id.."Developer:Bot:Reply"..Id_Group,Info_Group.Status_Dev)   
+redis:set(bot_id.."TiTanoper:Bot:Reply"..Id_Group,Info_Group.Status_Dev)   
 end
 end
 if Info_Group.Status_Prt then
@@ -682,7 +682,7 @@ if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-if Dev_Devel(msg) then
+if Dev_TiTan(msg) then
 local Text_keyboard = '⎙╮ اهلا بك في اوامر الكيبورد الجاهزه'
 local List_keyboard = {
 {'تفعيل تواصل البوت 🔔','تعطيل تواصل البوت 🔕'},
@@ -725,7 +725,7 @@ end
 redis:setex(bot_id..'Ban:Cmd:Start'..msg.sender_user_id_,60,true)
 return false
 end
-if not Dev_Devel(msg) and not redis:sismember(bot_id..'User:Ban:Pv',msg.sender_user_id_) and not redis:get(bot_id..'Status:Lock:Twasl') then
+if not Dev_TiTan(msg) and not redis:sismember(bot_id..'User:Ban:Pv',msg.sender_user_id_) and not redis:get(bot_id..'Status:Lock:Twasl') then
 send(msg.sender_user_id_,msg.id_,'⎙╮ تم ارسال رسالتك الى المطور ← { [tahaj20] }')    
 local List_id = {Id_Dev,msg.sender_user_id_}
 for k,v in pairs(List_id) do   
@@ -740,7 +740,7 @@ end
 end
 end,nil)
 end
-if Dev_Devel(msg) then
+if Dev_TiTan(msg) then
 if msg.reply_to_message_id_ ~= 0  then    
 tdcli_function({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)},function(extra, result, success) 
 if result.forward_info_.sender_user_id_ then     
@@ -800,7 +800,7 @@ elseif text == 'تعطيل الوضع الخدمي 〽' then
 redis:set(bot_id..'Free:Bot',true) 
 send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل البوت الخدمي') 
 elseif text == 'تغير كليشة المطور 🆕' then
-redis:set(bot_id..'GetTexting:DevDevel'..msg.chat_id_..':'..msg.sender_user_id_,true)
+redis:set(bot_id..'GetTexting:DevTiTan'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'⎙╮  ارسل لي الكليشه الان')
 elseif text=="اذاعه خاص 👤" then 
 redis:setex(bot_id.."Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
@@ -810,20 +810,20 @@ elseif text=="اذاعه للمجموعات 👥" then
 redis:setex(bot_id.."Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي المنشور الان\n⎙╮ يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⎙╮ لالغاء الاذاعه ارسل : الغاء") 
 return false
-elseif text=="اذاعه بالتثبيت 📌" and DeveloperBot(msg) then 
+elseif text=="اذاعه بالتثبيت 📌" and TiTanoperBot(msg) then 
 redis:setex(bot_id.."Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي المنشور الان\n⎙╮ يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⎙╮ لالغاء الاذاعه ارسل : الغاء") 
 return false
-elseif text=="اذاعه بالتوجيه 👥" and DeveloperBot(msg) then 
+elseif text=="اذاعه بالتوجيه 👥" and TiTanoperBot(msg) then 
 redis:setex(bot_id.."Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي التوجيه الان\n⎙╮ ليتم نشره في المجموعات") 
 return false
-elseif text=="اذاعه خاص بالتوجيه 👤" and DeveloperBot(msg) then 
+elseif text=="اذاعه خاص بالتوجيه 👤" and TiTanoperBot(msg) then 
 redis:setex(bot_id.."Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي التوجيه الان\n⎙╮ ليتم نشره الى المشتركين") 
 return false
 elseif text == 'ازالة كليشة المطور 🆗' then
-redis:del(bot_id..'Texting:DevDevel')
+redis:del(bot_id..'Texting:DevTiTan')
 send(msg.chat_id_, msg.id_,'⎙╮  تم حذف كليشه المطور')
 elseif text == "تغير اسم البوت 🔄" then 
 redis:setex(bot_id.."Change:Name:Bot"..msg.sender_user_id_,300,true) 
@@ -833,7 +833,7 @@ elseif text == ("مسح قائمه العام 💯") or text == ("مسح الم�
 redis:del(bot_id.."Removal:User:Groups")
 send(msg.chat_id_, msg.id_, "⎙╮ تم مسح المحظورين عام من البوت")
 elseif text == ("مسح قائمه المطورين 🚫") then
-redis:del(bot_id.."Developer:Bot")
+redis:del(bot_id.."TiTanoper:Bot")
 send(msg.chat_id_, msg.id_, "⎙╮  تم مسح المطورين من البوت  ")
 elseif text == ("قائمه العام 📝") or text == ("المحظورين عام") then
 local list = redis:smembers(bot_id.."Removal:User:Groups")
@@ -851,7 +851,7 @@ Gban = "⎙╮ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("قائمه المطورين 📝") then
-local list = redis:smembers(bot_id.."Developer:Bot")
+local list = redis:smembers(bot_id.."TiTanoper:Bot")
 Sudos = "\n⎙╮ قائمة مطورين في البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 local username = redis:get(bot_id.."Save:Username" .. v)
@@ -876,7 +876,7 @@ if tonumber(result.id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
-if Dev_Devel_User(result.id_) == true then
+if Dev_TiTan_User(result.id_) == true then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
@@ -904,7 +904,7 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"⎙╮ عذرا هاذا معرف قناة")   
 return false 
 end      
-redis:sadd(bot_id.."Developer:Bot", result.id_)
+redis:sadd(bot_id.."TiTanoper:Bot", result.id_)
 Send_Options(msg,result.id_,"reply","⎙╮ تم ترقيته مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
@@ -914,7 +914,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^اضف مطو�
 elseif text and text:match("^حذف مطور @(.*)$") then
 function FunctionStatus(arg, result)
 if (result.id_) then
-redis:srem(bot_id.."Developer:Bot", result.id_)
+redis:srem(bot_id.."TiTanoper:Bot", result.id_)
 Send_Options(msg,result.id_,"reply","⎙╮ تم تنزيله من المطورين")  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
@@ -927,7 +927,7 @@ elseif text and text:match("^تعين عدد الاعضاء (%d+)$") then
 redis:set(bot_id..'Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 send(msg.chat_id_, msg.id_,'*⎙╮  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *')
 elseif text == 'حذف كليشه المطور' then
-redis:del(bot_id..'Texting:DevDevel')
+redis:del(bot_id..'Texting:DevTiTan')
 send(msg.chat_id_, msg.id_,'⎙╮  تم حذف كليشه المطور')
 elseif text == "تنظيف المشتركين 🚯" then
 local pv = redis:smembers(bot_id..'Num:User:Pv')  
@@ -987,11 +987,11 @@ else
 taha = '\n⎙╮  تم ازالة ~ '..q..' مجموعات من البوت'
 end
 if w == 0 then
-Devel = ''
+TiTan = ''
 else
-Devel = '\n⎙╮  تم ازالة ~'..w..' مجموعه لان البوت عضو'
+TiTan = '\n⎙╮  تم ازالة ~'..w..' مجموعه لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,'*⎙╮  عدد المجموعات الان ← { '..#group..' } مجموعه '..Devel..''..taha..'\n⎙╮ اصبح عدد المجموعات الان ← { '..sendok..' } مجموعات*\n')   
+send(msg.chat_id_, msg.id_,'*⎙╮  عدد المجموعات الان ← { '..#group..' } مجموعه '..TiTan..''..taha..'\n⎙╮ اصبح عدد المجموعات الان ← { '..sendok..' } مجموعات*\n')   
 end
 end
 end,nil)
@@ -1008,7 +1008,7 @@ local Admin = redis:smembers(bot_id.."Admin:Group"..v)
 local Vips = redis:smembers(bot_id.."Vip:Group"..v)
 local LinkGroup = redis:get(bot_id.."Status:link:set:Group"..v) 
 local WelcomeGroup = redis:get(bot_id.."Get:Welcome:Group"..v) or ''
-local Status_Dev = redis:get(bot_id.."Developer:Bot:Reply"..v) 
+local Status_Dev = redis:get(bot_id.."TiTanoper:Bot:Reply"..v) 
 local Status_Prt = redis:get(bot_id.."President:Group:Reply"..v) 
 local Status_Cto = redis:get(bot_id.."Constructor:Group:Reply"..v) 
 local Status_Own = redis:get(bot_id.."Manager:Group:Reply"..v) 
@@ -1137,14 +1137,14 @@ send(msg.chat_id_,Data.id_,''..Text_Fun[math.random(#Text_Fun)]..'')
 end,nil)
 return false
 end    
-if text == 'رفع النسخه الاحتياطيه' and tonumber(msg.reply_to_message_id_) > 0 and Dev_Devel(msg) then   
+if text == 'رفع النسخه الاحتياطيه' and tonumber(msg.reply_to_message_id_) > 0 and Dev_TiTan(msg) then   
 tdcli_function({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},function(Arg, Data)   
 if Data.content_.document_ then 
 SetFile_Groups(msg,msg.chat_id_,Data.content_.document_.document_.persistent_id_ ,Data.content_.document_.file_name_)
 end;end,nil)
 end
 
-if text == 'جلب نسخه احتياطيه' and Dev_Devel(msg) or text == 'جلب نسخه الكروبات' and Dev_Devel(msg) then
+if text == 'جلب نسخه احتياطيه' and Dev_TiTan(msg) or text == 'جلب نسخه الكروبات' and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1161,7 +1161,7 @@ local Admin = redis:smembers(bot_id.."Admin:Group"..v)
 local Vips = redis:smembers(bot_id.."Vip:Group"..v)
 local LinkGroup = redis:get(bot_id.."Status:link:set:Group"..v) 
 local WelcomeGroup = redis:get(bot_id.."Get:Welcome:Group"..v) or ''
-local Status_Dev = redis:get(bot_id.."Developer:Bot:Reply"..v) 
+local Status_Dev = redis:get(bot_id.."TiTanoper:Bot:Reply"..v) 
 local Status_Prt = redis:get(bot_id.."President:Group:Reply"..v) 
 local Status_Cto = redis:get(bot_id.."Constructor:Group:Reply"..v) 
 local Status_Own = redis:get(bot_id.."Manager:Group:Reply"..v) 
@@ -1260,7 +1260,7 @@ File:write(Get_Json)
 File:close()
 sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n⎙╮ تم جلب نسخه خاصه بالكروبات\n⎙╮ يحتوي الملف على {'..#Groups..'} مجموعه')
 end
-if text == ("مسح قائمه العام") and Dev_Devel(msg) or text == ("مسح المحظورين عام") and Dev_Devel(msg) then
+if text == ("مسح قائمه العام") and Dev_TiTan(msg) or text == ("مسح المحظورين عام") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1269,16 +1269,16 @@ return false
 end
 redis:del(bot_id.."Removal:User:Groups")
 send(msg.chat_id_, msg.id_, "⎙╮ تم مسح المحظورين عام من البوت")
-elseif text == ("مسح المطورين") and Dev_Devel(msg) then
+elseif text == ("مسح المطورين") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-redis:del(bot_id.."Developer:Bot")
+redis:del(bot_id.."TiTanoper:Bot")
 send(msg.chat_id_, msg.id_, "⎙╮  تم مسح المطورين من البوت  ")
-elseif text == ("مسح المنشئين الاساسين") and DeveloperBot(msg) or text == "مسح الاساسين" and DeveloperBot(msg)  then
+elseif text == ("مسح المنشئين الاساسين") and TiTanoperBot(msg) or text == "مسح الاساسين" and TiTanoperBot(msg)  then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1377,7 +1377,7 @@ end
 local list = redis:smembers(bot_id.."Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."Validitys:Group"..msg.chat_id_);end
 send(msg.chat_id_, msg.id_,"⎙╮ تم مسح صلاحيات المجموعه")
-elseif text == ("قائمه العام") and Dev_Devel(msg) or text == ("المحظورين عام") and Dev_Devel(msg) then
+elseif text == ("قائمه العام") and Dev_TiTan(msg) or text == ("المحظورين عام") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1398,14 +1398,14 @@ if #list == 0 then
 Gban = "⎙╮ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
-elseif text == ("المطورين") and Dev_Devel(msg) then
+elseif text == ("المطورين") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-local list = redis:smembers(bot_id.."Developer:Bot")
+local list = redis:smembers(bot_id.."TiTanoper:Bot")
 Sudos = "\n⎙╮ قائمة مطورين في البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 local username = redis:get(bot_id.."Save:Username" .. v)
@@ -1419,7 +1419,7 @@ if #list == 0 then
 Sudos = "⎙╮ لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
-elseif text == "المنشئين الاساسين" and DeveloperBot(msg) or text == "الاساسين" and DeveloperBot(msg) then
+elseif text == "المنشئين الاساسين" and TiTanoperBot(msg) or text == "الاساسين" and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1619,7 +1619,7 @@ end
 end
 send(msg.chat_id_,msg.id_,t)
 end,nil)
-elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Devel(msg) then
+elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1631,7 +1631,7 @@ if tonumber(result.sender_user_id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
-if Dev_Devel_User(result.sender_user_id_) == true then
+if Dev_TiTan_User(result.sender_user_id_) == true then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
@@ -1640,7 +1640,7 @@ redis:sadd(bot_id.."Removal:User:Groups", result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Devel(msg) then
+elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1652,7 +1652,7 @@ redis:srem(bot_id.."Removal:User:Groups", result.sender_user_id_)
 Send_Options(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء حظره عام من المجموعات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Devel(msg) then
+elseif text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1660,11 +1660,11 @@ send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة ال
 return false 
 end
 function FunctionStatus(arg, result)
-redis:sadd(bot_id.."Developer:Bot", result.sender_user_id_)
+redis:sadd(bot_id.."TiTanoper:Bot", result.sender_user_id_)
 Send_Options(msg,result.sender_user_id_,"reply","⎙╮ تم ترقيته مطور في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Devel(msg) then
+elseif text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1672,11 +1672,11 @@ send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة ال
 return false 
 end
 function FunctionStatus(arg, result)
-redis:srem(bot_id.."Developer:Bot", result.sender_user_id_)
+redis:srem(bot_id.."TiTanoper:Bot", result.sender_user_id_)
 Send_Options(msg,result.sender_user_id_,"reply","⎙╮ تم تنزيله من المطورين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
+elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1688,7 +1688,7 @@ redis:sadd(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
 Send_Options(msg,result.sender_user_id_,"reply","⎙╮ تم ترقيته منشئ اساسي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
+elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1932,7 +1932,7 @@ https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?ch
 Send_Options(msg,result.sender_user_id_,"reply","⎙╮ تم الغاء تقييده")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
-elseif text and text:match("^حظر عام @(.*)$") and Dev_Devel(msg) then
+elseif text and text:match("^حظر عام @(.*)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1949,7 +1949,7 @@ if tonumber(result.id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تسطيع حظر البوت عام")
 return false 
 end
-if Dev_Devel_User(result.id_) == true then
+if Dev_TiTan_User(result.id_) == true then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
@@ -1960,7 +1960,7 @@ send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^الغاء العام @(.*)$") and Dev_Devel(msg) then
+elseif text and text:match("^الغاء العام @(.*)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1976,7 +1976,7 @@ send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء العام @(.*)$") }, FunctionStatus, nil)
-elseif text and text:match("^اضف مطور @(.*)$") and Dev_Devel(msg) then
+elseif text and text:match("^اضف مطور @(.*)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -1989,14 +1989,14 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"⎙╮ عذرا اذا معرف قناة")   
 return false 
 end      
-redis:sadd(bot_id.."Developer:Bot", result.id_)
+redis:sadd(bot_id.."TiTanoper:Bot", result.id_)
 Send_Options(msg,result.id_,"reply","⎙╮ تم ترقيته مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^اضف مطور @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^حذف مطور @(.*)$") and Dev_Devel(msg) then
+elseif text and text:match("^حذف مطور @(.*)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -2005,14 +2005,14 @@ return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
-redis:srem(bot_id.."Developer:Bot", result.id_)
+redis:srem(bot_id.."TiTanoper:Bot", result.id_)
 Send_Options(msg,result.id_,"reply","⎙╮ تم تنزيله من المطورين")  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حذف مطور @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^رفع منشئ اساسي @(.*)$") and DeveloperBot(msg) then
+elseif text and text:match("^رفع منشئ اساسي @(.*)$") and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -2032,7 +2032,7 @@ send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ اساسي @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and DeveloperBot(msg) then
+elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -2562,14 +2562,14 @@ send(msg.chat_id_, msg.id_,"⎙╮ المعرف غلط ")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$")}, FunctionStatus, nil)
-elseif text and text:match("^حظر عام (%d+)$") and Dev_Devel(msg) then
+elseif text and text:match("^حظر عام (%d+)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-if Dev_Devel_User(text:match("^حظر عام (%d+)$")) == true then
+if Dev_TiTan_User(text:match("^حظر عام (%d+)$")) == true then
 send(msg.chat_id_, msg.id_, "⎙╮ لا تستطيع حظر المطور الاساسي عام")
 return false 
 end
@@ -2579,7 +2579,7 @@ return false
 end
 redis:sadd(bot_id.."Removal:User:Groups", text:match("^حظر عام (%d+)$"))
 Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","⎙╮ تم حظره عام من المجموعات")  
-elseif text and text:match("^الغاء العام (%d+)$") and Dev_Devel(msg) then
+elseif text and text:match("^الغاء العام (%d+)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -2590,25 +2590,25 @@ redis:srem(bot_id.."Removal:User:Groups", text:match("^الغاء العام (%d
 Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","⎙╮ تم الغاء حظره عام من المجموعات")  
 return false
 end
-if text and text:match("^اضف مطور (%d+)$") and Dev_Devel(msg) then
+if text and text:match("^اضف مطور (%d+)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-redis:sadd(bot_id.."Developer:Bot", text:match("^اضف مطور (%d+)$"))
+redis:sadd(bot_id.."TiTanoper:Bot", text:match("^اضف مطور (%d+)$"))
 Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","⎙╮ تم ترقيته مطور في البوت")  
-elseif text and text:match("^حذف مطور (%d+)$") and Dev_Devel(msg) then
+elseif text and text:match("^حذف مطور (%d+)$") and Dev_TiTan(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
 return false 
 end
-redis:srem(bot_id.."Developer:Bot", text:match("^حذف مطور (%d+)$"))
+redis:srem(bot_id.."TiTanoper:Bot", text:match("^حذف مطور (%d+)$"))
 Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","⎙╮ تم تنزيله من المطورين")  
-elseif text and text:match("^رفع منشئ اساسي (%d+)$") and DeveloperBot(msg) then
+elseif text and text:match("^رفع منشئ اساسي (%d+)$") and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -2617,7 +2617,7 @@ return false
 end 
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, text:match("^رفع منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","⎙╮ تم ترقيته منشئ اساسي")  
-elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and DeveloperBot(msg) then
+elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and TiTanoperBot(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
@@ -3303,16 +3303,16 @@ send(msg.chat_id_, msg.id_,Text)
 elseif text == "تعطيل اطردني" and Owner(msg) then  
 redis:set(bot_id.."Status:Cheking:Kick:Me:Group"..msg.chat_id_,true)  
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل امر اطردني") 
-elseif text == "تفعيل المغادره" and Dev_Devel(msg) then   
+elseif text == "تفعيل المغادره" and Dev_TiTan(msg) then   
 redis:del(bot_id.."Status:Lock:Left"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل مغادرة البوت") 
-elseif text == "تعطيل المغادره" and Dev_Devel(msg) then  
+elseif text == "تعطيل المغادره" and Dev_TiTan(msg) then  
 redis:set(bot_id.."Status:Lock:Left"..msg.chat_id_,true)   
 send(msg.chat_id_, msg.id_, "⎙╮ تم تعطيل مغادرة البوت") 
-elseif text == "تفعيل الاذاعه" and Dev_Devel(msg) then  
+elseif text == "تفعيل الاذاعه" and Dev_TiTan(msg) then  
 redis:del(bot_id.."Status:Broadcasting:Bot") 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل الاذاعه \n⎙╮ الان يمكن للمطورين الاذاعه" ) 
-elseif text == "تعطيل الاذاعه" and Dev_Devel(msg) then  
+elseif text == "تعطيل الاذاعه" and Dev_TiTan(msg) then  
 redis:set(bot_id.."Status:Broadcasting:Bot",true) 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه") 
 elseif text == "تعطيل اوامر التحشيش" and Owner(msg) then    
@@ -3339,10 +3339,10 @@ send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الالعاب")
 elseif text == "تفعيل الالعاب" and Owner(msg) then  
 redis:set(bot_id.."Status:Lock:Game:Group"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تفعيل الالعاب") 
-elseif text == 'تفعيل البوت الخدمي' and Dev_Devel(msg) then  
+elseif text == 'تفعيل البوت الخدمي' and Dev_TiTan(msg) then  
 redis:del(bot_id..'Free:Bot') 
 send(msg.chat_id_, msg.id_,'⎙╮ تم تفعيل البوت الخدمي \n⎙╮ الان يمكن الجميع تفعيله') 
-elseif text == 'تعطيل البوت الخدمي' and Dev_Devel(msg) then  
+elseif text == 'تعطيل البوت الخدمي' and Dev_TiTan(msg) then  
 redis:set(bot_id..'Free:Bot',true) 
 send(msg.chat_id_, msg.id_,'⎙╮ تم تعطيل البوت الخدمي') 
 elseif text == "تعطيل الطرد" and Constructor(msg) or text == "تعطيل الحظر" and Constructor(msg) then
@@ -3491,8 +3491,8 @@ send(msg.chat_id_,msg.id_,"⎙╮ ارسل لي الترحيب الان".."\n⎙
 elseif text == "ضع قوانين" and Admin(msg) or text == "وضع قوانين" and Admin(msg) then 
 redis:setex(bot_id.."Redis:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_,msg.id_,"⎙╮ ارسل لي القوانين الان")  
-elseif text == 'وضع كليشه المطور' and Dev_Devel(msg) then
-redis:set(bot_id..'GetTexting:DevDevel'..msg.chat_id_..':'..msg.sender_user_id_,true)
+elseif text == 'وضع كليشه المطور' and Dev_TiTan(msg) then
+redis:set(bot_id..'GetTexting:DevTiTan'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'⎙╮  ارسل لي الكليشه الان')
 elseif text and text:match("^ضع اسم (.*)") and Owner(msg) or text and text:match("^وضع اسم (.*)") and Owner(msg) then 
 local Name = text:match("^ضع اسم (.*)") or text:match("^وضع اسم (.*)") 
@@ -3507,7 +3507,7 @@ else
 send(msg.chat_id_,msg.id_,"⎙╮  تم تغيير اسم المجموعه الى {["..Name.."]}")  
 end
 end,nil) 
-elseif text == 'روابط الكروبات' and Dev_Devel(msg) then
+elseif text == 'روابط الكروبات' and Dev_TiTan(msg) then
 local list = redis:smembers(bot_id..'ChekBotAdd') 
 test = '⎙╮ روابط الكروبات \n\n'
 for k,v in pairs(list) do 
@@ -3630,7 +3630,7 @@ redis:setex(bot_id.."Redis:Validity:Group"..msg.chat_id_..""..msg.sender_user_id
 send(msg.chat_id_, msg.id_, "\n⎙╮ ارسل نوع الصلاحيه كما مطلوب منك :\n⎙╮ انواع الصلاحيات المطلوبه ← { عضو ، مميز  ، ادمن  ، مدير }") 
 elseif text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
-redis:set(bot_id.."Developer:Bot:Reply"..msg.chat_id_,Teext)
+redis:set(bot_id.."TiTanoper:Bot:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد المطور الى :"..Teext)
 elseif text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
@@ -3657,7 +3657,7 @@ local Teext = text:match("^تغير رد العضو (.*)$")
 redis:set(bot_id.."Mempar:Group:Reply"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⎙╮  تم تغير رد العضو الى :"..Teext)
 elseif text == 'حذف رد المطور' and Owner(msg) then
-redis:del(bot_id.."Developer:Bot:Reply"..msg.chat_id_)
+redis:del(bot_id.."TiTanoper:Bot:Reply"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"⎙╮ تم حدف رد المطور")
 elseif text == 'حذف رد المنشئ الاساسي' and Owner(msg) then
 redis:del(bot_id.."President:Group:Reply"..msg.chat_id_)
@@ -3724,7 +3724,7 @@ redis:set(bot_id.."Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 elseif text == "حذف رد" and Owner(msg) then
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل الان الكلمه لحذفها من ردود المدير")
 redis:set(bot_id.."Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true2")
-elseif text == ("مسح ردود المطور") and Dev_Devel(msg) then 
+elseif text == ("مسح ردود المطور") and Dev_TiTan(msg) then 
 local list = redis:smembers(bot_id.."List:Rd:Sudo")
 for k,v in pairs(list) do
 redis:del(bot_id.."Add:Rd:Sudo:Gif"..v)   
@@ -3738,7 +3738,7 @@ redis:del(bot_id.."Add:Rd:Sudo:Audio"..v)
 redis:del(bot_id.."List:Rd:Sudo")
 end
 send(msg.chat_id_, msg.id_,"⎙╮ تم حذف ردود المطور")
-elseif text == ("ردود المطور") and Dev_Devel(msg) then 
+elseif text == ("ردود المطور") and Dev_TiTan(msg) then 
 local list = redis:smembers(bot_id.."List:Rd:Sudo")
 text = "\n⎙╮ قائمة ردود المطور \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
@@ -3765,21 +3765,21 @@ if #list == 0 then
 text = "⎙╮ لا توجد ردود للمطور"
 end
 send(msg.chat_id_, msg.id_,"["..text.."]")
-elseif text == "اضف رد للكل" and Dev_Devel(msg) then 
+elseif text == "اضف رد للكل" and Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل الان الكلمه لاضافتها في ردود المكور ")
 redis:set(bot_id.."Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
-elseif text == "حذف رد للكل" and Dev_Devel(msg) then 
+elseif text == "حذف رد للكل" and Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل الان الكلمه لحذفها من ردود المطور")
 redis:set(bot_id.."Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 end
 if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then
 function FunctionStatus(extra, result, success)
 if (result.id_) then
-if Dev_Devel_User(result.id_) == true then
+if Dev_TiTan_User(result.id_) == true then
 send(msg.chat_id_, msg.id_,"⎙╮  لا تستطيع تنزيل المطور الاساسي")
 return false 
 end
-if redis:sismember(bot_id.."Developer:Bot",result.id_) then
+if redis:sismember(bot_id.."TiTanoper:Bot",result.id_) then
 dev = "المطور ،" else dev = "" end
 if redis:sismember(bot_id.."President:Group"..msg.chat_id_, result.id_) then
 crr = "منشئ اساسي ،" else crr = "" end
@@ -3797,14 +3797,14 @@ send(msg.chat_id_, msg.id_,"\n⎙╮ تم تنزيل الشخص من الرتب 
 else
 send(msg.chat_id_, msg.id_,"\n⎙╮ ليس لديه رتب حتى استطيع تنزيله \n")
 end
-if Dev_Devel_User(msg.sender_user_id_) == true then
-redis:srem(bot_id.."Developer:Bot", result.id_)
+if Dev_TiTan_User(msg.sender_user_id_) == true then
+redis:srem(bot_id.."TiTanoper:Bot", result.id_)
 redis:srem(bot_id.."President:Group"..msg.chat_id_,result.id_)
 redis:srem(bot_id..'Constructor:Group'..msg.chat_id_, result.id_)
 redis:srem(bot_id..'Manager:Group'..msg.chat_id_, result.id_)
 redis:srem(bot_id..'Admin:Group'..msg.chat_id_, result.id_)
 redis:srem(bot_id..'Vip:Group'..msg.chat_id_, result.id_)
-elseif redis:sismember(bot_id.."Developer:Bot",msg.sender_user_id_) then
+elseif redis:sismember(bot_id.."TiTanoper:Bot",msg.sender_user_id_) then
 redis:srem(bot_id..'Admin:Group'..msg.chat_id_, result.id_)
 redis:srem(bot_id..'Vip:Group'..msg.chat_id_, result.id_)
 redis:srem(bot_id..'Manager:Group'..msg.chat_id_, result.id_)
@@ -3829,11 +3829,11 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل ا�
 end
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
 function Function_Status(extra, result, success)
-if Dev_Devel_User(result.sender_user_id_) == true then
+if Dev_TiTan_User(result.sender_user_id_) == true then
 send(msg.chat_id_, msg.id_,"⎙╮  لا تستطيع تنزيل المطور الاساسي")
 return false 
 end
-if redis:sismember(bot_id.."Developer:Bot",result.sender_user_id_) then
+if redis:sismember(bot_id.."TiTanoper:Bot",result.sender_user_id_) then
 dev = "المطور ،" else dev = "" end
 if redis:sismember(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_) then
 crr = "منشئ اساسي ،" else crr = "" end
@@ -3851,14 +3851,14 @@ send(msg.chat_id_, msg.id_,"\n⎙╮ تم تنزيل الشخص من الرتب 
 else
 send(msg.chat_id_, msg.id_,"\n⎙╮ ليس لديه رتب حتى استطيع تنزيله \n")
 end
-if Dev_Devel_User(msg.sender_user_id_) == true then
-redis:srem(bot_id.."Developer:Bot", result.sender_user_id_)
+if Dev_TiTan_User(msg.sender_user_id_) == true then
+redis:srem(bot_id.."TiTanoper:Bot", result.sender_user_id_)
 redis:srem(bot_id.."President:Group"..msg.chat_id_,result.sender_user_id_)
 redis:srem(bot_id..'Constructor:Group'..msg.chat_id_, result.sender_user_id_)
 redis:srem(bot_id..'Manager:Group'..msg.chat_id_, result.sender_user_id_)
 redis:srem(bot_id..'Admin:Group'..msg.chat_id_, result.sender_user_id_)
 redis:srem(bot_id..'Vip:Group'..msg.chat_id_, result.sender_user_id_)
-elseif redis:sismember(bot_id.."Developer:Bot",msg.sender_user_id_) then
+elseif redis:sismember(bot_id.."TiTanoper:Bot",msg.sender_user_id_) then
 redis:srem(bot_id..'Admin:Group'..msg.chat_id_, result.sender_user_id_)
 redis:srem(bot_id..'Vip:Group'..msg.chat_id_, result.sender_user_id_)
 redis:srem(bot_id..'Manager:Group'..msg.chat_id_, result.sender_user_id_)
@@ -3911,14 +3911,14 @@ local taha = "⎙╮  عدد الادمنيه : "..data.administrator_count_..
 send(msg.chat_id_, msg.id_, taha) 
 end,nil)end,nil)
 elseif text == "غادر" then 
-if DeveloperBot(msg) and not redis:get(bot_id.."Status:Lock:Left"..msg.chat_id_) then 
+if TiTanoperBot(msg) and not redis:get(bot_id.."Status:Lock:Left"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,"⎙╮  تم مغادرة المجموعه") 
 redis:srem(bot_id.."ChekBotAdd",msg.chat_id_)  
 end
 elseif text and text:match("^غادر (-%d+)$") then
 local GP_ID = {string.match(text, "^(غادر) (-%d+)$")}
-if DeveloperBot(msg) and not redis:get(bot_id.."Status:Lock:Left"..msg.chat_id_) then 
+if TiTanoperBot(msg) and not redis:get(bot_id.."Status:Lock:Left"..msg.chat_id_) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=GP_ID[2],user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,"⎙╮  تم مغادرة المجموعه") 
 send(GP_ID[2], 0,"⎙╮  تم مغادرة المجموعه بامر من مطور البوت") 
@@ -3942,39 +3942,39 @@ local BotName = {
 }
 BotNameText = math.random(#BotName)
 send(msg.chat_id_, msg.id_,BotName[BotNameText]) 
-elseif text == "تغير اسم البوت" and Dev_Devel(msg) or text == "تغيير اسم البوت" and Dev_Devel(msg) then 
+elseif text == "تغير اسم البوت" and Dev_TiTan(msg) or text == "تغيير اسم البوت" and Dev_TiTan(msg) then 
 redis:setex(bot_id.."Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"⎙╮  ارسل لي الاسم الان ")  
-elseif text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
-if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_Devel(msg) then 
+elseif text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and TiTanoperBot(msg) then 
+if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Broadcasting:Users" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي المنشور الان\n⎙╮ يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⎙╮ لالغاء الاذاعه ارسل : الغاء") 
 return false
-elseif text=="اذاعه" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
-if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_Devel(msg) then 
+elseif text=="اذاعه" and msg.reply_to_message_id_ == 0 and TiTanoperBot(msg) then 
+if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Broadcasting:Groups" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي المنشور الان\n⎙╮ يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⎙╮ لالغاء الاذاعه ارسل : الغاء") 
 return false
-elseif text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DeveloperBot(msg) then 
-if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_Devel(msg) then 
+elseif text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and TiTanoperBot(msg) then 
+if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Broadcasting:Groups:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي المنشور الان\n⎙╮ يمكنك ارسال -{ صوره - ملصق - متحركه - رساله }\n⎙╮ لالغاء الاذاعه ارسل : الغاء") 
 return false
-elseif text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then 
-if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_Devel(msg) then 
+elseif text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and TiTanoperBot(msg) then 
+if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Broadcasting:Groups:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"⎙╮ ارسل لي التوجيه الان\n⎙╮ ليتم نشره في المجموعات") 
 return false
-elseif text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and DeveloperBot(msg) then 
-if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_Devel(msg) then 
+elseif text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and TiTanoperBot(msg) then 
+if redis:get(bot_id.."Status:Broadcasting:Bot") and not Dev_TiTan(msg) then 
 send(msg.chat_id_, msg.id_,"⎙╮ تم تعطيل الاذاعه من قبل المطور الاساسي !")
 return false end
 redis:setex(bot_id.."Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
@@ -4771,16 +4771,16 @@ elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  t
 send(msg.chat_id_, msg.id_,[[
 ⦑ Welcome to Source ⦒
 
-𓂅 .Devel TEAM 
+𓂅 .TiTan TEAM 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 𓂅 . [Source Channel](t.me/JJJUU)
 
-𓂅 . [Source Info ](t.me/Devel0)     
+𓂅 . [Source Info ](t.me/TiTan0)     
 
-𓂅 . [Devel iNDT](t.me/Devel0)     
+𓂅 . [TiTan iNDT](t.me/TiTan0)     
  
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-𓂅 . [TWS Devel](t.me/Ub55bot)     
+𓂅 . [TWS TiTan](t.me/Ub55bot)     
 ]]) 
 elseif text == 'الاوامر' and Admin(msg) then
 send(msg.chat_id_, msg.id_,[[*
@@ -4918,7 +4918,7 @@ send(msg.chat_id_, msg.id_,[[*
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ⎙╮ قناة البوت ←* @TiTancil
 ]]) 
-elseif text == 'م5' and DeveloperBot(msg)  then
+elseif text == 'م5' and TiTanoperBot(msg)  then
 send(msg.chat_id_, msg.id_,[[*
 ⎙╮ اوامر المطور الاساسي  
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
@@ -5032,7 +5032,7 @@ send(msg.chat_id_, msg.id_, "⎙╮ تم اضافه عدد الرسائل : "..t
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
-elseif text == "تنظيف المشتركين" and Dev_Devel(msg) then
+elseif text == "تنظيف المشتركين" and Dev_TiTan(msg) then
 local pv = redis:smembers(bot_id..'Num:User:Pv')  
 local sendok = 0
 for i = 1, #pv do
@@ -5055,7 +5055,7 @@ end,nil)
 end,nil)
 end
 return false
-elseif text == "تنظيف الكروبات" and Dev_Devel(msg) then
+elseif text == "تنظيف الكروبات" and Dev_TiTan(msg) then
 local group = redis:smembers(bot_id..'ChekBotAdd')  
 local w = 0
 local q = 0
@@ -5090,11 +5090,11 @@ else
 taha = '\n⎙╮  تم ازالة ~ '..q..' مجموعات من البوت'
 end
 if w == 0 then
-Devel = ''
+TiTan = ''
 else
-Devel = '\n⎙╮  تم ازالة ~'..w..' مجموعه لان البوت عضو'
+TiTan = '\n⎙╮  تم ازالة ~'..w..' مجموعه لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,'*⎙╮  عدد المجموعات الان ← { '..#group..' } مجموعه '..Devel..''..taha..'\n⎙╮ اصبح عدد المجموعات الان ← { '..sendok..' } مجموعات*\n')   
+send(msg.chat_id_, msg.id_,'*⎙╮  عدد المجموعات الان ← { '..#group..' } مجموعه '..TiTan..''..taha..'\n⎙╮ اصبح عدد المجموعات الان ← { '..sendok..' } مجموعات*\n')   
 end
 end
 end,nil)
@@ -5131,7 +5131,7 @@ elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then
 local username = text:match("^رفع القيود @(.*)") 
 function Function_Status(extra, result, success)
 if result.id_ then
-if Dev_Devel(msg) then
+if Dev_TiTan(msg) then
 redis:srem(bot_id.."Removal:User:Groups",result.id_)
 redis:srem(bot_id.."Removal:User:Group"..msg.chat_id_,result.id_)
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_,result.id_)
@@ -5148,7 +5148,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Status, nil)
 elseif text == "رفع القيود" and Owner(msg) then
 function Function_Status(extra, result, success)
-if Dev_Devel(msg) then
+if Dev_TiTan(msg) then
 redis:srem(bot_id.."Removal:User:Groups",result.sender_user_id_)
 redis:srem(bot_id.."Removal:User:Group"..msg.chat_id_,result.sender_user_id_)
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_,result.sender_user_id_)
@@ -5247,7 +5247,7 @@ end,nil)
 end
 end
 end,nil)   
-elseif text ==("رفع المنشئ") and DeveloperBot(msg) then 
+elseif text ==("رفع المنشئ") and TiTanoperBot(msg) then 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
 for i=0 , #admins do
@@ -5265,22 +5265,22 @@ send(msg.chat_id_, msg.id_,"⎙╮ تم ترقية منشئ المجموعه ←
 redis:sadd(bot_id.."President:Group"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
-elseif text and text:match("^تعين عدد الاعضاء (%d+)$") and Dev_Devel(msg) then
+elseif text and text:match("^تعين عدد الاعضاء (%d+)$") and Dev_TiTan(msg) then
 redis:set(bot_id..'Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 send(msg.chat_id_, msg.id_,'*⎙╮  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *')
-elseif text =='الاحصائيات' and DeveloperBot(msg) then 
+elseif text =='الاحصائيات' and TiTanoperBot(msg) then 
 send(msg.chat_id_, msg.id_,'*⎙╮ عدد احصائيات البوت الكامله \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n⎙╮ عدد المجموعات : '..(redis:scard(bot_id..'ChekBotAdd') or 0)..'\n⎙╮ عدد المشتركين : '..(redis:scard(bot_id..'Num:User:Pv') or 0)..'*')
 elseif text == 'المطور' or text == 'مطور' then
-local TextingDevDevel = redis:get(bot_id..'Texting:DevDevel')
-if TextingDevDevel then 
-send(msg.chat_id_, msg.id_,TextingDevDevel)
+local TextingDevTiTan = redis:get(bot_id..'Texting:DevTiTan')
+if TextingDevTiTan then 
+send(msg.chat_id_, msg.id_,TextingDevTiTan)
 else
 send(msg.chat_id_, msg.id_,'['..UserName_Dev..']')
 end
-elseif text == 'حذف كليشه المطور' and Dev_Devel(msg) then
-redis:del(bot_id..'Texting:DevDevel')
+elseif text == 'حذف كليشه المطور' and Dev_TiTan(msg) then
+redis:del(bot_id..'Texting:DevTiTan')
 send(msg.chat_id_, msg.id_,'⎙╮  تم حذف كليشه المطور')
 end
 end
 end
-return {Devel = Script}
+return {TiTan = Script}
