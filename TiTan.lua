@@ -3207,7 +3207,7 @@ elseif text == ("المدراء") and Constructor(msg) then
 local url,res = http.request('https://titan-com.ml/Titan.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮ قناة البوت ← { @TiTancil }')   
+send(msg.chat_id_,msg.id_,'\n⎙╮ عليك الاشتراك في قناة البوت \n⎙╮قناة البوت ← { @TiTancil }')   
 return false 
 end
 local list = redis:smembers(bot_id.."Manager:Group"..msg.chat_id_)

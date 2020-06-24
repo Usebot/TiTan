@@ -5286,7 +5286,7 @@ send(msg.chat_id_, msg.id_,'['..UserName_Dev..']')
 end
 elseif text == 'حذف كليشه المطور' and Dev_TiTan(msg) then
 redis:del(bot_id..'Texting:DevTiTan')
-send(msg.chat_id_, msg.id_,'⎙╮  تم حذف كليشه المطور')
+send(msg.chat_id_, msg.id_,'⎙╮ تم حذف كليشه المطور')
 end
 end
 end
