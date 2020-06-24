@@ -1612,9 +1612,9 @@ local list = taha.members_
 for k, v in pairs(list) do
 x = x + 1
 if redis:get(bot_id.."Save:Username"..v.user_id_) then
-t = t..""..x.." : [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
+t = t..""..x.." 𖣀 [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
 else
-t = t..""..x.." : "..v.user_id_.."\n"
+t = t..""..x.." 𖣀 "..v.user_id_.."\n"
 end
 end
 send(msg.chat_id_,msg.id_,t)
