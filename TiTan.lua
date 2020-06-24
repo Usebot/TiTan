@@ -1417,7 +1417,7 @@ local GetWelcomeGroup = redis:get(bot_id.."Get:Welcome:Group"..msg.chat_id_)
 if GetWelcomeGroup then 
 t = GetWelcomeGroup
 else  
-t = "\n• نورت حبي \n•  name \n• user" 
+t = "\n• ܊ ܁ ههلو عمري نورتنا 💞 . \n•  name \n• user" 
 end 
 t = t:gsub("name",result.first_name_) 
 t = t:gsub("user",("@"..result.username_ or "لا يوجد")) 
