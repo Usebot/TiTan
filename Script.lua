@@ -350,7 +350,7 @@ height_ = 0
 end
 ------------------------------------------------------------------------------------------------------------
 function tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Usebot/Devel/master/Script.lua'
+url = 'https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua'
 file_path = 'Script.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -371,7 +371,7 @@ end
 function tdcli_update_callback_value_(Data) 
 tdcli_update_callback_value(Data) 
 url = 'https://raw.githubusercontent.com/Usebot/Devel/master/Devel.lua'
-file_path = 'Devel.lua'
+file_path = 'TiTan.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
 local response = nil 

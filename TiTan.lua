@@ -24,7 +24,7 @@ end
 else
 io.write('\n\27[1;31m⎙╮ Token was not saved \n لم يتم حفظ التوكن \n\27[0;39;49m')
 end 
-os.execute('lua Devel.lua')
+os.execute('lua TiTan.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 if not redis:get(Server_Devel.."User_DevDevel1") then
@@ -35,15 +35,15 @@ local GetInfoUser = http.request("http://teamstorm.tk/GetUser?id="..User_Sudo)
 local User_Info = JSON.decode(GetInfoUser)
 if User_Info.Info.Chek == "Not_Info" then
 io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل المعرف صحيح\n\27[0;39;49m')
-os.execute('lua Devel.lua')
+os.execute('lua TiTan.lua')
 end
 if User_Info.Info.Chek == "Is_Spam" then
 io.write('\n\27[1;31m⎙╮ Is Spam For Url : لقد قمت بالتكرار في الرابط حاول بعد دقيقتين \n\27[0;39;49m')
-os.execute('lua Devel.lua')
+os.execute('lua TiTan.lua')
 end
 if User_Info.Info == 'Channel' then
 io.write('\n\27[1;31m⎙╮ The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
-os.execute('lua Devel.lua')
+os.execute('lua TiTan.lua')
 end
 io.write('\n\27[1;31m⎙╮ The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
 redis:set(Server_Devel.."User_DevDevel1",User_Info.Info.Username)
@@ -51,7 +51,7 @@ redis:set(Server_Devel.."Id_DevDevel",User_Info.Info.Id)
 else
 io.write('\n\27[1;31m⎙╮ The UserName was not Saved : لم يتم حفظ معرف المطور الاساسي\n\27[0;39;49m')
 end 
-os.execute('lua Devel.lua')
+os.execute('lua TiTan.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 local DevDevel_Info_Sudo = io.open("Info_Sudo.lua", 'w')
@@ -75,7 +75,7 @@ cd $HOME/Storm
 token="]]..redis:get(Server_Devel.."Token_DevDevel")..[["
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./Devel.lua -p PROFILE --bot=$token
+./tg -s ./TiTan.lua -p PROFILE --bot=$token
 done
 ]])
 Run_File_Devel:close()
@@ -524,7 +524,7 @@ height_ = 0
 end
 ------------------------------------------------------------------------------------------------------------
 function tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Usebot/Devel/master/Script.lua'
+url = 'https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua'
 file_path = 'Script.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -544,8 +544,8 @@ end
 ------------------------------------------------------------------------------------------------------------ 
 function tdcli_update_callback_value_(Data) 
 tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Usebot/Devel/master/Devel.lua'
-file_path = 'Devel.lua'
+url = 'https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua'
+file_path = 'TiTan.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
 local response = nil 
@@ -2157,18 +2157,18 @@ end
 send(msg.chat_id_, msg.id_,'👥┇تم نقل : '..#Groups..' كروب\n👤┇تم نقل : '..#Users..' مشترك \n🔘┇من التحديث القديم الى التحديث الجديد')
 
 elseif text == "تحديث الملفات 🔁" then
-dofile("Devel.lua")  
+dofile("TiTan.lua")  
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث ملفات البوت")
 elseif text == "تحديث" then
-dofile("Devel.lua")  
+dofile("TiTan.lua")  
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث ملفات البوت")
 elseif text == 'تحديث السورس 🔂' then
-download_to_file('https://raw.githubusercontent.com/Usebot/Devel/master/Devel.lua','Devel.lua') 
-download_to_file('https://raw.githubusercontent.com/Usebot/Devel/master/Script.lua','Script.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua','TiTan.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua','Script.lua') 
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث السورس وتنزيل اخر تحديث للملفات")
 elseif text == 'تحديث السورس' then
-download_to_file('https://raw.githubusercontent.com/Usebot/Devel/master/Devel.lua','Devel.lua') 
-download_to_file('https://raw.githubusercontent.com/Usebot/Devel/master/Script.lua','Script.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/TiTan.lua','TiTan.lua') 
+download_to_file('https://raw.githubusercontent.com/Usebot/TiTan/master/Script.lua','Script.lua') 
 send(msg.chat_id_, msg.id_, "⎙╮ تم تحديث السورس وتنزيل اخر تحديث للملفات")
 end
 if text == 'الملفات' then
@@ -2218,7 +2218,7 @@ local Get_Json, Res = https.request("https://raw.githubusercontent.com/Develkid/
 if Res == 200 then
 os.execute("rm -fr Files/"..File_Name)
 send(msg.chat_id_, msg.id_,"\n⎙╮ الملف ← *"..File_Name.."*\n⎙╮ تم تعطيله وحذفه من البوت بنجاح") 
-dofile('Devel.lua')  
+dofile('TiTan.lua')  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد ملف بهاذا الاسم") 
 end
@@ -2231,7 +2231,7 @@ local ChekAuto = io.open("Files/"..File_Name,'w+')
 ChekAuto:write(Get_Json)
 ChekAuto:close()
 send(msg.chat_id_, msg.id_,"\n⎙╮ الملف ← *"..File_Name.."*\n⎙╮ تم تفعيله في البوت بنجاح") 
-dofile('Devel.lua')  
+dofile('TiTan.lua')  
 else
 send(msg.chat_id_, msg.id_,"⎙╮ لا يوجد ملف بهاذا الاسم") 
 end
