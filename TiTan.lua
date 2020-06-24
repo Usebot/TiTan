@@ -2185,7 +2185,7 @@ Files = '⎙╮ لا توجد ملفات في البوت '
 end
 send(msg.chat_id_, msg.id_,Files)
 elseif text == "متجر الملفات" or text == 'المتجر' then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/TiTankid/Files_TiTan/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 if Get_info then
@@ -2214,7 +2214,7 @@ send(msg.chat_id_,msg.id_,"⎙╮ تم مسح جميع ملفات المفعله
 elseif text and text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local File_Get = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local File_Name = File_Get[2]..'.lua'
-local Get_Json, Res = https.request("https://raw.githubusercontent.com/TiTankid/Files_TiTan/master/Files_TiTan/"..File_Name)
+local Get_Json, Res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/Files_TiTan/"..File_Name)
 if Res == 200 then
 os.execute("rm -fr Files/"..File_Name)
 send(msg.chat_id_, msg.id_,"\n⎙╮ الملف ← *"..File_Name.."*\n⎙╮ تم تعطيله وحذفه من البوت بنجاح") 
@@ -2225,7 +2225,7 @@ end
 elseif text and text:match("^(تفعيل ملف) (.*)(.lua)$") then
 local File_Get = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local File_Name = File_Get[2]..'.lua'
-local Get_Json, Res = https.request("https://raw.githubusercontent.com/TiTankid/Files_TiTan/master/Files_TiTan/"..File_Name)
+local Get_Json, Res = https.request("https://raw.githubusercontent.com/Usebot/Files_TiTan/master/Files_TiTan/"..File_Name)
 if Res == 200 then
 local ChekAuto = io.open("Files/"..File_Name,'w+')
 ChekAuto:write(Get_Json)
