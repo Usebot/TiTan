@@ -438,31 +438,31 @@ for gmatch in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = gmatch
 end
 if status == "Close_Status" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."")
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."")
 return false
 end
 if status == "Close_Status_Ktm" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - الكتم 𓂅 .\n")
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - الكتم 𓂅 .\n")
 return false
 end
 if status == "Close_Status_Kick" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - الطرد 𓂅 .\n")
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - الطرد 𓂅 .\n")
 return false
 end
 if status == "Close_Status_Kid" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - التقييد 𓂅 .\n")
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text.."\n⎙︙خاصية - التقييد 𓂅 .\n")
 return false
 end
 if status == "Open_Status" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 if status == "reply" then
-send(msg.chat_id_, msg.id_,"⎙︙المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"⎙︙المستخدم ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 if status == "reply_Add" then
-send(msg.chat_id_, msg.id_,"⎙︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(msg.chat_id_, msg.id_,"⎙︙بواسطه ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 else
@@ -478,7 +478,7 @@ for gmatch in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = gmatch
 end
 if status == "reply_Pv" then
-send(chat,idmsg,"⎙︙المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
+send(chat,idmsg,"⎙︙المستخدم ⋙ ["..data.first_name_.."](T.me/"..UserName..")".."\n"..text)
 return false
 end
 else
