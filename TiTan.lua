@@ -3329,9 +3329,8 @@ local list = taha.members_
 for k, v in pairs(list) do
 x = x + 1
 if redis:get(bot_id.."Save:Username"..v.user_id_) then
-t = t..""..x.." : [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
+t = t..""..x.." 𖣀 [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
 else
-t = t..""..x.." : "..v.user_id_.."\n"
 end
 end
 send(msg.chat_id_,msg.id_,t)
@@ -5542,7 +5541,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
 elseif text == "رتبتي" then
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
-send(msg.chat_id_, msg.id_,"⎙╮ رتبتك في البوت : "..rtp)
+send(msg.chat_id_, msg.id_,"⎙︙رتبتك في البوت : "..rtp)
 elseif text == "اسمي"  then 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.first_name_  then
@@ -6001,7 +6000,7 @@ send(msg.chat_id_, msg.id_,[[
 ⎙╮ `#game` » عدد المجوهرات
 ⎙╮ `#AddMem` » عدد الجهات
 ⎙╮ `#Description` » تعليق الصوره
-⎙╮ قناة الكلايش • @jEEEEI
+⎙╮ قناة الكلايش • @TiTancil
 ]])
 return false  
 elseif text == 'تغير الايدي' and Owner(msg) then 
@@ -6061,11 +6060,14 @@ local Num_Games = redis:get(bot_id.."Num:Add:Games"..msg.chat_id_..msg.sender_us
 local Add_Mem = redis:get(bot_id.."Num:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
-'ملاك وناسيك بكروبنه😟',
-"حلغوم والله☹️ ",
-"اطلق صوره🐼❤️",
-"كيكك والله🥺",
-"لازك بيها غيرها عاد😒",
+'منور يكيوت 😉❤️',
+"قميل اوربي 🥺💞",
+"وفالله 😔💘",
+"كشخه برب 😉💘",
+"دغيره شبي هذ 😒",
+"عمري الحلو🤤💘",
+"تنكرط نتا وف 🙂❤️",
+"محتحت ياب 😉💞",
 }
 local Description = Texting[math.random(#Texting)]
 local Get_Is_Id = redis:get(bot_id.."Set:Id:Group"..msg.chat_id_)
@@ -6084,10 +6086,10 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',Num_Games)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',Total_Photp) 
 sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,Get_Is_Id)
 else
-sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'⎙╮ '..Description..'\n⎙╮ ايديك ← '..Id..'\n⎙╮ معرفك ← '..UserName_User..'\n⎙╮ رتبتك ← '..Status_Gps..'\n⎙╮ رسائلك ← '..NumMsg..'\n⎙╮ السحكات ← '..NumMessageEdit..' \n⎙╮ تتفاعلك ← '..TotalMsg..'\n⎙╮ مجوهراتك ← '..Num_Games)
+sendPhoto(msg.chat_id_,msg.id_,taha.photos_[0].sizes_[1].photo_.persistent_id_,'⎙╮ '..Description..'\n⎙︙ايديك ← '..Id..'\n⎙︙معرفك ← '..UserName_User..'\n⎙︙رتبتك ← '..Status_Gps..'\n⎙︙رسائلك ← '..NumMsg..'\n⎙︙السحكات ← '..NumMessageEdit..' \n⎙︙تفاعلك ← '..TotalMsg..'\n⎙︙مجوهراتك ← '..Num_Games)
 end
 else
-send(msg.chat_id_, msg.id_,'\n*⎙╮ ايديك ← '..Id..'\n⎙╮ معرفك ← *['..UserName_User..']*\n⎙╮ رتبتك ← '..Status_Gps..'\n⎙╮ رسائلك ← '..NumMsg..'\n⎙╮ السحكات ← '..NumMessageEdit..' \n⎙╮ تتفاعلك ← '..TotalMsg..'\n⎙╮ مجوهراتك ← '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n*⎙︙ايديك ← '..Id..'\n⎙︙معرفك ← *['..UserName_User..']*\n⎙︙رتبتك ← '..Status_Gps..'\n⎙︙رسائلك ← '..NumMsg..'\n⎙︙السحكات ← '..NumMessageEdit..' \n⎙︙تفاعلك ← '..TotalMsg..'\n⎙︙مجوهراتك ← '..Num_Games..'*') 
 end
 else
 if Get_Is_Id then
@@ -6103,7 +6105,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',Num_Games)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',Total_Photp) 
 send(msg.chat_id_, msg.id_,'['..Get_Is_Id..']') 
 else
-send(msg.chat_id_, msg.id_,'\n*⎙╮ ايديك ← '..Id..'\n⎙╮ معرفك ← *['..UserName_User..']*\n⎙╮ رتبتك ← '..Status_Gps..'\n⎙╮ رسائلك ← '..NumMsg..'\n⎙╮ السحكات ← '..NumMessageEdit..' \n⎙╮ تتفاعلك ← '..TotalMsg..'\n⎙╮ مجوهراتك ← '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n*⎙︙ايديك ← '..Id..'\n⎙︙معرفك ← *['..UserName_User..']*\n⎙︙رتبتك ← '..Status_Gps..'\n⎙︙رسائلك ← '..NumMsg..'\n⎙︙السحكات ← '..NumMessageEdit..' \n⎙︙تفاعلك ← '..TotalMsg..'\n⎙︙مجوهراتك ← '..Num_Games..'*') 
 end
 end
 end,nil)   
@@ -6142,7 +6144,7 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local NumMessageEdit = redis:get(bot_id..'Num:Message:Edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = redis:get(bot_id.."Status:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = redis:get(bot_id.."Num:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'\n*⎙╮ ايديه ← '..Id..'\n⎙╮ رسائله ← '..NumMsg..'\n⎙╮ معرفه ← *['..UserName_User..']*\n⎙╮ تفاعله ← '..TotalMsg..'\n⎙╮ رتبته ← '..Status_Gps..'\n⎙╮ تعديلاته ← '..NumMessageEdit..'\n⎙╮ جهاته ← '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'\n*⎙︙ايديه ← '..Id..'\n⎙︙رسائله ← '..NumMsg..'\n⎙︙معرفه ← *['..UserName_User..']*\n⎙︙تفاعله ← '..TotalMsg..'\n⎙︙رتبته ← '..Status_Gps..'\n⎙︙تعديلاته ← '..NumMessageEdit..'\n⎙︙جهاته ← '..Add_Mem..'*') 
 end,nil)   
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_Status, nil)
@@ -6166,7 +6168,7 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local NumMessageEdit = redis:get(bot_id..'Num:Message:Edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = redis:get(bot_id.."Status:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = redis:get(bot_id.."Num:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'\n*⎙╮ ايديه ← '..Id..'\n⎙╮ رسائله ← '..NumMsg..'\n⎙╮ معرفه ← *['..UserName_User..']*\n⎙╮ تفاعله ← '..TotalMsg..'\n⎙╮ رتبته ← '..Status_Gps..'\n⎙╮ تعديلاته ← '..NumMessageEdit..'\n⎙╮ جهاته ← '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'\n*⎙︙ايديه ← '..Id..'\n⎙︙رسائله ← '..NumMsg..'\n⎙︙معرفه ← *['..UserName_User..']*\n⎙︙تفاعله ← '..TotalMsg..'\n⎙︙رتبته ← '..Status_Gps..'\n⎙︙تعديلاته ← '..NumMessageEdit..'\n⎙︙جهاته ← '..Add_Mem..'*') 
 end,nil)   
 else
 send(msg.chat_id_, msg.id_,'⎙╮ لا يوجد حساب بهاذا المعرف')
