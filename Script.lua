@@ -1612,9 +1612,8 @@ local list = taha.members_
 for k, v in pairs(list) do
 x = x + 1
 if redis:get(bot_id.."Save:Username"..v.user_id_) then
-t = t..""..x.." : [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
+t = t..""..x.." 𖣀 [@"..redis:get(bot_id.."Save:Username"..v.user_id_).."]\n"
 else
-t = t..""..x.." : "..v.user_id_.."\n"
 end
 end
 send(msg.chat_id_,msg.id_,t)
@@ -4772,18 +4771,15 @@ return false
 end
 elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
 send(msg.chat_id_, msg.id_,[[
-⦑ Welcome to Source ⦒
+⎙ = TEAM TiTAN
+━━━━━━━━━━━━━
 
-𓂅 .TiTan TEAM 
-••━━⎙━━━━⎙━━••
-𓂅 . [Source Channel](t.me/JJJUU)
+⋙ [Channel Source ،](t.me/titancil)
 
-𓂅 . [Source Info ](t.me/TiTan0)     
+⋙ [Files Source](t.me/TiTanFiles)
 
-𓂅 . [TiTan iNDT](t.me/TiTan0)     
- 
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-𓂅 . [TWS TiTan](t.me/Ub55bot)     
+━━━━━━━━━━━━━
+⎙ = [Twasl Source !](t.me/Ta2bot)
 ]]) 
 elseif text == 'الاوامر' and Admin(msg) then
 send(msg.chat_id_, msg.id_,[[*
