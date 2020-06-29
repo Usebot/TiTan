@@ -4770,12 +4770,6 @@ send(msg.chat_id_, msg.id_,"⎙︙اسرع واحد يكمل المثل ~ {"..na
 return false
 end
 elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
-local url,res = https.request('https://seefor.ml/Apil.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.TiTan ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@DayBad]')   
-return false 
-end
 send(msg.chat_id_, msg.id_,[[
 ⎙ = TEAM TiTAN
 ━━━━━━━━━━━━━
