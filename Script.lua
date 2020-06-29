@@ -676,7 +676,7 @@ end
 function Script(msg)
 if TypeForChat == ("ForUser") then
 if text == '/start' then  
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1145,7 +1145,7 @@ end;end,nil)
 end
 
 if text == 'جلب نسخه احتياطيه' and Dev_TiTan(msg) or text == 'جلب نسخه الكروبات' and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1261,7 +1261,7 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n⎙︙تم جلب نسخه خاصه بالكروبات\n⎙︙يحتوي الملف على {'..#Groups..'} مجموعه')
 end
 if text == ("مسح قائمه العام") and Dev_TiTan(msg) or text == ("مسح المحظورين عام") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1270,7 +1270,7 @@ end
 redis:del(bot_id.."Removal:User:Groups")
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المحظورين عام من البوت")
 elseif text == ("مسح المطورين") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1279,7 +1279,7 @@ end
 redis:del(bot_id.."Developer:Bot")
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المطورين من البوت  ")
 elseif text == ("مسح المنشئين الاساسين") and DeveloperBot(msg) or text == "مسح الاساسين" and DeveloperBot(msg)  then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1290,7 +1290,7 @@ send(msg.chat_id_, msg.id_, "⎙︙تم مسح المنشئين الاساسيي
 elseif text == ("مسح المنشئين الاساسين") or text == "مسح الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1301,7 +1301,7 @@ send(msg.chat_id_, msg.id_, "⎙︙تم مسح المنشئين الاساسيي
 end
 end,nil)
 elseif text == ("مسح المنشئين") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1310,7 +1310,7 @@ end
 redis:del(bot_id.."Constructor:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المنشئين في المجموعه")
 elseif text == ("مسح المدراء") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1319,7 +1319,7 @@ end
 redis:del(bot_id.."Manager:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المدراء في المجموعه")
 elseif text == ("مسح الادمنيه") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1328,7 +1328,7 @@ end
 redis:del(bot_id.."Admin:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح الادمنيه في المجموعه")
 elseif text == ("مسح المميزين") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1337,7 +1337,7 @@ end
 redis:del(bot_id.."Vip:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المميزين في المجموعه")
 elseif text == ("مسح المكتومين") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1346,7 +1346,7 @@ end
 redis:del(bot_id.."Silence:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المكتومين في المجموعه")
 elseif text == ("مسح المحظورين") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1355,7 +1355,7 @@ end
 redis:del(bot_id.."Removal:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⎙︙تم مسح المحظورين في المجموعه")
 elseif text == "حذف الاوامر المضافه" and Constructor(msg) or text == "مسح الاوامر المضافه" and Constructor(msg) then 
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1368,7 +1368,7 @@ redis:del(bot_id.."Command:List:Group"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"⎙︙تم مسح جميع الاوامر التي تم اضافتها")  
 elseif text == "مسح الصلاحيات" and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1378,7 +1378,7 @@ local list = redis:smembers(bot_id.."Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."Validitys:Group"..msg.chat_id_);end
 send(msg.chat_id_, msg.id_,"⎙︙تم مسح صلاحيات المجموعه")
 elseif text == ("قائمه العام") and Dev_TiTan(msg) or text == ("المحظورين عام") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1399,7 +1399,7 @@ Gban = "⎙︙لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("المطورين") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1420,7 +1420,7 @@ Sudos = "⎙︙لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
 elseif text == "المنشئين الاساسين" and DeveloperBot(msg) or text == "الاساسين" and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1443,7 +1443,7 @@ send(msg.chat_id_, msg.id_, Asase)
 elseif text == "المنشئين الاساسين" or text == "الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1466,7 +1466,7 @@ send(msg.chat_id_, msg.id_, Asase)
 end
 end,nil)
 elseif text == ("المنشئين") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1487,7 +1487,7 @@ Monsh = "⎙︙لا يوجد منشئين"
 end
 send(msg.chat_id_, msg.id_, Monsh)
 elseif text == ("المدراء") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1508,7 +1508,7 @@ Moder = "⎙︙لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, Moder)
 elseif text == ("الادمنيه") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1619,7 +1619,7 @@ end
 send(msg.chat_id_,msg.id_,t)
 end,nil)
 elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1640,7 +1640,7 @@ Kick_Group(result.chat_id_, result.sender_user_id_)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1652,7 +1652,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم الغاء حظره 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1664,7 +1664,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته مطو�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1676,7 +1676,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1688,7 +1688,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته منش�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1700,7 +1700,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1718,7 +1718,7 @@ end,nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1732,7 +1732,7 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 end,nil)
 elseif text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1744,7 +1744,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته منش�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1756,7 +1756,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1768,7 +1768,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته مدي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1780,7 +1780,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1796,7 +1796,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته ادم�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1808,7 +1808,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1824,7 +1824,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم ترقيته ممي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1836,7 +1836,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1867,7 +1867,7 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1884,7 +1884,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم الغاء حظره 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1904,7 +1904,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم كتمه من هنا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1916,7 +1916,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم الغاء كتمه 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1932,7 +1932,7 @@ Send_Options(msg,result.sender_user_id_,"reply","⎙︙تم الغاء تقيي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام @(.*)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1960,7 +1960,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء العام @(.*)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1976,7 +1976,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء العام @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^اضف مطور @(.*)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -1996,7 +1996,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^اضف مطور @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^حذف مطور @(.*)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2012,7 +2012,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حذف مطور @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2032,7 +2032,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ اساسي @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2050,7 +2050,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل م�
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2075,7 +2075,7 @@ end,nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2094,7 +2094,7 @@ return false
 end
 end,nil)
 elseif text and text:match("^رفع منشئ @(.*)$") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2114,7 +2114,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ @(.*)$") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2130,7 +2130,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2150,7 +2150,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2166,7 +2166,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2190,7 +2190,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع ادمن @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2206,7 +2206,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل ادمن @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^رفع مميز @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2230,7 +2230,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مميز @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مميز @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2336,7 +2336,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},status_username,nil) 
 end  
 elseif text and text:match("^حظر @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2375,7 +2375,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء حظر @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2396,7 +2396,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء حظر @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^كتم @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2424,7 +2424,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء كتم @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2440,7 +2440,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تقيد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2504,7 +2504,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = TextEnd[4]}, FunctionStatus, nil)
 elseif text and text:match("^الغاء تقيد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2524,7 +2524,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء تقيد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^طرد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2562,7 +2562,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام (%d+)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2579,7 +2579,7 @@ end
 redis:sadd(bot_id.."Removal:User:Groups", text:match("^حظر عام (%d+)$"))
 Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","⎙︙تم حظره عام من المجموعات")  
 elseif text and text:match("^الغاء العام (%d+)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2590,7 +2590,7 @@ Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","⎙︙تم
 return false
 end
 if text and text:match("^اضف مطور (%d+)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2599,7 +2599,7 @@ end
 redis:sadd(bot_id.."Developer:Bot", text:match("^اضف مطور (%d+)$"))
 Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","⎙︙تم ترقيته مطور في البوت")  
 elseif text and text:match("^حذف مطور (%d+)$") and Dev_TiTan(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2608,7 +2608,7 @@ end
 redis:srem(bot_id.."Developer:Bot", text:match("^حذف مطور (%d+)$"))
 Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","⎙︙تم تنزيله من المطورين")  
 elseif text and text:match("^رفع منشئ اساسي (%d+)$") and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2617,7 +2617,7 @@ end
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, text:match("^رفع منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","⎙︙تم ترقيته منشئ اساسي")  
 elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and DeveloperBot(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2626,7 +2626,7 @@ end
 redis:srem(bot_id.."President:Group"..msg.chat_id_, text:match("^تنزيل منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^تنزيل منشئ اساسي (%d+)$") ,"reply","⎙︙تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع منشئ (%d+)$") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2635,7 +2635,7 @@ end
 redis:sadd(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^رفع منشئ (%d+)$"))
 Send_Options(msg,text:match("^رفع منشئ (%d+)$"),"reply","⎙︙تم ترقيته منشئ في المجموعه")  
 elseif text and text:match("^تنزيل منشئ (%d+)$") and PresidentGroup(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2644,7 +2644,7 @@ end
 redis:srem(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^تنزيل منشئ (%d+)$"))
 Send_Options(msg,text:match("^تنزيل منشئ (%d+)$"),"reply","⎙︙تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2653,7 +2653,7 @@ end
 redis:sadd(bot_id.."Manager:Group"..msg.chat_id_, text:match("^رفع مدير (%d+)$") )
 Send_Options(msg,text:match("^رفع مدير (%d+)$") ,"reply","⎙︙تم ترقيته مدير المجموعه")  
 elseif text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2662,7 +2662,7 @@ end
 redis:srem(bot_id.."Manager:Group"..msg.chat_id_, text:match("^تنزيل مدير (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مدير (%d+)$") ,"reply","⎙︙تم تنزيله من المدراء")  
 elseif text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2675,7 +2675,7 @@ end
 redis:sadd(bot_id.."Admin:Group"..msg.chat_id_, text:match("^رفع ادمن (%d+)$"))
 Send_Options(msg,text:match("^رفع ادمن (%d+)$"),"reply","⎙︙تم ترقيته ادمن للمجموعه")  
 elseif text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2684,7 +2684,7 @@ end
 redis:srem(bot_id.."Admin:Group"..msg.chat_id_, text:match("^تنزيل ادمن (%d+)$"))
 Send_Options(msg,text:match("^تنزيل ادمن (%d+)$"),"reply","⎙︙تم تنزيله من ادمنيه المجموعه")  
 elseif text and text:match("^رفع مميز (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2697,7 +2697,7 @@ end
 redis:sadd(bot_id.."Vip:Group"..msg.chat_id_, text:match("^رفع مميز (%d+)$"))
 Send_Options(msg,text:match("^رفع مميز (%d+)$"),"reply","⎙︙تم ترقيته مميز للمجموعه")  
 elseif text and text:match("^تنزيل مميز (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2706,7 +2706,7 @@ end
 redis:srem(bot_id.."Vip:Group"..msg.chat_id_, text:match("^تنزيل مميز (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مميز (%d+)$") ,"reply","⎙︙تم تنزيله من المميزين")  
 elseif text and text:match("^حظر (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2734,7 +2734,7 @@ Send_Options(msg,text:match("^حظر (%d+)$") ,"reply","⎙︙تم حظره من
 end,nil)   
 end
 elseif text and text:match("^الغاء حظر (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2748,7 +2748,7 @@ redis:srem(bot_id.."Removal:User:Group"..msg.chat_id_, text:match("^الغاء �
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^الغاء حظر (%d+)$") , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 Send_Options(msg,text:match("^الغاء حظر (%d+)$") ,"reply","⎙︙تم الغاء حظره من هنا")  
 elseif text and text:match("^كتم (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -2765,7 +2765,7 @@ redis:sadd(bot_id.."Silence:User:Group"..msg.chat_id_, text:match("^كتم (%d+)
 Send_Options(msg,text:match("^كتم (%d+)$"),"reply","⎙︙تم كتمه من هنا")  
 end
 elseif text and text:match("^الغاء كتم (%d+)$") and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -3357,7 +3357,7 @@ elseif text == "تفعيل الرفع" and Constructor(msg) or text == "تفعي
 redis:del(bot_id.."Status:Cheking:Seted"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '⎙︙تم تفعيل رفع - ( الادمن - المميز ) ')
 elseif text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
@@ -3376,7 +3376,7 @@ elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"⎙︙ليست لدي صلاحية التثبيت .")  
 end;end,nil) 
 elseif text == "الغاء التثبيت" and Admin(msg) then
-local url,res = http.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://seefor.ml/Ch.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TiTan ~= true then
 send(msg.chat_id_,msg.id_,'\n⎙︙عليك الاشتراك في قناة البوت \n⎙︙قناة البوت ← { @TiTancil }')   
